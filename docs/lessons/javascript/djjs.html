@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DJ JS</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">DJ JS</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    You're starting your business as a strictly online DJ (DJ
+                    JS) and you want to start by creating a website where people
+                    can change the color of a square on the page by interacting
+                    with different HTML Events.
+                </p>
+                <p>The square's color will change as follows:</p>
+                <ul class="custom-list">
+                    <li>Blue when the mouse hovers over the square</li>
+                    <li>
+                        Red when the mouse button is held down over the square
+                    </li>
+                    <li>
+                        Yellow when the mouse button is let go over the square
+                    </li>
+                    <li>
+                        Green when the mouse is double clicked in the square
+                    </li>
+                    <li>
+                        Orange when the mouse scroll is used somewhere in the
+                        window (not just over the square).
+                    </li>
+                    <li>
+                        You should also be able to press the first letter of the
+                        colors (typing "r" on the keyboard for "red", for
+                        example) and have the box change to that color. Check
+                        out the key and keyCode property of
+                        <code>e.target</code>
+                    </li>
+                </ul>
+                <p>
+                    Attempt these requirements. If you become discouraged,
+                    included are things to consider.
+                </p>
+                <p>
+                    Take a minute to think through how you would implement all
+                    of these event listeners.
+                </p>
+                <p>
+                    You will need a different event for each event. Keyboard
+                    events are triggered by any key.
+                </p>
+                <p>
+                    <code>.addEventListener</code> will be called on your square
+                    6 times.
+                </p>
+                <aside>
+                    <p>
+                        💡 the scroll event will only fire the it’s if there is
+                        enough content to scroll. Try “wheel”!
+                    </p>
+                </aside>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>
+                    <a
+                        href="https://marcopete5.github.io/level-1/assignments/dj-js/index.html"
+                        target="_blank"
+                        rel="noopener"
+                        >DEMO OF COMPLETED ASSIGNMENT</a
+                    >
+                </h3>
+            </div>
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

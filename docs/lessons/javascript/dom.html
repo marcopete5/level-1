@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM Manipulation Olympics</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">DOM Manipulation Olympics</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    <strong
+                        >The Bronze and Silver Medal challenges are required,
+                        the Gold medal challenge is optional</strong
+                    >
+                </p>
+                <p>
+                    DOM manipulation is it's own beast. Fairly soon, you'll be
+                    doing a lot of it along side of other things that are
+                    conceptually difficult if you're not yet familiar with DOM
+                    manipulation.
+                </p>
+                <p>
+                    This exercise is designed to help use repetition to become
+                    comfortable with syntax that is commonly used throughout the
+                    industry. Each step should be a stretch, but feel free to
+                    use what you learned from the last step to be able to
+                    complete the next.
+                </p>
+                <p>
+                    Please take your time, and really understand why you're
+                    using the code you are using.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Setup</h3>
+                <p>
+                    Clone down
+                    <a
+                        href="https://github.com/VSchool/dom-olympics-start"
+                        target="_blank"
+                        rel="noopener"
+                        >this repo</a
+                    >:
+                </p>
+                <pre><code class="language-jsx">
+git clone https://github.com/VSchool/dom-olympics-start
+            </code></pre>
+                <p>Remove the hidden <code>.git</code> folder:</p>
+                <pre><code class="language-jsx">
+cd dom-olympics-start
+
+# Copy/paste this command. You don't want to enter it incorrectly.
+rm -rf .git
+            </code></pre>
+                <p>
+                    You will use it to work your way through the Olympic medals.
+                </p>
+                <p>Follow the instructions in the README.</p>
+                <p>
+                    You will complete the requirements of this assignment using
+                    JavaScript only.
+                </p>
+                <p>
+                    This is a simple messaging app. Your job is to make it
+                    interactive.
+                </p>
+                <p>
+                    Feel free to change the CSS not mentioned in the assignment
+                    if you feel so inclined.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Bronze</h3>
+                <p>
+                    Your first task is to use pure JavaScript to insert a header
+                    to the top of this page. It should look like this:
+                </p>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2018/10/Screen-Shot-2018-10-15-at-4.44.53-PM.png"
+                    alt="Example of header with name in different color"
+                    aria-label="Example of header with name in different color for DOM Manipulation Olympics" />
+                <p>
+                    The HTML for the header's container exists but the header
+                    and the name don't exist yet.
+                </p>
+                <p>
+                    Feel free to change <code>.style</code> or use
+                    <code>.name</code> or <code>.header</code> classes from the
+                    CSS file.
+                </p>
+                <p>
+                    Notice that your name needs to be a different color.
+                    Wrapping text in a <code>span</code> tag is a great way to
+                    do this.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Silver</h3>
+                <p>
+                    There's some sub par conversation going on in this messaging
+                    app. You have two tasks to help give it either a clean
+                    slate, or a positive start.
+                </p>
+                <ul class="custom-list">
+                    <li>
+                        Write some custom JavaScript to automatically change the
+                        words of the conversation to something fun and good.
+                    </li>
+                    <li>
+                        Write some JavaScript that will wait until the user
+                        clicks the "clear" button, and then clears out all
+                        conversation.
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Gold</h3>
+                <p>Themes!</p>
+                <ul class="custom-list">
+                    <li>
+                        Use the drop down to write some JavaScript that will
+                        notice when the drop down has changed and then changes
+                        the background colors of the messages accordingly.
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>
+                    <a
+                        href="https://marcopete5.github.io/level-1/assignments/dom-olympics/index.html"
+                        target="_blank"
+                        rel="noopener"
+                        >DEMO OF COMPLETED ASSIGNMENT</a
+                    >
+                </h3>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+body {
+    font-family: 'Helvetica';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.requirements {
+    background-color: whitesmoke;
+    border: 2px solid black;
+    padding: 0 20px;
+    flex-basis: 20%; /* Set a base width for the requirements panel */
+    height: fit-content;
+}
+
+.requirement #header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header {
+    font-size: 30px;
+}
+
+.name {
+    color: cornflowerblue;
+}
+
+#main {
+    background-color: whitesmoke;
+    width: 100%;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.messages {
+    height: 300px;
+    background-color: lightgray;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.message {
+    padding: 5px;
+    margin-bottom: 5px;
+    width: 48%;
+}
+
+.left {
+    background-color: burlywood;
+}
+
+.right {
+    background-color: lightblue;
+    margin-left: auto;
+}
+
+#clear-button {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Gold Medal Theme Styles */
+.theme-one .left {
+    background-color: blue;
+    color: white;
+}
+.theme-one .right {
+    background-color: brown;
+    color: white;
+}
+.theme-two .left {
+    background-color: red;
+    color: white;
+}
+.theme-two .right {
+    background-color: black;
+    color: white;
+}

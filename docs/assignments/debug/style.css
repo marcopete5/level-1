@@ -1,0 +1,36 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.main {
+    width: 400px;
+    text-align: center;
+}
+
+#input {
+    width: 200px;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+#add {
+    padding: 8px 15px;
+}
+
+#list {
+    margin-top: 20px;
+}
+
+.subItem {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

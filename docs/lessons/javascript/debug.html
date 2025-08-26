@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM Debug</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">DOM Debug</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Troubleshooting DOM Issues</h3>
+                <aside>
+                    <p>
+                        Important Note: This assignment is designed to challenge
+                        your troubleshooting skills. It's meant for individuals
+                        who are confident in their ability to solve complex
+                        problems. If you find yourself genuinely stuck, you can
+                        reveal the final section on this page, which serves as a
+                        guide. Keep in mind that this guide is a work in
+                        progress, and don't hesitate to seek help if you're
+                        stuck for more than 10 to 15 minutes.
+                    </p>
+                </aside>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Getting Started</h3>
+                <ol class="custom-list">
+                    <li>
+                        <strong>Clone the Repository</strong>
+                        <pre><code class="language-bash">
+git clone https://github.com/VSchool/dom-debug
+                    </code></pre>
+                    </li>
+                    <li>
+                        <strong>Delete <code>.git</code> Folder</strong>
+                        <pre><code class="language-bash">
+cd dom-debug
+rm -rf .git
+                    </code></pre>
+                    </li>
+                    <li>
+                        <strong>Open <code>index.html</code> in Browser</strong>
+                        <p>
+                            Open the <code>index.html</code> file in your
+                            preferred browser. The instructions are based on
+                            using the Chrome developer tools, but Firefox and
+                            Opera are also compatible.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Objective</h3>
+                <p>
+                    Your objective is to add new items to a list and
+                    independently change the background of each item. The text
+                    for each item should be extracted from an input box. You can
+                    start with either a white or red background for each item.
+                </p>
+                <div class="section">
+                    <h3>
+                        <a
+                            href="https://marcopete5.github.io/level-1/assignments/debug/index.html"
+                            target="_blank"
+                            rel="noopener"
+                            >DEMO OF COMPLETED ASSIGNMENT</a
+                        >
+                    </h3>
+                </div>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Troubleshooting Steps</h3>
+                <ol class="custom-list">
+                    <li>
+                        <strong>Address Console Errors</strong>
+                        <p>Start by tackling any console errors that appear.</p>
+                        <p>
+                            <strong>Example:</strong> If you encounter a
+                            <code>TypeError</code> mentioning
+                            <code>undefined is not a function</code>, inspect
+                            the code around that error and determine which
+                            object or function is undefined. Investigate why
+                            it's undefined and fix the issue.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Explore the <code>sources</code> Tab</strong>
+                        <p>
+                            If there are no immediate console errors, navigate
+                            to the <code>sources</code> tab in your browser's
+                            developer tools.
+                        </p>
+                        <p>
+                            <strong>Example:</strong> Within the
+                            <code>sources</code> tab, locate the JavaScript file
+                            that's likely involved in the issue. Inspect the
+                            code and identify the function responsible for
+                            executing when the "Add new item" button is clicked.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Set Breakpoints</strong>
+                        <p>
+                            Instead of using multiple
+                            <code>console.log</code> statements, utilize
+                            breakpoints to pause code execution at specific
+                            lines.
+                        </p>
+                        <p>
+                            <strong>Example:</strong> If you suspect a
+                            particular function isn't being called, set a
+                            breakpoint by clicking the line number where the
+                            function is defined. This will pause execution,
+                            allowing you to inspect variables and values.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Independent Troubleshooting</strong>
+                        <p>
+                            After setting breakpoints, trigger the action that
+                            should invoke the function. The browser will pause
+                            at the breakpoint, giving you a chance to assess the
+                            situation.
+                        </p>
+                        <p>
+                            <strong>Example:</strong> If the breakpoint is set
+                            within a function that's supposed to run when a
+                            button is clicked, click the button and observe
+                            whether the browser stops at the breakpoint.
+                            Investigate any code issues that may be preventing
+                            the function from executing as expected.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Code Correction and Iteration</strong>
+                        <p>
+                            Attempt to identify and fix the issue on your own by
+                            analyzing the code and applying your understanding
+                            of programming concepts.
+                        </p>
+                        <p>
+                            <strong>Example:</strong> If you suspect a typo or
+                            syntax error is causing the issue, correct it. If a
+                            function parameter is incorrect, make necessary
+                            adjustments.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Collaboration and Asking for Help</strong>
+                        <p>
+                            If your individual troubleshooting efforts aren't
+                            yielding results, don't hesitate to ask for
+                            assistance.
+                        </p>
+                        <p>
+                            <strong>Example:</strong> Collaborating with peers
+                            or seeking guidance from instructors can provide
+                            fresh perspectives and help overcome challenges.
+                        </p>
+                    </li>
+                </ol>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2018/11/Screen-Shot-2018-11-21-at-11.06.55-AM.png"
+                    alt="Example of debugging interface"
+                    aria-label="Example of debugging interface for DOM Debug assignment" />
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Additional Strategies</h3>
+                <ul class="custom-list">
+                    <li>
+                        <strong>Handling Property Errors</strong>
+                        <p>
+                            If you encounter errors related to properties not
+                            being found, it often means you're trying to access
+                            a property on an undefined object.
+                        </p>
+                        <p>
+                            <strong>Example:</strong> If you see a
+                            <code
+                                >Cannot read property 'name' of undefined</code
+                            >
+                            error, review the code leading up to this error.
+                            Verify that the object you're trying to access
+                            actually exists and has the expected structure.
+                        </p>
+                    </li>
+                    <li>
+                        <strong
+                            >Inspecting Objects with
+                            <code>console.dir()</code></strong
+                        >
+                        <p>
+                            Use the <code>console.dir()</code> function to print
+                            the properties and values of objects to the console,
+                            allowing you to inspect their structure.
+                        </p>
+                        <p>
+                            <strong>Example:</strong> If you're unsure about the
+                            contents of an object, add a line like
+                            <code>console.dir(myObject)</code> to your code to
+                            see its properties and values in the console.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Using Conditional Breakpoints</strong>
+                        <p>
+                            Set breakpoints with conditions to pause execution
+                            only when specific conditions are met.
+                        </p>
+                        <p>
+                            <strong>Example:</strong> If you suspect that a loop
+                            is causing an issue after a certain number of
+                            iterations, set a breakpoint within the loop with a
+                            condition like <code>i === 10</code> to pause
+                            execution when <code>i</code> reaches 10.
+                        </p>
+                    </li>
+                </ul>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2018/11/Screen-Shot-2018-11-21-at-11.30.41-AM.png"
+                    alt="Example of debugging tools in use"
+                    aria-label="Example of debugging tools in use for DOM Debug assignment" />
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <details
+                    style="margin-bottom: 1em"
+                    role="region"
+                    aria-labelledby="spoiler-header">
+                    <summary
+                        style="
+                            font-family: Poppins, sans-serif;
+                            font-size: 1.5em;
+                            color: #1a2a44;
+                            margin-bottom: 1em;
+                            cursor: pointer;
+                        ">
+                        Guide for Overcoming Specific Challenges (Spoiler Alert)
+                    </summary>
+                    <div style="padding-left: 1em">
+                        <ul class="custom-list">
+                            <li>
+                                <strong>Addressing Console Errors</strong>
+                                <p>
+                                    Begin by dealing with any console errors
+                                    that appear. Examine the error messages,
+                                    identify the relevant code, and address the
+                                    issues.
+                                </p>
+                            </li>
+                            <li>
+                                <strong
+                                    >Exploring the
+                                    <code>sources</code> Tab</strong
+                                >
+                                <p>
+                                    If no console errors are evident, switch to
+                                    the <code>sources</code> tab. Find the
+                                    JavaScript file connected to the issue and
+                                    locate the function responsible for handling
+                                    the "Add new item" button click.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Setting Breakpoints</strong>
+                                <p>
+                                    Instead of using <code>console.log</code>,
+                                    set breakpoints to halt code execution at
+                                    crucial points. This enables you to inspect
+                                    variables and values.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Independent Troubleshooting</strong>
+                                <p>
+                                    Trigger the action that should invoke the
+                                    function. The browser will pause at the
+                                    breakpoint you set, allowing you to assess
+                                    the situation.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Code Correction and Iteration</strong>
+                                <p>
+                                    Attempt to identify and fix the issue on
+                                    your own by analyzing the code and applying
+                                    your understanding of programming concepts.
+                                </p>
+                            </li>
+                            <li>
+                                <strong
+                                    >Collaboration and Asking for Help</strong
+                                >
+                                <p>
+                                    Seek help if your individual efforts fail.
+                                    Collaborating with peers or consulting
+                                    instructors can provide valuable insights.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
