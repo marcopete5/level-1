@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Terminal Commands</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Terminal Commands</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Be able to confidently navigate the computer’s entire
+                        folder structure using terminal commands.
+                    </li>
+                    <li>
+                        Be able to view
+                        <strong
+                            >metadata about the current working directory and
+                            its file contents using terminal commands.</strong
+                        >
+                    </li>
+                    <li>
+                        Be able to create, delete, and modify folders and files
+                        using terminal commands.
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>Try these videos in 1.5X playback speed!</p>
+                <iframe
+                    class="video-embed"
+                    src="https://www.youtube.com/embed/d7cBgop2tHo"
+                    title="Terminal Commands Introduction"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    aria-label="Video introducing terminal commands"></iframe>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>What is the terminal?</h3>
+                <p>
+                    When launched, it provides a line interface to control the
+                    underpinnings of the UNIX-based operating system. In short,
+                    it lets you control your computer like hackers from the
+                    movies!
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Why use it?</h3>
+                <p>
+                    Until now, you've been used to using a mouse and monitor to
+                    interact with your computer. However, some systems you'll
+                    want to use don't have a graphical user interface and many
+                    of the applications you will use in this class are only run
+                    (or better run) via the terminal.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>What can I do with the terminal?</h3>
+                <p>
+                    There's a lot you can do with it! You can create files,
+                    delete them, make folders, run applications, and perform
+                    complex operations all via the command line. Here are some
+                    examples of a few:
+                </p>
+                <ul class="custom-list">
+                    <li>
+                        <code>pwd</code> tells you what directory you are
+                        currently in.
+                    </li>
+                    <li>
+                        <code>ls</code> lists the files and folders in the
+                        current directory.
+                    </li>
+                    <li>
+                        <code>cd</code> changes what directory you're in. You
+                        can use <code>/</code> to get to the root directory
+                        quickly.
+                    </li>
+                </ul>
+                <iframe
+                    class="video-embed"
+                    src="https://www.youtube.com/embed/26PJ1V5DY6M"
+                    title="Terminal Commands Examples"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    aria-label="Video demonstrating terminal command examples"></iframe>
+                <ul class="custom-list">
+                    <li>
+                        <code>mkdir</code> makes a new folder in the current
+                        directory.
+                    </li>
+                    <li>
+                        <code>touch</code> creates a new file with the name and
+                        extension given.
+                    </li>
+                    <li>
+                        <code>rm</code> deletes a file or folder. Use it with -r
+                        to force it to delete a folder even if there are still
+                        objects in the folder you are trying to delete.
+                    </li>
+                    <li>
+                        <code>mv</code> either <em>moves</em> or
+                        <em>renames</em> a file or folder, depending on how you
+                        use it
+                    </li>
+                    <ul class="custom-list">
+                        <li>
+                            To <em>rename</em> a file, you would do
+                            <code
+                                >mv &lt;old-file-name&gt;
+                                &lt;new-file-name&gt;</code
+                            >, without the <code>&lt;</code> and
+                            <code>&gt;</code>. For example:
+                        </li>
+                    </ul>
+                </ul>
+                <pre><code class="language-jsx">
+mv myOldFile.js myAwesomeNewFile.js
+            </code></pre>
+                <ul class="custom-list">
+                    <li>
+                        To move a file or folder to another directory, you would
+                        do
+                        <code
+                            >mv &lt;file-to-move&gt;
+                            &lt;place-to-move-it-to&gt;</code
+                        >, again without the <code>&lt;</code> and
+                        <code>&gt;</code>. For example:
+                    </li>
+                </ul>
+                <pre><code class="language-jsx">
+mv fileToMove.js dev/
+
+#(Moves this fileToMove.js file into the dev folder)
+            </code></pre>
+                <p>OR</p>
+                <pre><code class="language-jsx">
+mv fileToMove.txt ../../my-folder/things-i-save/notes/
+
+#(Moves the file back two directories, forward into the my-folder directory, then forward again into the things-i-save directory, and forward again into the notes directory)
+            </code></pre>
+                <ul class="custom-list">
+                    <li>
+                        <code>cp [file to be copied] [where to put copy]</code>
+                        copies the files that you name.
+                    </li>
+                    <li>
+                        <code>cp -r [new directory name]</code> will copy a
+                        directory.
+                    </li>
+                    <li>
+                        <code>nano</code> will open the nano text editor. If we
+                        say <code>nano [file that already exists]</code> we will
+                        be editing that file, but if we say
+                        <code>nano [new file that doesn't exist yet]</code> we
+                        will create a new file and start editing it.
+                    </li>
+                    <ul class="custom-list">
+                        <li>
+                            At the bottom of Nano, we can see that if we hold
+                            down control and push "x" we will exit. While we
+                            exit, it asks us to push <code>y</code> to save, and
+                            then <code>enter</code> to confirm the file name.
+                        </li>
+                    </ul>
+                    <li>
+                        <code>help</code> gives a list of useful commands such
+                        as the one given in this list.
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>What complex operations can one do in the terminal?</h3>
+                <p>
+                    Now that you know how to do some of the most basic
+                    operations in the terminal, you are prepared to deal with
+                    more complex programs like Git, SSH-ing into a server,
+                    editing files directly in terminal, etc. Another great
+                    resource that is best accessed through the terminal is
+                    called a package manager. In this class you will learn to
+                    use <code>NPM</code>, which is a package manager that will
+                    give you access to powerful tools to use within your own
+                    work.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Git Push</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Git Push</h1>
+                <h2>Lesson</h2>
+            </header>
+            <div class="section">
+                <iframe
+                    class="video-embed"
+                    src="https://www.youtube.com/embed/n6WSRREZGJU"
+                    title="Making a Commit with Git Push"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    aria-label="Video explaining how to make a commit with Git Push"></iframe>
+                <h3>Pushing Changes with <code>git push</code></h3>
+                <h4>What is <code>git push</code>?</h4>
+                <ul class="custom-list">
+                    <li>
+                        <strong>Explanation:</strong> <code>git push</code> is
+                        like sending your committed changes from your local
+                        repository to a remote repository, typically hosted on a
+                        platform like GitHub.
+                    </li>
+                    <li>
+                        <strong>Example:</strong> Think of it as uploading a
+                        file to a cloud storage service. You're taking your
+                        local changes and making them available to others or
+                        syncing them across different devices.
+                    </li>
+                    <li>
+                        <strong>Why it matters:</strong> It allows you to
+                        collaborate with others by sharing your work and keeping
+                        everyone's copies of the project up-to-date.
+                    </li>
+                </ul>
+                <h4>How to Use <code>git push</code></h4>
+                <ol class="custom-list">
+                    <li><strong>Open Terminal or Command Prompt:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Navigate to your project folder using the
+                            <code>cd</code> command.
+                        </li>
+                    </ul>
+                    <li><strong>Commit Your Changes:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Before pushing your changes, make sure you've
+                            committed them using <code>git commit</code>.
+                        </li>
+                    </ul>
+                    <li>
+                        <strong>Type <code>git push</code>:</strong>
+                    </li>
+                    <ul class="custom-list">
+                        <li>
+                            Once your changes are committed, type
+                            <code>git push</code> and press Enter. This will
+                            send your committed changes to the remote
+                            repository.
+                        </li>
+                    </ul>
+                    <li><strong>Authenticate (if needed):</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Depending on your setup, you may need to
+                            authenticate with your username and password, or
+                            with SSH keys.
+                        </li>
+                    </ul>
+                    <li><strong>Check Remote Repository:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            After pushing, you can check the remote repository
+                            (e.g., on GitHub) to verify that your changes have
+                            been successfully uploaded.
+                        </li>
+                    </ul>
+                </ol>
+                <h4>Why Use <code>git push</code>?</h4>
+                <ul class="custom-list">
+                    <li><strong>Collaborate with Others:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            <code>git push</code> allows you to share your work
+                            with collaborators by making your changes available
+                            in a shared repository.
+                        </li>
+                    </ul>
+                    <li><strong>Keep Repositories in Sync:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            It helps keep multiple copies of the project (e.g.,
+                            on different computers) synchronized by updating the
+                            remote repository with your local changes.
+                        </li>
+                    </ul>
+                    <li><strong>Backup Your Work:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Pushing changes to a remote repository serves as a
+                            backup of your work, ensuring that it's not lost if
+                            something happens to your local copy.
+                        </li>
+                    </ul>
+                </ul>
+                <h4>Tips for Using <code>git push</code></h4>
+                <ul class="custom-list">
+                    <li><strong>Push Regularly:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Get into the habit of pushing your changes regularly
+                            to keep your remote repository up-to-date.
+                        </li>
+                    </ul>
+                    <li><strong>Communicate with Collaborators:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Let your collaborators know when you've pushed
+                            changes so they can pull them into their own copies
+                            of the project.
+                        </li>
+                    </ul>
+                    <li><strong>Verify Changes:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Always double-check your changes before pushing to
+                            avoid accidentally sharing unfinished or incorrect
+                            work.
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Git Add</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Git Add</h1>
+                <h2>Lesson</h2>
+            </header>
+            <div class="section">
+                <iframe
+                    class="video-embed"
+                    src="https://www.youtube.com/embed/xfXu_HRBQho"
+                    title="Using Git Add"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    aria-label="Video explaining how to use Git Add"></iframe>
+                <h3>Adding Changes with <code>git add</code></h3>
+                <h4>What is <code>git add</code>?</h4>
+                <ul class="custom-list">
+                    <li>
+                        <strong>Explanation:</strong> <code>git add</code> is
+                        like telling Git, "Hey, I want to include these changes
+                        in my next snapshot."
+                    </li>
+                    <li>
+                        <strong>Example:</strong> Imagine you're preparing a
+                        presentation. <code>git add</code> is like selecting the
+                        slides you want to include before saving your
+                        presentation.
+                    </li>
+                    <li>
+                        <strong>Why it matters:</strong> It allows you to choose
+                        which changes you want to save and which ones you want
+                        to leave out for now.
+                    </li>
+                </ul>
+                <h4>How to Use <code>git add</code></h4>
+                <ol class="custom-list">
+                    <li><strong>Open Terminal or Command Prompt:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Navigate to your project folder using the
+                            <code>cd</code> command.
+                        </li>
+                    </ul>
+                    <li>
+                        <strong>Type <code>git add &lt;file&gt;</code>:</strong>
+                    </li>
+                    <ul class="custom-list">
+                        <li>
+                            Replace <code>&lt;file&gt;</code> with the name of
+                            the file you want to include in the next commit. If
+                            you want to add all files, you can use
+                            <code>git add .</code>.
+                        </li>
+                    </ul>
+                    <li><strong>Check Status:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            After adding files, you can use
+                            <code>git status</code> to see which files have been
+                            staged for the next commit.
+                        </li>
+                    </ul>
+                </ol>
+                <h4>Why Use <code>git add</code>?</h4>
+                <ul class="custom-list">
+                    <li><strong>Selective Staging:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            <code>git add</code> allows you to selectively
+                            choose which changes you want to include in the next
+                            commit.
+                        </li>
+                    </ul>
+                    <li><strong>Control Over Changes:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            It gives you control over what gets saved, helping
+                            you avoid including unfinished or unwanted changes.
+                        </li>
+                    </ul>
+                    <li><strong>Incremental Commits:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            By adding changes in stages, you can make smaller,
+                            incremental commits, which can make it easier to
+                            track the history of your project.
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

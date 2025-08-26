@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Git & Github</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Git & Github</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Be able to explain the importance and advantage of using
+                        version control software such as git.
+                    </li>
+                    <li>
+                        Be able to create a git repository, make commits, and
+                        push their code to a remote repository.
+                    </li>
+                </ul>
+                <iframe
+                    class="video-embed"
+                    src="https://www.youtube.com/embed/csLWSX0Ijgk"
+                    title="Introduction to Git and Github"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    aria-label="Video introducing Git and Github"></iframe>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Why Git is Important for New Developers</h3>
+                <p>
+                    If you’re just starting out with coding, learning Git is
+                    really important. Git is a tool that helps you keep track of
+                    changes in your code and work with others on the same
+                    projects. Here’s why it’s so useful:
+                </p>
+                <ol class="custom-list">
+                    <li><strong>Tracking Changes</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Git helps you see every change you’ve made to your
+                            code. This is helpful because:
+                        </li>
+                        <li>
+                            <strong>Undo Mistakes</strong>: If you make a
+                            mistake, you can go back to an earlier version of
+                            your code, saving you time and frustration.
+                        </li>
+                        <li>
+                            <strong>See History</strong>: You can see who made
+                            changes and what those changes were, making it
+                            easier to understand the evolution of the project.
+                        </li>
+                    </ul>
+                    <li><strong>Working Together</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Git makes it easy for multiple people to work on the
+                            same project at the same time without messing up
+                            each other’s work. You can:
+                        </li>
+                        <li>
+                            <strong>Branching</strong>: Create separate branches
+                            to work on new features or fixes without affecting
+                            the main code. This keeps the main project stable.
+                        </li>
+                        <li>
+                            <strong>Merging</strong>: Combine your changes with
+                            others smoothly. Git helps manage and integrate
+                            these changes to avoid conflicts.
+                        </li>
+                    </ul>
+                    <li><strong>Finding and Fixing Errors</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            With Git, you can experiment with your code without
+                            worrying about breaking things. If you do make a
+                            mistake, Git lets you:
+                        </li>
+                        <li>
+                            <strong>Revert Changes</strong>: Go back to a
+                            working version of your code easily. This helps you
+                            recover quickly from mistakes.
+                        </li>
+                        <li>
+                            <strong>Find Problems</strong>: Use tools to see
+                            what changes might have caused an error, making
+                            debugging faster and easier.
+                        </li>
+                    </ul>
+                    <li><strong>Professional Skills</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Knowing Git shows that you can work well in a team
+                            and manage your code professionally. Employers look
+                            for these skills:
+                        </li>
+                        <li>
+                            <strong>Teamwork</strong>: Shows you know how to
+                            share and work on code with others effectively,
+                            which is crucial in a team environment.
+                        </li>
+                        <li>
+                            <strong>Clean Code</strong>: Keeps your project
+                            history organized and easy to understand, which is
+                            important for maintaining a professional codebase.
+                        </li>
+                    </ul>
+                    <li><strong>Showcasing Your Work</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Using GitHub, a platform for hosting Git
+                            repositories, you can show your code to others,
+                            including potential employers:
+                        </li>
+                        <li>
+                            <strong>Portfolio</strong>: Show off your projects
+                            and code to employers. Having a visible record of
+                            your work can impress potential employers.
+                        </li>
+                        <li>
+                            <strong>Commit History</strong>: Demonstrates your
+                            coding skills and progress over time, giving
+                            employers insight into your development process.
+                        </li>
+                        <li>
+                            <strong>Professional Profile</strong>: A
+                            well-maintained GitHub profile looks great to
+                            employers, showcasing your involvement and
+                            contributions.
+                        </li>
+                    </ul>
+                    <li><strong>Learning Resources</strong></li>
+                    <ul class="custom-list">
+                        <li>There are many resources to help you learn Git:</li>
+                        <li>
+                            <strong>Documentation and Tutorials</strong>: Lots
+                            of guides and tutorials available online, making it
+                            easy to learn at your own pace.
+                        </li>
+                        <li>
+                            <strong>Community Support</strong>: Many forums and
+                            websites where you can get help and advice from
+                            other developers, making it easier to solve problems
+                            and learn new tips.
+                        </li>
+                    </ul>
+                    <li><strong>Integration with Tools</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Git works well with many other development tools:
+                        </li>
+                        <li>
+                            <strong>Code Editors</strong>: Many code editors
+                            have Git built-in, making it easy to use without
+                            leaving your coding environment.
+                        </li>
+                        <li>
+                            <strong>Automation</strong>: Git is used in
+                            automated testing and deployment, which are
+                            important in modern development to ensure code
+                            quality and speed up the release process.
+                        </li>
+                    </ul>
+                    <li><strong>Transferable Skills</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Learning Git is not just about one tool; the skills
+                            you gain are useful for other tools and jobs:
+                        </li>
+                        <li>
+                            <strong>Command Line Skills</strong>: Using Git
+                            helps you get comfortable with the command line,
+                            which is a valuable skill in many areas of
+                            development.
+                        </li>
+                        <li>
+                            <strong>Core Concepts</strong>: Understanding
+                            version control, branching, and merging are valuable
+                            skills that apply to many other tools and workflows
+                            in software development.
+                        </li>
+                    </ul>
+                </ol>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Conclusion</h3>
+                <p>
+                    For new developers, learning Git is crucial. It helps you
+                    keep track of changes, work well with others, and show your
+                    skills to potential employers. Plus, it integrates with many
+                    tools you’ll use as a developer. By learning Git, you set
+                    yourself up for success in your coding career.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Next Steps</h3>
+                <p>
+                    To get started with Git, watch all the videos below. These
+                    lessons will teach you the basic Git commands and how to use
+                    them effectively.
+                </p>
+                <ul>
+                    <li>
+                        <a
+                            href="https://marcopete5.github.io/level-1/lessons/github/step3.html"
+                            >Git is a Distributed Version Control System
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://marcopete5.github.io/level-1/lessons/github/step4.html"
+                            >Creating a New Git Repository
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://marcopete5.github.io/level-1/lessons/github/step5.html"
+                            >Git Status
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://marcopete5.github.io/level-1/lessons/github/step6.html"
+                            >Git Add
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://marcopete5.github.io/level-1/lessons/github/step7.html"
+                            >Git Commit
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://marcopete5.github.io/level-1/lessons/github/step8.html"
+                            >Git Push
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Additional Resources</h3>
+                <p>
+                    Read the official git documentation
+                    <a
+                        href="https://git-scm.com/book/en/v2"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

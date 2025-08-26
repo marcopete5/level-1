@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Creating a New Git Repository</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Creating a New Git Repository</h1>
+                <h2>Lesson</h2>
+            </header>
+            <div class="section">
+                <iframe
+                    class="video-embed"
+                    src="https://www.youtube.com/embed/SGpZhaWZSC8"
+                    title="Distributed Version Control"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    aria-label="Video explaining distributed version control in Git"></iframe>
+
+                <h3>
+                    Initializing a Git Repository with <code>git init</code>
+                </h3>
+                <h4>What is <code>git init</code>?</h4>
+                <ul class="custom-list">
+                    <li>
+                        <strong>Explanation:</strong> <code>git init</code> is
+                        the command used to initialize a new Git repository in
+                        your project directory. It sets up all the necessary
+                        files and folders that Git needs to start tracking
+                        changes in your project.
+                    </li>
+                    <li>
+                        <strong>Example:</strong> Imagine you're setting up a
+                        new workspace for your project. <code>git init</code> is
+                        like flicking the switch to turn on version control for
+                        that workspace.
+                    </li>
+                    <li>
+                        <strong>Why it matters:</strong> Initializing a Git
+                        repository is the first step towards using version
+                        control for your project. It allows you to track
+                        changes, collaborate with others, and manage your
+                        project more effectively.
+                    </li>
+                </ul>
+                <h4>Adding <code>.gitignore</code> to your project</h4>
+                <aside>
+                    <p>
+                        In general, a rule of thumb is to just include files
+                        that you plan on manually updating/writing. There are
+                        always exceptions but we don’t need to worry about this
+                        too much for now.
+                    </p>
+                </aside>
+                <p>
+                    While you won’t be using some of these files until later on
+                    in the course, it is <strong>extremely important</strong> to
+                    add this now so you don’t forget later on.
+                </p>
+                <ul class="custom-list">
+                    <li>
+                        From the root of your git repository, create a file
+                        called <code>.gitignore</code>. you can either do this
+                        manually in your editor or use the
+                        <code>touch</code> command:
+                    </li>
+                </ul>
+                <pre><code class="language-bash">
+cd /path/to/your/git/repo
+touch .gitignore
+            </code></pre>
+                <ul class="custom-list">
+                    <li>
+                        Open it up in your IDE, add the following text, and save
+                        the file:
+                    </li>
+                </ul>
+                <pre><code class="language-bash">
+node_modules
+.env
+.DS_Store
+            </code></pre>
+                <p>That’s it! So what do each of these mean?</p>
+                <ul class="custom-list">
+                    <li>
+                        <code>node_modules</code> is a folder where 3rd party
+                        code from the Node.js
+                        <a
+                            href="https://docs.npmjs.com/"
+                            target="_blank"
+                            rel="noopener"
+                            >NPM library</a
+                        >
+                        lives. We have a way of auto-generating them so there’s
+                        no need to save them in our project.
+                    </li>
+                    <li>
+                        <code>.env</code> is a file that usually contains
+                        sensitive data such as API keys, server secrets. This
+                        won’t be relevant until much later, so don’t worry if
+                        you’re not sure what these are.
+                    </li>
+                    <li>
+                        <code>.DS_Store</code> is just a MacOS-specific
+                        configuration file that we don’t need to track.
+                    </li>
+                </ul>
+                <p>
+                    Read more about it
+                    <a
+                        href="https://git-scm.com/docs/gitignore"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >
+                </p>
+            </div>
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

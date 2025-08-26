@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Git Commit</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Git Commit</h1>
+                <h2>Lesson</h2>
+            </header>
+            <div class="section">
+                <iframe
+                    class="video-embed"
+                    src="https://www.youtube.com/embed/QCmJEdGy1gA"
+                    title="Adding Changes with Git Commit"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    aria-label="Video explaining how to use Git Commit"></iframe>
+                <h3>Making a Commit with <code>git commit -m</code></h3>
+                <h4>What is a Git Commit?</h4>
+                <ul class="custom-list">
+                    <li>
+                        <strong>Explanation:</strong> A Git commit is like
+                        saving a snapshot of your project at a specific point in
+                        time. It records the changes you've made since the last
+                        commit.
+                    </li>
+                    <li>
+                        <strong>Example:</strong> Think of it as saving your
+                        progress in a game. When you reach a milestone or
+                        complete a task, you save your game to remember your
+                        achievements.
+                    </li>
+                    <li>
+                        <strong>Why it matters:</strong> Committing regularly
+                        helps you keep track of your project's history and
+                        allows you to revert to previous versions if needed.
+                    </li>
+                </ul>
+                <h4>How to Make a Commit with <code>m</code> Option</h4>
+                <ol class="custom-list">
+                    <li><strong>Open Terminal or Command Prompt:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Navigate to your project folder using the
+                            <code>cd</code> command.
+                        </li>
+                    </ul>
+                    <li>
+                        <strong
+                            >Stage Changes with <code>git add</code>:</strong
+                        >
+                    </li>
+                    <ul class="custom-list">
+                        <li>
+                            Use <code>git add</code> to select which changes you
+                            want to include in the commit. You can add specific
+                            files (<code>git add &lt;file&gt;</code>) or add all
+                            changes (<code>git add .</code>).
+                        </li>
+                    </ul>
+                    <li><strong>Commit Changes with Message:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Instead of using <code>git commit</code> alone, you
+                            can use
+                            <code>git commit -m "&lt;commit message&gt;"</code>
+                            where <code>&lt;commit message&gt;</code> is a brief
+                            description of your changes enclosed in double
+                            quotes.
+                        </li>
+                    </ul>
+                </ol>
+                <h4>Why Use <code>git commit -m</code>?</h4>
+                <ul class="custom-list">
+                    <li><strong>Quick and Convenient:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            <code>git commit -m</code> allows you to make a
+                            commit in one step without opening a text editor to
+                            write a commit message.
+                        </li>
+                    </ul>
+                    <li><strong>Saves Time:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            It's faster for small changes or when you don't need
+                            a detailed commit message.
+                        </li>
+                    </ul>
+                    <li><strong>Maintains Clarity:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            While convenient, it's important to ensure that your
+                            commit messages are still clear and descriptive,
+                            even with the <code>m</code> option.
+                        </li>
+                    </ul>
+                </ul>
+                <h4>Tips for Writing Commit Messages with <code>m</code></h4>
+                <ul class="custom-list">
+                    <li><strong>Be Concise:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Since you have limited space in the command line,
+                            keep your commit messages short and to the point.
+                        </li>
+                    </ul>
+                    <li><strong>Include Essential Information:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Focus on including the most important details of
+                            your changes in the commit message.
+                        </li>
+                    </ul>
+                    <li><strong>Use Quotes:</strong></li>
+                    <ul class="custom-list">
+                        <li>
+                            Enclose your commit message in double quotes to
+                            ensure that it's interpreted correctly by the
+                            command line.
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
