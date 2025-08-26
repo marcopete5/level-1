@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Daily Planet Editor</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">Daily Planet Editor</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cwyzqPUz?pl=pQMWgWMUg"
+                    title="Daily Planet Editor Assignment"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video guiding the Daily Planet Editor assignment"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    You're the new editor of the Daily Planet, and you're
+                    committed to bringing the newspaper up to a modern-day
+                    standard. In order to do this, you're moving the paper
+                    online and are teaching all the Planet's writers to code.
+                </p>
+                <p>
+                    As the editor, each piece of code needs to pass your desk
+                    for your approval before being shown to the public. Your job
+                    is to check for the following issues in every program that
+                    comes across your desk:
+                </p>
+                <ul class="custom-list">
+                    <li>Is the writer using variables correctly?</li>
+                    <li>Is the writer using operators correctly?</li>
+                    <li>
+                        Is the writer spelling things correctly? (Misspelled
+                        programs don't just look bad, they can break!)
+                    </li>
+                    <li>
+                        Is the writer following best practices with
+                        <a
+                            href="https://coursework.vschool.io/javascript-code-conventions/"
+                            target="_blank"
+                            rel="noopener"
+                            >JavaScript code conventions</a
+                        >?
+                    </li>
+                </ul>
+                <p>
+                    Clone the code down from
+                    <a
+                        href="https://github.com/VSchool/daily-planet-editor"
+                        target="_blank"
+                        rel="noopener"
+                        >this repository</a
+                    >
+                    and fix the code until it correctly follows JavaScript code
+                    standards and works the way it should.
+                </p>
+                <p>
+                    Make sure you remove the V School remote url from the local
+                    repository, too.
+                </p>
+                <pre><code class="language-jsx">
+# cd into the assignments>exerises folder
+git clone https://github.com/VSchool/daily-planet-editor
+cd daily-planet-editor/
+
+# COPY/PASTE THIS COMMAND. YOU DON'T WANT TO TYPE IT INCORRECTLY
+rm -rf .git
+            </code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>DEMO OF COMPLETED ASSIGNMENT</h3>
+                <iframe
+                    class="video-embed"
+                    width="1280"
+                    height="720"
+                    style="border: 0"
+                    scrolling="no"
+                    src="https://go.screenpal.com/player/cTjO31n2KeZ?controls=1&share=1&download=1&embed=1&cl=1&width=1280&height=720&overlays=1&ff=1"
+                    allowfullscreen="true"></iframe>
+            </div>
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

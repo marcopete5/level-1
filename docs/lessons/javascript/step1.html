@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript Conventions</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">JavaScript Conventions</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Be able to explain the difference between syntax and
+                        convention.
+                    </li>
+                    <li>
+                        Be able to correctly demonstrate examples of common
+                        conventions <strong>in programming:</strong>
+                    </li>
+                    <ul class="custom-list">
+                        <li>Casing</li>
+                        <li>White space and tabs</li>
+                        <li>Variable and file naming</li>
+                        <li>Braces</li>
+                        <li>Comments</li>
+                    </ul>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/c7zvQMfk?pl=pQMWgWMUg"
+                    title="JavaScript Conventions"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining JavaScript conventions"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    In JavaScript, having correct <strong>syntax</strong> means
+                    you're obeying the basic rules that allow JavaScript to be
+                    interpreted correctly. If you mess up and write incorrect
+                    syntax, your program will break.
+                </p>
+                <p>
+                    Code conventions are a little different than syntax though.
+                    <strong>Conventions</strong> are like the writing/style
+                    guides of programming languages. Most languages have a
+                    standard convention that all programmers should follow.
+                    Although your code may not necessarily <em>break</em> if you
+                    don't follow convention, your fellow programmers may decide
+                    they want to break <em>you</em> because you're making their
+                    life more difficult...
+                </p>
+                <aside>
+                    <p>
+                        Note: for a quick summary of these (and more) rules of
+                        JavaScript code conventions, check out the
+                        <a
+                            href="https://www.w3schools.com/js/js_conventions.asp"
+                            target="_blank"
+                            rel="noopener"
+                            >W3Schools page on Code Conventions</a
+                        >
+                    </p>
+                </aside>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>JavaScript</h3>
+                <p>
+                    The following are some important conventions and best
+                    practices to follow with the JavaScript language, some of
+                    which apply to programming in general.
+                </p>
+                <h4>camelCase</h4>
+                <p>
+                    JavaScript uses a variable- and function-naming convention
+                    called <strong>"camelCase"</strong>. This means that anytime
+                    you're naming a variable or a function in your code, you
+                    separate the "words" of your variable or function name by
+                    capitalizing the first letter of each new "word."
+                </p>
+                <pre><code class="language-jsx">
+var thisIsHowYouDoCamelCasing = true;
+
+function hereIsAFunction() {
+    ...
+}
+            </code></pre>
+                <p>
+                    You'll notice also that the first letter of the variable or
+                    function is lowercased. This is also a convention, although
+                    there are instances in JavaScript where it is more common to
+                    capitalize this first letter, like when using a
+                    <strong>constructor function</strong>. Don't worry about
+                    this too much right now, but just for the sake of
+                    completeness, here is an example:
+                </p>
+                <pre><code class="language-jsx">
+function Person(name) {
+    this.name = name
+}
+
+Person.prototype.talk = function () {
+    console.log("Hello!");
+}
+            </code></pre>
+                <h4>Whitespace</h4>
+                <p>
+                    JavaScript ignores whitespace, which means you could write
+                    your entire JavaScript program on a single line and it would
+                    work just the same as if you spaced it out in a more
+                    readable way. Since it's nearly impossible to write a
+                    program this way, much less <em>read</em> a program like
+                    this, you should do everything you can to make sure your
+                    JavaScript is clearly and logically
+                    <strong>indented</strong>. At V School we use a 4-space
+                    indenting convention, although it is also very common to see
+                    a 2-space convention.
+                </p>
+                <pre><code class="language-jsx">
+// This is legit, with 4-space indents:
+if (programmerIsNoob) {
+    if (notIndentedWell) {
+        console.log("Fix your spacing!");
+    }
+}
+
+// This is terrible awful no good, but it will technically still work:
+var terribleSpacing; terribleSpacing = " "; if (terribleSpacing){ console.log("Oh heck naw"); }
+            </code></pre>
+                <p>
+                    You should put spaces between operations in an expression.
+                    So any time you have a <code>+</code>, <code>-</code>,
+                    <code>*</code>, <code>/</code>, <code>%</code>,
+                    <code>=</code>, <code>===</code>, etc. you should put spaces
+                    on either side:
+                </p>
+                <pre><code class="language-jsx">
+// Good:
+var prettySum = 4 + 3 / (5 - 1)
+
+// Not as good:
+var uglySum=4+3/(5-1)
+            </code></pre>
+                <p>
+                    You should put each property of an object on its own line,
+                    and indented:
+                </p>
+                <pre><code class="language-jsx">
+var person = {
+   name: "Bob",
+   age: 21
+}
+            </code></pre>
+                <p>
+                    Right from the beginning you should be thinking about
+                    writing your programs for other developers (and your future
+                    self) to read. Although you may take notes in poor
+                    handwriting, it's no fun if you can barely read it later on
+                    when you need it!
+                </p>
+                <h4>Semicolons</h4>
+                <p>
+                    Semicolons can be confusing in JavaScript. The problem is
+                    worsened by the fact that JavaScript interpreters do a
+                    pretty good job of running correctly even if there are
+                    missing semicolons.
+                </p>
+                <p>
+                    The basic rule is that you should use them after every
+                    simple statements:
+                </p>
+                <pre><code class="language-jsx">
+var values = ["Volvo", "Saab", "Fiat"];
+
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
+            </code></pre>
+                <p>
+                    You <em>won't</em> put semicolons after the closing braces
+                    (<code>}</code>) of conditional (<code>if-else</code>)
+                    statements, <code>for</code> loops, or
+                    <code>function</code> declarations, but you will still put
+                    them at the end of every simple statement therein:
+                </p>
+                <pre><code class="language-jsx">
+if (time < 20) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}  // No semicolon
+
+for (i = 0; i < 5; i++) {
+    x += i;
+}  // No semicolon
+
+function toCelsius(fahrenheit) {
+    return (5 / 9) * (fahrenheit - 32);
+}  // No semicolon
+            </code></pre>
+                <h4>Braces</h4>
+                <p>
+                    If there's a hotly disputed topic in programming, this might
+                    be it: put the opening curly brace (<code>{</code>) on its
+                    own line, or no?
+                </p>
+                <p>
+                    The correct answer in JavaScript is <strong>no</strong>. Put
+                    it at the end of the line before opening the body of the
+                    block you're writing:
+                </p>
+                <pre><code class="language-jsx">
+// Good:
+if (condition) {
+    doThing();
+} else {
+    doAnotherThing();
+}
+
+// Bad:
+if (condition)
+{
+    doThing();
+}
+else
+{
+    doAnotherThing();
+}
+            </code></pre>
+                <h4>Naming</h4>
+                <p>
+                    Sure, you may feel like you're in a hurry to finish up the
+                    program you're working on, and it's <em>way</em> easier to
+                    just call that variable <code>b</code>. You know, short for
+                    <code>books</code>.
+                </p>
+                <p>
+                    <strong>Don't do it!</strong> Just spend the extra time to
+                    make the extra keystrokes it takes to type out
+                    <code>books</code>! First of all - you likely won't be
+                    saving much time when you introduce a new variable
+                    <code>b2</code> which is short for <code>blankets</code> or
+                    something, and then you have to spend a whole lot of extra
+                    mental capacity remembering which one is <code>b</code> and
+                    which one is <code>b2</code>. And all those bugs that will
+                    ensue... it's simply not worth it. Second of all - most text
+                    editors you'll be using will have code completion built-in.
+                    So you won't even need to type out the whole word every time
+                    anyway. You start typing it, it suggests all the names you
+                    might be meaning to type, and you hit enter on the right
+                    one.
+                </p>
+                <p>
+                    Along those lines, we'd also recommend not shortening
+                    variables by removing a bunch of letters in the middle,
+                    vowels, etc. Use the variable name <code>person</code>, not
+                    <code>prsn</code>. For all you know, someone later might
+                    think it's short for <code>prison</code> or something
+                    equally confusing.
+                </p>
+                <pre><code class="language-jsx">
+// Good:
+var person = {
+    name: "Joe Hero",
+    email: "jhero@example.com"
+}
+
+// Not as good:
+var prsn = {
+    n: "Joe Schmoe",
+    e: "ihrtabbrv8ing@silly.com"
+}
+            </code></pre>
+                <p>
+                    <strong
+                        >Names are for the sake of those reading your code,
+                        which includes you!</strong
+                    >
+                </p>
+                <p>When choosing a name, consider the following:</p>
+                <ul class="custom-list">
+                    <li>
+                        <strong><code>Number</code></strong> - name it based on
+                        the value it represents (e.g:
+                        <code>var age = 10;</code>).
+                    </li>
+                    <li>
+                        <strong><code>String</code></strong> - same as above
+                        (e.g: <code>var location = "Salt Lake City";</code>).
+                    </li>
+                    <li>
+                        <strong><code>Boolean</code></strong> - asks a yes/no
+                        question (e.g:
+                        <code>var isTheRealSlimShady = true;</code>).
+                    </li>
+                    <li>
+                        <strong><code>Function</code></strong> - verb or action
+                        word/phrase describing its job (e.g:
+                        <code
+                            >var capitalize = function(str){ return
+                            str.toUppercase()};</code
+                        >).
+                    </li>
+                    <li>
+                        <strong><code>Array</code></strong> -
+                        <em>Plural</em> word describing its contents (e.g:
+                        <code
+                            >var instruments = ["guitar", "drums", "bass",
+                            "keyboard"];</code
+                        >).
+                    </li>
+                    <li>
+                        <strong><code>Object</code></strong> -
+                        <em>Singular</em> word describing what it represents
+                        (e.g: <code>var animal = {type: "cow"}</code>).
+                    </li>
+                </ul>
+                <h4>Comments</h4>
+                <p>
+                    There are line comments (as you've seen in all the examples
+                    above, beginning with <code>//</code>), and there are block
+                    comments:
+                </p>
+                <pre><code class="language-jsx">
+/*Everything in here is a comment,
+even if it goes on multiple lines*/
+            </code></pre>
+                <p>
+                    You should mostly only be using block comments as
+                    explanatory documentation for particularly complex files or
+                    functions. Usually you'll want to stick to single line
+                    comments for most of what you do. If your function is so
+                    complex that it requires a block comment, you should
+                    probably consider splitting it into multiple functions or
+                    writing it more concisely.
+                </p>
+                <p>
+                    You should strive to write "self-documenting code." If you
+                    follow the naming conventions outlined above, you'll be well
+                    on your way to writing code that is easy enough to read on
+                    its own that you don't need to load it up with explanations
+                    on why you're doing something a certain way.
+                </p>
+                <p>
+                    Line comments are most helpful when you had to solve a
+                    problem in a less-than-obvious way because of the
+                    limitations you're facing. In other words, when another
+                    programmer might look at your code and say "why did they do
+                    it this way? I'm going to change it back...", you may want
+                    to add a comment saying in effect "hey buddy - this is the
+                    reason I had to do it this less-than-obvious way. If you
+                    change it back you'll likely come to the same conclusion I
+                    did and have to backtrack to writing it this way again."
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>HTML, UNIX, etc.</h3>
+                <p>
+                    This is kind of cheating, since this is supposed to be all
+                    about JavaScript code conventions, but it's important so
+                    we'll mention it here
+                </p>
+                <h4>HTML tags</h4>
+                <p>
+                    These should always be all lowercase. Sometimes in tutorials
+                    online you'll see something like <code>&lt;DIV&gt;</code>,
+                    especially when using JavaScript to create HTML. Don't do
+                    it! The only thing that should be capitalized in HTML is the
+                    <code>&lt;!DOCTYPE&gt;</code> "tag" at the very top, and the
+                    actual text that you're wanting to display on the screen.
+                </p>
+                <h4>UNIX files and folders</h4>
+                <p>
+                    These should always be all lowercase. Mac OSX does capital
+                    letters for their system and built-in folders, but you're
+                    not the Mac OSX. Since we'll be doing so much of our work in
+                    the terminal and you'll have to type out the names of the
+                    directories when you reference them, you'll
+                    <em>almost always</em> want to have them be in all lower
+                    case letters.
+                </p>
+                <p>
+                    To separate words in the name of a folder you can either use
+                    the <code>_</code> or the <code>-</code> (E.g.:
+                    <code>vschool_projects</code> or
+                    <code>vschool-projects</code>)
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Conclusion</h3>
+                <p>
+                    Writing your code within the guidelines of convention may
+                    seem odd at first, but once you've been programming for a
+                    while you'll quickly understand the benefits of adhering to
+                    convention. You should begin adopting these practices
+                    <em>now</em> into your code, and keep in mind that employers
+                    might be looking at your code when determining if you'd be a
+                    good fit for their team. If you give them a reason to think
+                    they'll need to educate you on following basic conventions,
+                    that may be a reason they choose someone else over you.
+                </p>
+                <p>Use this document heavily for your next assignment!</p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
