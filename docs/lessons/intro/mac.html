@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Computer Setup for Mac</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="setup-header">
+            <header class="slide-header">
+                <h1 id="setup-header">Computer Setup for Mac</h1>
+                <h2>Setup</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Install <code>Homebrew</code>, which is a package
+                        manager for MacOS
+                    </li>
+                    <li>
+                        Install <code>Node.js</code>, which is a JS runtime
+                        engine
+                    </li>
+                    <li>
+                        Install <code>Git</code>, a version control library for
+                        managing changes to a codebase over time
+                    </li>
+                </ul>
+                <p>
+                    <strong
+                        >Before continuing on, ensure that you have completed
+                        <em>all</em> of the tasks listed in the
+                        <a
+                            href="https://coursework.vschool.io/v-school-preparation/"
+                            target="_blank"
+                            rel="noopener"
+                            >V School Preparation</a
+                        >
+                        page, including the ones at the bottom</strong
+                    >
+                </p>
+                <p>TL;DR: That page has you get the following accounts:</p>
+                <ul class="custom-list">
+                    <li>
+                        <a
+                            href="https://appleid.apple.com/account"
+                            target="_blank"
+                            rel="noopener"
+                            >Apple ID</a
+                        >
+                        (Only required for Mac users)
+                    </li>
+                    <li>
+                        <a
+                            href="https://github.com/"
+                            target="_blank"
+                            rel="noopener"
+                            >Github</a
+                        >
+                    </li>
+                </ul>
+                <p>These are optional:</p>
+                <ul class="custom-list">
+                    <li>
+                        <a
+                            href="https://codesignal.com/"
+                            target="_blank"
+                            rel="noopener"
+                            >CodeSignal</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.lastpass.com/"
+                            target="_blank"
+                            rel="noopener"
+                            >LastPass</a
+                        >
+                    </li>
+                </ul>
+                <p>You also need to:</p>
+                <ul class="custom-list">
+                    <li>
+                        Download a text editor. We recommend
+                        <a
+                            href="https://code.visualstudio.com/download"
+                            target="_blank"
+                            rel="noopener"
+                            >VS Code</a
+                        >.
+                    </li>
+                    <li>
+                        <a
+                            href="https://slack.com/downloads"
+                            target="_blank"
+                            rel="noopener"
+                            >Download the native Slack client</a
+                        >. (Best option might be to download it from the Mac App
+                        Store or Microsoft Store)
+                    </li>
+                    <li>
+                        Download note-taking software. We recommend
+                        <a
+                            href="https://evernote.com/"
+                            target="_blank"
+                            rel="noopener"
+                            >Evernote</a
+                        >
+                        or
+                        <a
+                            href="https://bear.app/"
+                            target="_blank"
+                            rel="noopener"
+                            >Bear</a
+                        >.
+                    </li>
+                    <li>Update to the latest version of MacOS or Windows 10</li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    There are a number of technical setup items we need to get
+                    out of the way that will make our learning process go more
+                    smoothly. Because we ❤️ you, we've written a simple bash
+                    script that will help take care of the more technical setup
+                    items for you, with minimal input on your end.
+                </p>
+                <p>
+                    If you prefer to manually complete the setup,
+                    <a
+                        href="https://coursework.vschool.io/computer-setup-for-v-school/#manual-setup"
+                        target="_blank"
+                        rel="noopener"
+                        >jump down to the manual technical setup section</a
+                    >.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Automatic setup with bash script</h3>
+                <p>
+                    It isn't usually a good idea to just run random scripts
+                    without knowing what's happening.
+                    <a
+                        href="https://coursework.vschool.io/computer-setup-for-v-school/#what-its-doing"
+                        target="_blank"
+                        rel="noopener"
+                        >Below</a
+                    >
+                    we outline exactly what this bash script does, and you're
+                    welcome to
+                    <a
+                        href="https://raw.githubusercontent.com/VSchool/computer-setup/master/vschool-computer-setup.sh"
+                        target="_blank"
+                        rel="noopener"
+                        >check out the contents of the script</a
+                    >
+                    before running it and ask us what any particular line of
+                    code in the script means before running it.
+                </p>
+                <h4>How do I use the setup script?</h4>
+                <ol class="custom-list">
+                    <li>
+                        Open Terminal: Run
+                        <code
+                            >sudo chown -R $(whoami)
+                            /usr/local/var/homebrew</code
+                        >
+                    </li>
+                    <li>
+                        Open Terminal and run the following (triple click to
+                        select the whole thing,
+                        <strong
+                            >which may automatically run it when you paste it in
+                            to terminal</strong
+                        >. Paste first, then press enter if necessary):
+                    </li>
+                </ol>
+                <pre><code class="language-jsx">
+bash <(curl -s https://raw.githubusercontent.com/VSchool/computer-setup/master/vschool-computer-setup.sh)
+            </code></pre>
+                <p>
+                    The script should guide you much of the way.
+                    <strong
+                        >Make sure to read the instructions it gives
+                        carefully.</strong
+                    >
+                </p>
+                <ol class="custom-list" start="3">
+                    <li>
+                        When everything completes successfully, close and
+                        re-open Terminal. You may see the following insecure
+                        directories error message (<strong
+                            >If you do not see this message, that is okay, you
+                            are DONE with set up and can finish here</strong
+                        >):
+                    </li>
+                </ol>
+                <pre><code class="language-jsx">
+zsh compinit: insecure directories, run compaudit for list.
+Ignore insecure directories and continue [y] or abort compinit [n]? yzsh compinit: insecure directories, run compaudit for list.
+Ignore insecure directories and continue [y] or abort compinit [n]? y%     ~ $
+            </code></pre>
+                <ul class="custom-list">
+                    <li>Type ‘y’ two times</li>
+                    <li>
+                        Run <code>compaudit</code> to see the affected
+                        directories you may then see:
+                    </li>
+                </ul>
+                <pre><code class="language-jsx">
+There are insecure directories:
+/usr/local/share/zsh/site-functions
+/usr/local/share/zsh
+            </code></pre>
+                <p>If so:</p>
+                <pre><code class="language-jsx">
+sudo chown -R ${whoami} /usr/local/share/zsh/site-functions
+sudo chown -R ${whoami} /usr/local/share/zsh
+            </code></pre>
+                <ul class="custom-list">
+                    <li>
+                        Run <code>compaudit</code> again and you should see the
+                        error message(s) cleared
+                    </li>
+                </ul>
+                <p>That's it!</p>
+                <blockquote>
+                    <p>
+                        If anything appears to be out of order, please reach out
+                        to an instructor for help before trying to mess with
+                        something yourself.
+                    </p>
+                </blockquote>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>
+                    What is the <code>vschool-computer-setup.sh</code> script
+                    doing?
+                </h3>
+                <p>Running the setup script does the following:</p>
+                <ol class="custom-list">
+                    <li>Checks if you already have an SSH key</li>
+                    <ul class="custom-list">
+                        <li>
+                            If not, it creates one for you, using your github
+                            email address as the comment to the file so you get
+                            credit for your contributions to Github.
+                        </li>
+                        <li>
+                            Copies the SSH key to your clipboard so you can
+                            paste it into your Github SSH key settings
+                        </li>
+                    </ul>
+                    <li>Installs <code>Homebrew</code></li>
+                    <ul class="custom-list">
+                        <li>
+                            <code>Homebrew</code> is a popular package manager
+                            for installing developer tools. We use
+                            <code>Homebrew</code> to install the Node Version
+                            Manager, or <code>nvm</code>. Later in the course
+                            we'll also use it to install <code>MongoDB</code>.
+                        </li>
+                        <li>
+                            This script also sets up the folder structure and
+                            <code>.bash_profile</code> commands necessary to
+                            ensure <code>nvm</code> works correctly
+                        </li>
+                    </ul>
+                    <li>
+                        Uses <code>nvm</code> to install the latest version of
+                        <code>node.js</code>
+                    </li>
+                    <li>
+                        Sets up git command tab completion and modifies your
+                        terminal prompt to show your current git branch if
+                        you're inside a git repository.
+                    </li>
+                    <ul class="custom-list">
+                        <li>
+                            These are features that make working with
+                            <code>Git</code> <em>much</em> nicer.
+                        </li>
+                    </ul>
+                    <li>
+                        Closes the Terminal program to ensure that all changes
+                        are applied.
+                    </li>
+                </ol>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Manual Technical Setup</h3>
+                <p>
+                    <strong
+                        >If you ran the setup script from the top of this
+                        article, you're already done! No need to do any of the
+                        steps in this section.</strong
+                    >
+                    🎉
+                </p>
+                <h4>Create an SSH key</h4>
+                <ol class="custom-list">
+                    <li>
+                        Check to see if you already have an SSH key. Run
+                        <code>cat ~/.ssh/id_rsa.pub</code>.
+                    </li>
+                    <ul class="custom-list">
+                        <li>
+                            If it prints out a long string of characters, skip
+                            to step 3.
+                        </li>
+                    </ul>
+                    <li>
+                        In terminal, run the following:
+                        <code
+                            >ssh-keygen -t rsa -N "" -f id_rsa -C
+                            your_github_email@here.com</code
+                        >
+                        (Making sure to replace
+                        <code>your_github_email@here.com</code> with the actual
+                        email you use on Github). If you're unsure which email
+                        you used to sign up for Github, check the Public email
+                        section of
+                        <a
+                            href="https://github.com/settings/profile"
+                            target="_blank"
+                            rel="noopener"
+                            >your Github profile settings</a
+                        >
+                    </li>
+                    <li>
+                        Run <code>cat ~/.ssh/id_rsa.pub</code> and copy your new
+                        ssh key to the clipboard so you can add it to your
+                        GitHub account.
+                    </li>
+                </ol>
+                <h4>
+                    Install <code>Homebrew</code>, <code>NVM</code>, and
+                    <code>Node.js</code>
+                </h4>
+                <p>
+                    Follow the instructions on our post about
+                    <a
+                        href="https://coursework.vschool.io/installing-node-js/"
+                        target="_blank"
+                        rel="noopener"
+                        >installing node.js</a
+                    >
+                </p>
+                <h4>Modify your terminal prompt to be awesome</h4>
+                <p>
+                    Follow the instructions on our post about
+                    <a
+                        href="https://coursework.vschool.io/setting-up-your-terminal-to-be-awesome/"
+                        target="_blank"
+                        rel="noopener"
+                        >setting up your terminal to be awesome</a
+                    >
+                </p>
+                <h4>Set up your <code>Git</code> config</h4>
+                <p>
+                    Enter the following (replacing the name and email with your
+                    actual name and GitHub email address):
+                </p>
+                <pre><code class="language-jsx">
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+            </code></pre>
+                <p>This ensures you get credit on GitHub for your commits.</p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

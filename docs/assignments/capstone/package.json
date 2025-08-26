@@ -1,0 +1,25 @@
+{
+    "name": "pirates-of-the-caribbean-rpg",
+    "version": "1.0.0",
+    "description": "A text-based Pirates of the Caribbean RPG adventure game",
+    "main": "game.js",
+    "scripts": {
+        "start": "node game.js",
+        "dev": "nodemon game.js"
+    },
+    "keywords": [
+        "rpg",
+        "pirates",
+        "adventure",
+        "game",
+        "console"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "readline-sync": "^1.4.10"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
+}

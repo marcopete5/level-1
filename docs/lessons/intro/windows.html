@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Computer Setup for Windows</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="setup-header">
+            <header class="slide-header">
+                <h1 id="setup-header">Computer Setup for Windows</h1>
+                <h2>Setup</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Install productivity/messaging tools
+                        (<code>Discord</code>, <code>VS Code</code>)
+                    </li>
+                    <li>
+                        Install <code>WSL</code> (Windows Subsystem for Linux)
+                        which allows the use of linux on a Windows machine
+                    </li>
+                    <li>Install <code>Node.js</code>, a JS runtime engine</li>
+                    <li>Install <code>Git</code>, Version</li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Get Started</h3>
+                <p>
+                    Make sure you sign up for an account on the following sites:
+                </p>
+                <ul class="custom-list">
+                    <li>
+                        <a
+                            href="https://github.com/"
+                            target="_blank"
+                            rel="noopener"
+                            >Github</a
+                        >
+                    </li>
+                </ul>
+                <p>You also need to:</p>
+                <ul class="custom-list">
+                    <li>
+                        Download a text editor. We recommend
+                        <a
+                            href="https://code.visualstudio.com/download"
+                            target="_blank"
+                            rel="noopener"
+                            >VS Code</a
+                        >.
+                    </li>
+                    <li>
+                        <a
+                            href="https://slack.com/downloads"
+                            target="_blank"
+                            rel="noopener"
+                            >Download the native Slack client</a
+                        >. (Best option might be to download it from the Mac App
+                        Store or Microsoft Store)
+                    </li>
+                    <li>
+                        Download note-taking software. We recommend
+                        <a
+                            href="https://evernote.com/"
+                            target="_blank"
+                            rel="noopener"
+                            >Evernote</a
+                        >
+                        or
+                        <a
+                            href="https://bear.app/"
+                            target="_blank"
+                            rel="noopener"
+                            >Bear</a
+                        >.
+                    </li>
+                    <li>Update to the latest version of MacOS or Windows 10</li>
+                </ul>
+                <p>
+                    There are a number of technical setup items we need to get
+                    out of the way that will make our learning process go more
+                    smoothly. The video below will walk you through setting up
+                    your environment with <code>WSL</code> (Windows Subsystem
+                    for Linux).
+                    <strong
+                        >Before you watch the video, check the notes below for
+                        some recent updates.</strong
+                    >
+                </p>
+                <iframe
+                    class="video-embed"
+                    src="https://www.youtube.com/embed/xvMAZsGDBKY"
+                    title="Windows Computer Setup with WSL"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    aria-label="Video guiding Windows computer setup with WSL"></iframe>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>
+                    2022 WSL Download Update for Windows 10 or Higher - Read
+                    this first
+                </h3>
+                <p>
+                    <strong
+                        >Prior to starting, ensure virtualization is
+                        enabled.</strong
+                    >
+                </p>
+                <ol class="custom-list">
+                    <li>Open Task Manager by running CTRL + ALT + DELETE</li>
+                    <li>Go to Performance</li>
+                    <li>On the bottom right, look for “Virtualization”</li>
+                </ol>
+                <img
+                    class="image-embed"
+                    src="virtualization1.png"
+                    alt="Screenshot showing virtualization status in Task Manager"
+                    aria-label="Screenshot showing virtualization status in Task Manager" />
+                <h4>Enable Virtualization</h4>
+                <p>
+                    The steps to enable virtualization will differ depending on
+                    your system.
+                    <a
+                        href="https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968#:~:text=ON%20the%20System.-,Press%20F2%20key%20at%20startup%20BIOS%20Setup.,changes%20and%20Reboot%20into%20Windows"
+                        target="_blank"
+                        rel="noopener"
+                        >Find instructions for your manufacturer here</a
+                    >.
+                </p>
+                <p>Repeat 1-3 to confirm it has been enabled</p>
+                <p>
+                    If you’re using Windows 10 or higher, you can install
+                    <code>WSL</code> with a very simple command. Open Command
+                    Prompt as an administrator, and run the following line:
+                </p>
+                <pre><code class="language-jsx">
+wsl.exe --install
+            </code></pre>
+                <p>
+                    This command will install everything you need, including
+                    Ubuntu by default. You can double check that
+                    <code>WSL</code> is using Ubuntu by using:
+                </p>
+                <pre><code class="language-jsx">
+wsl -l -v
+            </code></pre>
+                <p>If you see this:</p>
+                <img
+                    class="image-embed"
+                    src="image2.png"
+                    alt="Screenshot confirming Ubuntu installation in WSL"
+                    aria-label="Screenshot confirming Ubuntu installation in WSL" />
+                <p>You’re successfully running Ubuntu!</p>
+                <p>
+                    Next, click on the Windows icon > search for Ubuntu and open
+                    it up. You may be prompted to create an account with a
+                    username and password. Note that this username and password
+                    is only for Ubuntu and is separate from your regular Windows
+                    account.
+                </p>
+                <p>
+                    You can now continue with the video at time marker
+                    <strong>9:32</strong>.
+                </p>
+                <h4>For Older Versions of Windows</h4>
+                <p>
+                    For older versions of Windows, you will need to do this
+                    manually. The page linked in the video (time marker
+                    <strong>2:32</strong>) can now be found here:
+                </p>
+                <p>
+                    <a
+                        href="https://docs.microsoft.com/en-us/windows/wsl/install-manual"
+                        target="_blank"
+                        rel="noopener"
+                        >Manual installation steps for older versions of WSL</a
+                    >
+                </p>
+                <p>
+                    You can now follow the video from this
+                    <strong>2:32</strong>.
+                </p>
+                <p>
+                    <a
+                        href="https://www.notion.so/Windows-Computer-Setup-for-V-School-a298e52f199c45cf8524d06111b4daed?pvs=21"
+                        target="_blank"
+                        rel="noopener"
+                        >If you have any issues, please look through the
+                        “Troubleshooting” section</a
+                    >
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Bash script command:</h3>
+                <p>
+                    bash <(curl -s
+                    https://raw.githubusercontent.com/VSchool/computer-setup/master/vschool-computer-setup.sh)
+                </p>
+                <pre><code class="language-jsx">
+*bash <(curl -s* https://raw.githubusercontent.com/VSchool/computer-setup/master/vschool-computer-setup.sh)
+            </code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Troubleshooting</h3>
+                <ol class="custom-list">
+                    <li>
+                        <a
+                            href="https://www.notion.so/Windows-Computer-Setup-for-V-School-a298e52f199c45cf8524d06111b4daed?pvs=21"
+                            target="_blank"
+                            rel="noopener"
+                            >Cannot Find “Code” command</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.notion.so/Windows-Computer-Setup-for-V-School-a298e52f199c45cf8524d06111b4daed?pvs=21"
+                            target="_blank"
+                            rel="noopener"
+                            >Virtualization</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.notion.so/Windows-Computer-Setup-for-V-School-a298e52f199c45cf8524d06111b4daed?pvs=21"
+                            target="_blank"
+                            rel="noopener"
+                            >Can’t access Ubuntu folder from Network</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.notion.so/Windows-Computer-Setup-for-V-School-a298e52f199c45cf8524d06111b4daed?pvs=21"
+                            target="_blank"
+                            rel="noopener"
+                            >Incorrect Starting Directory in Ubuntu Terminal</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.notion.so/Windows-Computer-Setup-for-V-School-a298e52f199c45cf8524d06111b4daed?pvs=21"
+                            target="_blank"
+                            rel="noopener"
+                            >Permission Denied (when reading, writing, accessing
+                            folders in root directory)</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.notion.so/Windows-Computer-Setup-for-V-School-a298e52f199c45cf8524d06111b4daed?pvs=21"
+                            target="_blank"
+                            rel="noopener"
+                            >Live Server Doesn’t Open Chrome Automatically</a
+                        >
+                    </li>
+                </ol>
+                <h4>Cannot Find “Code” Command</h4>
+                <ol class="custom-list">
+                    <li>In your terminal, run <code>echo $PATH</code></li>
+                    <li>If you don’t see the following path, follow step 3</li>
+                    <ul class="custom-list">
+                        <li>
+                            <code
+                                >/mnt/Users/&lt;USERNAME&gt;/AppData/Local/Programs/Microsoft
+                                VS Code/bin</code
+                            >
+                        </li>
+                    </ul>
+                    <li>Run this in your terminal:</li>
+                    <ul class="custom-list">
+                        <li>
+                            <code
+                                >export
+                                PATH="$PATH:/mnt/Users/&lt;USERNAME&gt;/AppData/Local/Programs/Microsoft
+                                VS Code/bin"</code
+                            >
+                        </li>
+                    </ul>
+                    <li>
+                        You should now be able to run “code” in your terminal to
+                        open any files and folders in <code>VS Code</code>
+                    </li>
+                </ol>
+                <h4>Virtualization</h4>
+                <p>
+                    If you receive a message about virtualization not being
+                    enabled, follow these steps:
+                </p>
+                <ol class="custom-list">
+                    <li>Open Task Manager by running CTRL + ALT + DELETE</li>
+                    <li>Go to Performance</li>
+                    <li>On the bottom right, look for “Virtualization”</li>
+                </ol>
+                <img
+                    class="image-embed"
+                    src="virtualization.png"
+                    alt="Screenshot showing virtualization status in Task Manager"
+                    aria-label="Screenshot showing virtualization status in Task Manager" />
+                <h5>Enable Virtualization</h5>
+                <p>
+                    The steps to enable virtualization will differ depending on
+                    your system.
+                    <a
+                        href="https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968#:~:text=ON%20the%20System.-,Press%20F2%20key%20at%20startup%20BIOS%20Setup.,changes%20and%20Reboot%20into%20Windows"
+                        target="_blank"
+                        rel="noopener"
+                        >Find instructions for your manufacturer here</a
+                    >.
+                </p>
+                <p>Repeat 1-3 to confirm it has been enabled</p>
+                <h4>Can’t access Ubuntu folder from Network</h4>
+                <p>
+                    Copy & paste the following address into your file explorer’s
+                    address bar:
+                </p>
+                <pre><code class="language-jsx">
+\\wsl$\Ubuntu\
+            </code></pre>
+                <h4>Incorrect Starting Directory in Ubuntu Terminal</h4>
+                <p>
+                    If you see <code>/</code> instead of <code>~</code> before
+                    the prompt (<code>$</code>), open up the settings page in
+                    Windows Terminal, click on “Open JSON file” and scroll down
+                    to the Ubuntu profile object.
+                </p>
+                <p>Replace this:</p>
+                <pre><code class="language-jsx">
+"startingDirectory": "//wsl$/Ubuntu/home/&lt;USERNAME&gt;"
+            </code></pre>
+                <p>with the following:</p>
+                <pre><code class="language-jsx">
+"startingDirectory": "/home/&lt;USERNAME&gt;"
+            </code></pre>
+                <h4>
+                    Permission Denied (when reading, writing, accessing folders
+                    in root directory)
+                </h4>
+                <p>Run this command in your root directory (<code>~</code>):</p>
+                <pre><code class="language-jsx">
+sudo chown -R USERNAME:USERNAME ~
+            </code></pre>
+                <h4>Live Server Does Not Automatically Open Chrome</h4>
+                <p>
+                    If you’re using <code>WSL</code>, open up your settings.json
+                    file and add this:
+                </p>
+                <pre><code class="language-jsx">
+"liveServer.settings.AdvanceCustomBrowserCmdLine": "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
+            </code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Alternate Set Up</h3>
+                <p>
+                    If you prefer to not use <code>WSL</code>, you can follow
+                    the written Manual Technical Setup below
+                </p>
+                <blockquote>
+                    <p>
+                        If anything appears to be out of order, please reach out
+                        to an instructor for help before trying to mess with
+                        something yourself.
+                    </p>
+                </blockquote>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Manual Technical Setup</h3>
+                <p>
+                    <strong
+                        >If you ran the setup script from the top of this
+                        article, you're already done! No need to do any of the
+                        steps in this section.</strong
+                    >
+                    🎉
+                </p>
+                <h4>Create an SSH key</h4>
+                <ol class="custom-list">
+                    <li>
+                        Check to see if you already have an SSH key. Run
+                        <code>cat ~/.ssh/id_rsa.pub</code>.
+                    </li>
+                    <ul class="custom-list">
+                        <li>
+                            If it prints out a long string of characters, skip
+                            to step 3.
+                        </li>
+                    </ul>
+                    <li>
+                        In terminal, run the following:
+                        <code
+                            >ssh-keygen -t rsa -N "" -f id_rsa -C
+                            your_github_email@here.com</code
+                        >
+                        (Making sure to replace
+                        <code>your_github_email@here.com</code> with the actual
+                        email you use on Github). If you're unsure which email
+                        you used to sign up for Github, check the Public email
+                        section of
+                        <a
+                            href="https://github.com/settings/profile"
+                            target="_blank"
+                            rel="noopener"
+                            >your Github profile settings</a
+                        >
+                    </li>
+                    <li>
+                        Run <code>cat ~/.ssh/id_rsa.pub</code> and copy your new
+                        ssh key to the clipboard so you can add it to your
+                        GitHub account.
+                    </li>
+                </ol>
+                <h4>Install <code>NVM</code> and <code>Node.js</code></h4>
+                <p>Follow the instructions from online documentation</p>
+                <h4>Modify your terminal prompt to be awesome</h4>
+                <p>
+                    You may be able to use the instructions on our post about
+                    <a
+                        href="https://coursework.vschool.io/setting-up-your-terminal-to-be-awesome/"
+                        target="_blank"
+                        rel="noopener"
+                        >setting up your terminal to be awesome</a
+                    >
+                    on Mac
+                </p>
+                <h4>Set up your <code>Git</code> config</h4>
+                <p>
+                    Enter the following (replacing the name and email with your
+                    actual name and GitHub email address):
+                </p>
+                <pre><code class="language-jsx">
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+            </code></pre>
+                <p>This ensures you get credit on GitHub for your commits.</p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
