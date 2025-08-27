@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Employee Records</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">Employee Records</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    You are to create a collection of employee's information for
+                    your company. Each employee has the following attributes:
+                </p>
+                <ol class="custom-list">
+                    <li>Name</li>
+                    <li>Salary</li>
+                    <li>Job title</li>
+                    <li>Status</li>
+                </ol>
+                <p>
+                    First, you will create an empty array named
+                    <code>employees</code>
+                </p>
+                <p>
+                    Next, you will create an <code>Employee</code> constructor
+                    with the first three attributes defined at the time of
+                    instantiation and the fourth will be defaulted to
+                    <code>"Full Time"</code>.
+                </p>
+                <p>
+                    This constructor will also have a method called
+                    <code>printEmployeeForm</code> that prints the employee's
+                    information to the console.
+                </p>
+                <p>
+                    (e.g.
+                    <code
+                        >"Name: Bob, Job Title: V School Instructor, Salary:
+                        $3000/hour, Status: Part time"</code
+                    >)
+                </p>
+                <p>You will then:</p>
+                <ol class="custom-list">
+                    <li>Instantiate three employees</li>
+                    <li>
+                        Override the status attribute of one of them to either
+                        "Part Time" or "Contract"
+                    </li>
+                    <li>
+                        Call the <code>printEmployeeForm</code> method for each
+                        employee
+                    </li>
+                    <li>
+                        Put the generated employees into the
+                        <code>employees</code> array using whichever method you
+                        prefer.
+                    </li>
+                </ol>
+                <p>
+                    Here's a refresher for the constructor syntax. Attempt
+                    writing yours without using the following code:
+                </p>
+                <pre><code class="language-jsx">
+function Car (year, make, model) {
+    // use the "this" keyword to reference each object
+    // that is created from this constructor
+    this.year = year;
+    this.make = make;
+    this.model = model;
+}
+
+// then we "instantiate" (create a new object from) our constructor with the "new" keyword and pass in the parameters:
+
+var myTacoma = new Car(2015, "Toyota", "Tacoma");
+
+// Result:
+
+//  Car { 
+//      year: 2015, 
+//      make: 'Toyota', 
+//      model: 'Tacoma' 
+// }
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Solution should look like this:</h3>
+                <pre><code class="language-jsx">
+/*
+EXPECTED CONSOLE OUTPUT:
+
+--- Employee Forms ---
+Name: Bob, Job Title: V School Instructor, Salary: $3000/hour, Status: Full Time
+Name: Alice, Job Title: Lead Designer, Salary: $4500/hour, Status: Contract
+Name: Charlie, Job Title: Project Manager, Salary: $4000/hour, Status: Full Time
+
+--- Final Employees Array ---
+[
+  Employee {
+    name: 'Bob',
+    jobTitle: 'V School Instructor',
+    salary: '$3000/hour',
+    status: 'Full Time',
+    printEmployeeForm: [Function (anonymous)]
+  },
+  Employee {
+    name: 'Alice',
+    jobTitle: 'Lead Designer',
+    salary: '$4500/hour',
+    status: 'Contract',
+    printEmployeeForm: [Function (anonymous)]
+  },
+  Employee {
+    name: 'Charlie',
+    jobTitle: 'Project Manager',
+    salary: '$4000/hour',
+    status: 'Full Time',
+    printEmployeeForm: [Function (anonymous)]
+  }
+]
+
+*/
+</code></pre>
+            </div>
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>A bigger picture</h3>
+                <p>
+                    These functions mimic classes, which is a pattern from more
+                    object oriented programming languages.
+                </p>
+                <p>
+                    In React, you will use classes to help instantiate instance
+                    "components" on the DOM. One of these components could be a
+                    post. Each post needs a title, maybe some text, and probably
+                    some methods to help with editing or deleting it.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>If you get stuck</h3>
+                <p>
+                    If you haven't done a focused session attempting the above
+                    requirements, these next few tips won't be that useful.
+                </p>
+                <p>
+                    The syntax for default parameters look like you're assigning
+                    the parameter a value. This will only be the value if an
+                    argument gets passed in.
+                </p>
+                <p>
+                    Think about why default parameters would need to go at the
+                    end of the parameter list, after any parameters that would
+                    need required values to be passed as arguments.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

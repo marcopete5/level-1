@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mutability & Value Types</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Mutability & Value Types</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Understand the concept of immutability vs. mutability
+                    </li>
+                    <li>
+                        Know which data types are mutable and which ones are
+                        immutable.
+                    </li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cbW6m8cM?pl=pQMWgWMUg"
+                    title="Mutability & Value Types"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining mutability and value types in JavaScript"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Although this post doesn't cover concepts you'll necessarily
+                    need to understand on a day-to-day basis, the information it
+                    presents could potentially help you understand a bug that
+                    would otherwise be <em>very</em> difficult to debug.
+                </p>
+                <p>
+                    <a
+                        href="https://coursework.vschool.io/mutability-and-types/"
+                        target="_blank"
+                        rel="noopener"
+                        >https://coursework.vschool.io/mutability-and-types/</a
+                    >
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Value Types</h3>
+                <p>
+                    Every <em>thing</em> in JavaScript is one of two value
+                    types: <strong>primitive</strong> or
+                    <strong>reference</strong> type. In JavaScript, the
+                    following are all <strong>primitive</strong> types:
+                </p>
+                <ul class="custom-list">
+                    <li>strings (<code>"this is a string"</code>)</li>
+                    <li>
+                        numbers (e.g.: <code>3.14</code> or <code>42</code> or
+                        <code>NaN</code>)
+                    </li>
+                    <li>booleans (<code>true</code> or <code>false</code>)</li>
+                    <li><code>undefined</code></li>
+                    <li><code>null</code></li>
+                </ul>
+                <p>and the following are <strong>reference</strong> types:</p>
+                <ul class="custom-list">
+                    <li>Arrays</li>
+                    <li>Objects</li>
+                    <li>Functions</li>
+                </ul>
+                <p>
+                    Before we dive into why this is useful, let's also tackle
+                    another definition.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Mutability</h3>
+                <p>
+                    The word <em>mutable</em> stems from <em>mutate</em> - which
+                    of course means to change. In JavaScript, the
+                    above-mentioned primitive data types are all considered
+                    "immutable", or unable to change. Conversely, the reference
+                    data types are mutable, or <em>able</em> to change.
+                </p>
+                <h4>What exactly are variables?</h4>
+                <p>
+                    To better understand this, we first need to understand what
+                    variables really are. All a variable does is point to a
+                    place in memory where the actual data is being saved.
+                    Consider the following example:
+                </p>
+                <pre><code class="language-jsx">
+var myNumber = 42;
+myNumber = 43;
+console.log(myNumber);  // prints 43
+
+</code></pre>
+                <p>
+                    On the first line, I saved <code>42</code> to memory and set
+                    up a pointer to that place in memory with the data, the
+                    number 42.
+                </p>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-19-at-1-56-40-PM.png"
+                    alt="Diagram showing a variable myNumber pointing to the number 42 in memory" />
+                <p>
+                    So what exactly is happening when I run the line
+                    <code>myNumber = 43</code>? This is what some may think:
+                </p>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-19-at-2-02-00-PM.png"
+                    alt="Incorrect diagram suggesting myNumber changes 42 to 43 in the same memory location" />
+                <p>
+                    At first glance, it may seem like I mutated
+                    <code>myNumber</code>, changing the number 42 to 43. In
+                    reality, what really happened was I reset where the variable
+                    <code>myNumber</code> points to in memory. For example, I
+                    could also have said <code>myNumber = true</code>, and that
+                    doesn't mean I <em>changed</em> the value of the number
+                    <code>42</code>. This is what actually happens when I run
+                    <code>myNumber = 43</code>:
+                </p>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-19-at-2-09-29-PM.png"
+                    alt="Correct diagram showing myNumber pointing to a new memory location with the number 43" />
+                <p>
+                    The reference (pointer) to the original place in memory
+                    where the number 42 was being stored is removed and a new
+                    pointer is created pointing instead at the number 43 and its
+                    place in memory. When JavaScript finds that the
+                    <code>42</code> no longer has anything pointing to it, it
+                    <em>garbage collects</em> the 42, removing it entirely and
+                    frees up the memory that was being taken up.
+                </p>
+                <h4>Immutable types</h4>
+                <p>
+                    In JavaScript, all value types (strings, numbers, booleans,
+                    <code>undefined</code>, and <code>null</code>) are
+                    immutable.
+                </p>
+                <p>
+                    Hopefully it makes some sense that numbers and booleans are
+                    immutable, but what about strings? Since I can index into a
+                    string as if it were an array, it seems intuitive that I
+                    should be able to change any given letter to another letter
+                    and keep that data at the same address in memory. Consider
+                    this example:
+                </p>
+                <pre><code class="language-jsx">
+var myString = "pool";
+console.log(myString[0]);  // prints "p"
+myString[0] = "t";  // I expect this to change myString to "tool"
+console.log(myString);  // prints "pool"
+
+</code></pre>
+                <p>
+                    We can see that strings are also <em>immutable!</em> If I
+                    want to "change" a string, I'll need to reset the pointer to
+                    another place in memory, creating a new string. This is why
+                    you'll see things like:
+                </p>
+                <pre><code class="language-jsx">
+...
+myString = myString + "!";
+// And the shorthand version of this is myString += "!"
+...
+
+</code></pre>
+                <p>
+                    With the <code>=</code>, we're <em>re-assigning</em> the
+                    variable to another value, which is the old version of
+                    <code>myString</code> plus an <code>!</code> on the end. We
+                    haven't mutated the original string, we've reset where the
+                    variable points to!
+                </p>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-19-at-2-20-02-PM.png"
+                    alt="Diagram showing myString reassigned to a new memory location with 'pool!'" />
+                <h4>What do <em>mutable</em> types look like?</h4>
+                <p>
+                    JavaScript's <strong>reference types</strong> (arrays and
+                    objects) are mutable. I can change the actual data itself
+                    without resetting its position in memory.
+                </p>
+                <pre><code class="language-jsx">
+var fruits = ["orange", "apple"];
+fruits[0] = "mango";
+console.log(fruits);  // prints ["mango", "apple"]
+
+</code></pre>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-19-at-2-39-59-PM.png"
+                    alt="Diagram showing the fruits array mutated in place, changing 'orange' to 'mango'" />
+                <p>The same goes for <strong>objects</strong>:</p>
+                <pre><code class="language-jsx">
+var myCar = {
+    year: 2002,
+    make: "Toyota",
+    model: "Camry"
+}
+console.log(myCar.year)  // prints 2002
+myCar.year = 2016;
+console.log(myCar.year)  // prints 2016
+
+</code></pre>
+                <p>
+                    The object mutated without needing to move its place in
+                    memory. In other words, it <em>changed in place</em>.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Pass by Value vs. Pass by Reference</h3>
+                <p>
+                    This is what we've been leading to: understanding how
+                    variables pass their values to other variables.
+                </p>
+                <h4>An analogy</h4>
+                <p>
+                    A good analogy to help understand the difference is to think
+                    of how you share a web page with a friend. If you wanted to
+                    follow the "pass by value" method, you would print out a
+                    copy of the web site and give it to your friend. If the
+                    owner of the website changes the original website, you
+                    friend's copy won't change at all. Similarly, if your friend
+                    writes all over the printed copy of the web site, the
+                    original site won't change.
+                </p>
+                <p>
+                    On the other hand, if you wanted to follow the "pass by
+                    reference" method, you would give your friend the URL of the
+                    web site. That URL is simply a <em>reference</em> to the
+                    actual web site. Anyone with the link <em>will</em> see
+                    changes that the site owner makes every time they visit the
+                    page.
+                </p>
+                <h4>In code</h4>
+                <p>
+                    In JavaScript, the <strong>value types</strong> (strings,
+                    numbers, booleans, <code>undefined</code>, and
+                    <code>null</code>) pass their data
+                    <strong>by value</strong>. Check out the following example:
+                </p>
+                <h5>Pass by Value</h5>
+                <pre><code class="language-jsx">
+var a = 30;
+var b = a;
+console.log(b);  // prints 30
+a = 40;
+console.log(b);  // what do you think it will print?
+
+</code></pre>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+30
+30
+
+</code></pre>
+                <p>
+                    Remember, <em>pass by value</em> means that a copy is made,
+                    and changes to the original don't affect the copies. The
+                    code above produces the following output:
+                </p>
+                <pre><code class="language-jsx">
+30
+30
+
+</code></pre>
+                <p>
+                    On the other hand, <strong>reference types</strong> (arrays
+                    and objects) pass their values
+                    <strong>by reference</strong>. You can see this in the
+                    following example:
+                </p>
+                <h5>Pass by Reference</h5>
+                <pre><code class="language-jsx">
+var person = {
+    name: "Susan",
+    age: 43,
+    eyeColor: "blue"
+};
+var another = person;
+person.age++;
+console.log(another.age);
+another.age++
+console.log(person.age);
+
+</code></pre>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+44
+45
+
+</code></pre>
+                <p>
+                    Since <code>person</code> is pointing to an object in
+                    memory, when I make <code>another</code> variable pointing
+                    to the <code>person</code> variable, it passes its data (the
+                    person object) by reference! So any change to the object via
+                    one variable is reflected to any other variable pointing to
+                    the same object (or array).
+                </p>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-19-at-3-15-19-PM.png"
+                    alt="Diagram showing two variables pointing to the same object in memory, demonstrating pass by reference" />
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Conclusion</h3>
+                <p>
+                    This is some basic-level computer science, and understanding
+                    could help you immensely when the time comes to understand
+                    why an object is seemingly changing itself at random (could
+                    turn out another variable pointing to the same object is
+                    changing it), or understanding why something isn't changing
+                    when you think it should (perhaps it is an immutable data
+                    type you're trying to change).
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

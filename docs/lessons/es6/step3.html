@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ES6 Part 1</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">ES6 Part 1</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Understand the concepts of <code>const</code> and
+                        <code>let</code> in ES6, and how they differ from
+                        <code>var</code>.
+                    </li>
+                    <li>
+                        Be able to use the rest and spread operators in ES6.
+                    </li>
+                    <li>
+                        Understand and be able to utilize template literals in
+                        ES6.
+                    </li>
+                    <li>Know how to use the import/export feature in ES6.</li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cLrdmduQ?pl=pQMWgWMUg"
+                    title="ES6 Part 1"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining ES6 concepts including const, let, rest and spread operators, template literals, and import/export"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>Much of ES6 is syntactic sugar.</p>
+                <p>
+                    "Syntactic sugar means that the new features of the language
+                    are not really new. Instead, they are a nicer syntax for
+                    something existing" -
+                    <a
+                        href="https://stackoverflow.com/questions/50835572/what-is-syntactic-sugar-in-javascript"
+                        target="_blank"
+                        rel="noopener"
+                        >stackoverflow</a
+                    >
+                </p>
+                <p>
+                    This means that the code becomes more readable, and often
+                    times sheds unnecessary syntax. Pay attention to how the new
+                    key words and arrangements of characters would help clean up
+                    our code, help in the development process, or read more like
+                    English.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Const and Let</h3>
+                <h4>What is Const and Let?</h4>
+                <p>
+                    We've historically defined variables using <code>var</code>
+                </p>
+                <pre><code class="language-jsx">
+var name = "Bob Evans";
+
+</code></pre>
+                <p>
+                    In ES6, we never need to use <code>var</code> again. It is
+                    going to be best practice to only use <code>let</code> and
+                    <code>const</code>.
+                </p>
+                <p>
+                    <code>const</code> is used to declare variables that will
+                    <strong>never</strong> be re-assigned.
+                </p>
+                <p>
+                    <code>let</code> is used to declare variables where the
+                    value could change at some point.
+                </p>
+                <pre><code class="language-jsx">
+const name = "Bob Evans";
+let address = "123 Fake Street";
+
+</code></pre>
+                <h4>Why use <code>const</code> and <code>let</code>?</h4>
+                <p>
+                    In complex JavaScript programs, we will be using many
+                    variables. Because of these new variable declarations key
+                    words, <code>let</code> and <code>const</code>, we have more
+                    control over those variables.
+                </p>
+                <p>
+                    <code>Const</code> and <code>let</code> also makes our code
+                    more readable. We can explicitly show what variables we
+                    expect to be altered, and which variables should stay the
+                    same.
+                </p>
+                <p>
+                    For example, imagine we are writing a program to identify
+                    vowels. We would use <code>const</code> to declare the array
+                    of vowels because vowels will never change. They will always
+                    be: a, e, i, o and u.
+                </p>
+                <pre><code class="language-jsx">
+const vowels = ["a", "e", "i", "o", "u"];
+
+</code></pre>
+                <h4>Scoping of Const and Let vs. Var</h4>
+                <p>
+                    Another important thing to understand about
+                    <code>const</code> and <code>let</code> is that they are
+                    locally scoped whereas <code>var</code> is globally scoped.
+                </p>
+                <p>For example:</p>
+                <pre><code class="language-jsx">
+function localScope(){
+  if(2 === 2){
+    let local = 'dog'
+  }
+  return local;
+}
+localScope()
+
+//returns 'local' is undefined
+
+</code></pre>
+                <p>but if it were the same function using var:</p>
+                <pre><code class="language-jsx">
+function localScope(){
+  if(2 === 2){
+    var local = 'dog'
+  }
+  return local;
+}
+localScope()
+
+//returns 'dog'
+
+</code></pre>
+                <h4>Practice</h4>
+                <p>
+                    change all the following <code>var</code>s to either
+                    <code>const</code> or <code>let</code>
+                </p>
+                <pre><code class="language-jsx">
+var name = "Ben";
+var age = 24;
+var dateOfBirth = "feb";
+
+var statuses = [
+  { code: 'OK', response: 'Request successful' },
+  { code: 'FAILED', response: 'There was an error with your request' },
+  { code: 'PENDING', response: 'Your reqeust is still pending' }
+];
+var message = '';
+var currentCode = 'OK';
+
+for (var i = 0; i &lt; statuses.length; i++) {
+  if (statuses[i].code === currentCode) {
+    message = statuses[i].response;
+  }
+}
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Rest and Spread Operator</h3>
+                <h4>Rest Operator</h4>
+                <p>
+                    Often times we want all our arguments to be an array of
+                    arguments. We don't know how many arguments will be passed
+                    into our function, but we want them to be an array in our
+                    function. We do that using the
+                    <strong>rest</strong> operator.
+                    <code>...whatWeWillNameOurArray</code>
+                </p>
+                <pre><code class="language-jsx">
+function addNumbers(...numbers) {
+  // numbers is now an array that we can use .reduce() on
+  return numbers.reduce((sum, number) => {
+    return sum + number;
+  }, 0);
+}
+
+addNumbers(1, 2, 3, 4, 5, 6, 7, 8);
+
+</code></pre>
+                <h4>Spread Operator</h4>
+                <p>
+                    In this example, we will have two arrays that we want to be
+                    joined into one. Before, we would have had to use
+                    <code>.concat()</code>.
+                </p>
+                <pre><code class="language-jsx">
+const defaultColors = ['red', 'green'];
+const userFavoriteColors = ['orange', 'yellow'];
+
+defaultColors.concat(userFavoriteColors);
+
+</code></pre>
+                <p>Now we can do this.</p>
+                <pre><code class="language-jsx">
+[ ...defaultColors, ...userFavoriteColors ];
+
+</code></pre>
+                <p>
+                    The ES6 way is much easier to read and identify quickly was
+                    is being done.
+                </p>
+                <p>Not only that, but now we can add more that two arrays.</p>
+                <pre><code class="language-jsx">
+[ ...defaultColors, ...userFavoriteColors, ...fallColors ];
+
+</code></pre>
+                <p>We aren't done yet! We can also just add values!</p>
+                <pre><code class="language-jsx">
+[ "blue", "green", ...defaultColors, ...userFavoriteColors, ...fallColors ];
+
+</code></pre>
+                <p>
+                    Let's write a shopping list validator that always includes
+                    milk. We will check for milk, and add it to our array if
+                    it's not there.
+                </p>
+                <pre><code class="language-jsx">
+function validateShoppingList(...items) {
+  if (items.indexOf('milk') &lt; 0) {
+    return [ 'milk', ...items ];
+  }
+
+  return items;
+}
+
+validateShoppingList('oranges', 'bread', 'eggs');
+
+</code></pre>
+                <h4>Practical example of Rest and Spread.</h4>
+                <p>
+                    Let's assume we have a library with a depreciated method. We
+                    would like users of our library to use a better method, but
+                    don't what to break the code of people still using the old
+                    method.
+                </p>
+                <pre><code class="language-jsx">
+const MathLibrary = {
+  calculateProduct(...rest) {
+    console.log('Please use the multiply method instead');
+    return this.multiply(...rest);
+  },
+  multiply(a, b) {
+    return a * b;
+   }
+};
+
+</code></pre>
+                <p>
+                    We just pass on all of the arguments straight into the call
+                    of the new method. The arguments do get turned into an
+                    array, but then "spread" out and dumped into the new method
+                    and individual parameters.
+                </p>
+                <p>Try to make the following function more ES6xy:</p>
+                <pre><code class="language-jsx">
+function product(a, b, c, d, e) {
+  const numbers = [a,b,c,d,e];
+
+  return numbers.reduce(function(acc, number) {
+    return acc * number;
+  }, 1)
+}
+
+</code></pre>
+                <p>
+                    Do this one too. Use at least <strong>both</strong> the
+                    <strong>rest and spread</strong> operators:
+                </p>
+                <pre><code class="language-jsx">
+function unshift(array, a, b, c, d, e) {
+  return [a, b, c, d, e].concat(array);
+}
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Template Literals</h3>
+                <p>
+                    These are designed for making our strings easier to read and
+                    write.
+                </p>
+                <p>
+                    They utilize the "back tick." This symbol -> <code>`</code>.
+                    It's just left of the "1" on your keyboard. We put our
+                    entire string inside two back ticks, and we use a dollar
+                    sign and curly brackets to insert JavaScript variables and
+                    expressions into.
+                </p>
+                <p>We used to concatenate strings like so:</p>
+                <pre><code class="language-jsx">
+let name = "Jacob";
+let age = 20;
+console.log("hello, my name is " + name + " and I am " + age + " years old.");
+
+</code></pre>
+                <p>but now we can use the following syntax:</p>
+                <pre><code class="language-jsx">
+console.log(`hello, my name is ${name} and I am ${age} years old.`);
+
+</code></pre>
+                <p>
+                    This is easier to read and write, we can easily identify
+                    where the JavaScript variables are, and it takes up less
+                    room. All those quotes and "+"s in the old way are way to
+                    easy to mess up. Start using the ES6 way!
+                </p>
+                <p>
+                    You can also insert JavaScript expressions into the curly
+                    brackets.
+                </p>
+                <pre><code class="language-jsx">
+console.log(`hello, my name is ${name}. Next year, I will be ${age + 1} years old`);
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Import/Export</h3>
+                <p>
+                    Before we would <code>require</code> npm packages or other
+                    files from our project. Now, we use the
+                    <code>import</code> syntax.
+                </p>
+                <pre><code class="language-jsx">
+import axios from 'axios';
+
+</code></pre>
+                <p>Is the same as saying</p>
+                <pre><code class="language-jsx">
+const axios = requre('axios');
+
+</code></pre>
+                <p>
+                    We can also "unpack" only the methods or items that we need
+                    from the package or file.
+                </p>
+                <pre><code class="language-jsx">
+import { Component } from 'react';
+
+</code></pre>
+                <h4>Export</h4>
+                <p>
+                    Export is generally the same, except you can export multiple
+                    items. When this file gets imported, all these items will be
+                    packaged into the imported object.
+                </p>
+                <p>You no longer say:</p>
+                <pre><code class="language-jsx">
+module.exports = codeOrFunctionOrObjectOrWhatever;
+
+</code></pre>
+                <p>but instead say:</p>
+                <pre><code class="language-jsx">
+export codeOrFunctionOrObjectOrWhatever;
+
+</code></pre>
+                <p>
+                    You can export however many items you'd like, and when they
+                    are imported, the import statement can specify which item it
+                    wants imported. You can also have an
+                    <code>export default</code> which will be exported if the
+                    import statement doesn't specify what it wants.
+                </p>
+                <pre><code class="language-jsx">
+export default codeOrFunctionOrObjectOrWhatever;
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

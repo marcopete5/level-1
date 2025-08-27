@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ES6 Part 2</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">ES6 Part 2</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Understand the syntax and functionality of arrow
+                        functions
+                    </li>
+                    <li>Be able to use object shorthand</li>
+                    <li>
+                        Understand and be able to apply de-structuring to
+                        objects and arrays
+                    </li>
+                    <li>Know how to use default parameters in functions</li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/c4GEJJtv?pl=pQMWgWMUg"
+                    title="ES6 Part 2"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining ES6 concepts including arrow functions, object shorthand, destructuring, and default parameters"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Arrow Functions</h3>
+                <p>
+                    Arrow functions simplify the <strong>syntax</strong> of our
+                    traditional functions.
+                </p>
+                <p>
+                    They use symbols that make intuitive sense to help make our
+                    functions simpler. The old way of writing functions:
+                </p>
+                <pre><code class="language-jsx">
+const add = function(a, b){
+    return a + b;
+}
+
+</code></pre>
+                <p>
+                    With arrow functions, we can remove the function key word,
+                    and add an arrow comprised of <code>=</code> and
+                    <code>&gt;</code>.
+                </p>
+                <pre><code class="language-jsx">
+const add = (a, b) => {
+    return a + b;
+}
+
+</code></pre>
+                <p>
+                    Cool, our function is already simpler. This syntax makes
+                    sense. It's like saying "I'm going to take a and b and
+                    transform them." Right? And arrow suggests transportation,
+                    transformation, forwarding, moving, etc. "I'm going to take
+                    a and b and 'arrow' them."
+                </p>
+                <p>But wait, there's more!!</p>
+                <p>
+                    We can simplify it some more. If your function has a single
+                    expression. Or a single line of code in the function, you
+                    can remove the curly brackets and
+                    <code>return</code> keyword
+                </p>
+                <pre><code class="language-jsx">
+const add = (a, b) => a + b;
+
+</code></pre>
+                <p>This is called an implicit return.</p>
+                <p>
+                    The rule is, if you have a just one expression in your
+                    function, remove both the curly brackets
+                    <strong>and</strong> the <code>return</code> keyword.
+                </p>
+                <p>
+                    If you only have <strong>one</strong> argument, you can also
+                    drop the parentheses!
+                </p>
+                <pre><code class="language-jsx">
+const double = (num) => num * 2;
+
+</code></pre>
+                <p>can be written:</p>
+                <pre><code class="language-jsx">
+const double = num => num * 2;
+
+</code></pre>
+                <p>If there are zero arguments, you need the parentheses.</p>
+                <pre><code class="language-jsx">
+const logHello = () => console.log("hello");
+
+</code></pre>
+                <p>
+                    Arrow functions start to look especially sexy when used as
+                    anonymous callback functions.
+                </p>
+                <pre><code class="language-jsx">
+const numbers = [1, 2, 3]
+
+numbers.map(function(number) {
+    return 2 * number;
+});
+
+</code></pre>
+                <p>can be:</p>
+                <pre><code class="language-jsx">
+const numbers = [1, 2, 3]
+
+numbers.map(number => 2 * number);
+
+</code></pre>
+                <p>
+                    This is possible because we are using arrow functions and
+                    <code>.map()</code> instead of a for loop.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Object Shorthand</h3>
+                <p>
+                    Object literal syntax is just a way to make our code look
+                    nicer. To show how to use this, we will just look at the
+                    old/uglier way of doing things, and then see the
+                    ES6/prettier way of doing things.
+                </p>
+                <p>
+                    There are three different shorthand syntaxes for objects in
+                    ES6. ES6:
+                </p>
+                <ol class="custom-list">
+                    <li>
+                        Provides a shorthand syntax for initializing properties
+                        from variables.
+                    </li>
+                    <li>
+                        Enables the ability to have computed property names in
+                        an object literal definition.
+                    </li>
+                    <li>
+                        Provides a shorthand syntax for defining function
+                        methods.
+                    </li>
+                </ol>
+                <pre><code class="language-jsx">
+const red = '#ff0000';
+const blue = '#0000ff';
+
+const COLORS = { red: red, blue: blue };
+
+</code></pre>
+                <p>can now be</p>
+                <pre><code class="language-jsx">
+const red = '#ff0000';
+const blue = '#0000ff';
+
+const colors = { red, blue };
+
+</code></pre>
+                <p>The old way:</p>
+                <pre><code class="language-jsx">
+const fields = ['firstName', 'lastName', 'phoneNumber'];
+
+const props = { fields: fields };
+
+</code></pre>
+                <p>Can now be:</p>
+                <pre><code class="language-jsx">
+const fields = ['firstName', 'lastName', 'phoneNumber'];
+
+const props = { fields };
+
+</code></pre>
+                <p>The old way:</p>
+                <pre><code class="language-jsx">
+const canvasDimensions = function(width, initialHeight) {
+  const height = initialHeight * 9 / 16;
+  return {
+    width: width,
+    height: height
+  };
+}
+
+</code></pre>
+                <p>Can now be:</p>
+                <pre><code class="language-jsx">
+const canvasDimensions = (width, initialHeight) => {
+  const height = initialHeight * 9 / 16;
+  return {
+    width,
+    height
+  };
+}
+
+</code></pre>
+                <p>
+                    <strong>Methods</strong> Methods in an object no longer need
+                    to have the <code>function</code> keyword. To facilitate
+                    this, we drop the <code>:</code> too.
+                </p>
+                <p>This</p>
+                <pre><code class="language-jsx">
+const color = 'red';
+
+const car = {
+  color: color,
+  drive: function() {
+    return 'Vroom!';
+  },
+  getColor: function() {
+    return this.color;
+  }
+};
+
+</code></pre>
+                <p>Can now be:</p>
+                <pre><code class="language-jsx">
+const color = 'red';
+
+const car = {
+  color,
+  drive() {
+    return 'Vroom!';
+  },
+  getColor() {
+    return this.color;
+  }
+};
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Destructuring</h3>
+                <p>
+                    As we've found, the easiest way to learn the new ES6 syntax
+                    is to see the old way of writing JavaScript.
+                </p>
+                <pre><code class="language-jsx">
+const expense = {
+  type: "Business",
+  amount: "$45 USD"
+};
+
+const type = expense.type;
+const amount = expense.amount;
+
+</code></pre>
+                <p>
+                    ugh. So much redundancy! We have <code>const</code>,
+                    <code>type</code>, and <code>amount</code> written three
+                    times. Using our old object, we can assign
+                    <code>type</code> and <code>amount</code> in a better way
+                    using curly-brackets.
+                </p>
+                <pre><code class="language-jsx">
+const {type} = expense;
+const {amount} = expense;
+
+</code></pre>
+                <p>Variable names need to be identical to property names.</p>
+                <p>We can boil this down even a little further.</p>
+                <pre><code class="language-jsx">
+const { type, amount } = expense;
+
+</code></pre>
+                <p>
+                    We will often times see this syntax when importing specific
+                    parts of a file. Look forward to the next section to see
+                    examples of this.
+                </p>
+                <h4>Destructuring Arrays</h4>
+                <p>we can make this code:</p>
+                <pre><code class="language-jsx">
+const vegetables = ["carrit", "tomat", "tomato soup"];
+
+const firstVegetable = vegetables[0];
+
+</code></pre>
+                <p>a lot prettier using square-brackets like this</p>
+                <pre><code class="language-jsx">
+const [ firstVegetable ] = vegetables
+
+</code></pre>
+                <p>
+                    Notice the use of square-brackets vs the curly-brackets we
+                    were using before.
+                </p>
+                <p>
+                    ES6 pulls the first item from the
+                    <code>vegetables</code> array, and assigns it to the
+                    <code>firstVegetable</code> variable. You can assign the
+                    first few like so:
+                </p>
+                <pre><code class="language-jsx">
+const [ firstVegetable, secondVegetable ] = vegetables
+
+</code></pre>
+                <h4>Destructuring arrays and objects together</h4>
+                <p>
+                    We are going to use two sets of destructuring in the last
+                    line of this snippet.
+                </p>
+                <pre><code class="language-jsx">
+const people = [
+  {name: 'Bob', age: 31},
+  {name: 'Joe', age: 29},
+  {name: 'Ben', age; 42}
+];
+const [{ name }] = people
+
+</code></pre>
+                <p>
+                    We start on the outside and go in, so name would equal
+                    <code>Bob</code>
+                </p>
+                <h4>Practical Examples</h4>
+                <p>
+                    There are many times were we need to change our data
+                    structures. Destructuring is
+                    <strong>extremely</strong> useful for this.
+                </p>
+                <p>Let's assume we have a grid of points:</p>
+                <pre><code class="language-jsx">
+const points = [
+  [4, 5],
+  [10, 1],
+  [0, 40]
+]
+
+</code></pre>
+                <p>
+                    but we are working with a graphing library that wants an
+                    array structured like this:
+                </p>
+                <pre><code class="language-jsx">
+[
+  { x: 4, y: 5 },
+  { x: 10, y: 1 },
+  { x: 0, y: 40 }
+]
+
+</code></pre>
+                <p>
+                    To transform our data, we could use a for loop. But let's
+                    not risk looking like an ES6 noob. Let's go step by step.
+                    Each one of these steps would work, but we'll simplify our
+                    code bit by bit. In every step of the way, and this first
+                    example especially, try to use destructuring to simplify the
+                    code.
+                </p>
+                <pre><code class="language-jsx">
+points.map(point => {
+  const x = point[0];
+  const y = point[1];
+});
+
+</code></pre>
+                <pre><code class="language-jsx">
+points.map(point => {
+  const [ x, y ] = point;
+});
+
+</code></pre>
+                <pre><code class="language-jsx">
+points.map(([ x, y ]) => {
+  return { x: x, y: y };
+});
+
+</code></pre>
+                <p>now, finally:</p>
+                <pre><code class="language-jsx">
+points.map(([ x, y ]) => {
+  return { x, y };
+});
+
+</code></pre>
+                <p>
+                    <strong>One more example</strong> Often we will use this to
+                    import specific parts of a package. All three following
+                    examples would do the exact same thing:
+                </p>
+                <pre><code class="language-jsx">
+import { createStore } from "redux";
+
+</code></pre>
+                <pre><code class="language-jsx">
+let { createStore } = require("redux");
+
+</code></pre>
+                <pre><code class="language-jsx">
+let createStore = require("redux").createStore
+
+</code></pre>
+                <p>
+                    Don't let import <code>intimidate</code> you, we'll talk
+                    about it later.
+                </p>
+                <h4>Practice</h4>
+                <p>
+                    This takes a lot of practice. Try each of these examples on
+                    your own before looking at the solution.
+                </p>
+                <p>Use destructuring to simplify this ES5 code:</p>
+                <pre><code class="language-jsx">
+const profile = {
+  title: 'Engineer',
+  department: 'Engineering'
+};
+
+function isEngineer(profile) {
+  const title = profile.title;
+  const department = profile.department;
+  return title === 'Engineer' && department === 'Engineering';
+}
+
+</code></pre>
+                <p>answer in ES6:</p>
+                <pre><code class="language-jsx">
+const profile = {
+  title: 'Engineer',
+  department: 'Engineering'
+};
+
+const isEngineer = ({title, department}) => title === 'Engineer' && department === 'Engineering';
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Default Parameters</h3>
+                <p>
+                    Often times, we want to write a function with a default
+                    argument. For example, you have a function that returns the
+                    square inches of a piece of wood. Most of our boards are an
+                    inch think, but occasionally they are more. Thickness in
+                    this function would default to <code>1</code>. To write this
+                    function in a way that sets thickness to <code>1</code>, we
+                    used to need to say:
+                </p>
+                <pre><code class="language-jsx">
+function calculateSquareInches(width, length, thickness){
+    if (thickness === undefined){
+        thickness = 1;
+    }
+    return width * length * thickness;
+}
+
+</code></pre>
+                <p>
+                    In this example, we have an entire <code>if</code> block to
+                    see if a value for thickness was passed through and to
+                    assign it to it's default if it wasn't.
+                </p>
+                <p>But now we can write:</p>
+                <pre><code class="language-jsx">
+function calculateSquareInches(width, length, thickness = 1){
+    return width * length * thickness;
+}
+
+</code></pre>
+                <p>
+                    It only assigns thickness to 1 if a third parameter wasn't
+                    passed through. Be sure to write all defaults as the last
+                    arguments when defining your functions.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
