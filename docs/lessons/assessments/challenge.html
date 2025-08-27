@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mid Level Skill Check</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assessment-header">
+            <header class="slide-header">
+                <h1 id="assessment-header">Mid Level Skill Check</h1>
+                <h2>Assessment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    This is a time for you to test your coding skills and
+                    prepare yourself for an interview. Below you will see two
+                    code challenges for you to complete. You will also need to
+                    add comments or pseudo-code to your project in order to talk
+                    through your process and solutions. Next, you will complete
+                    a quiz that will test the knowledge you have gained so far.
+                    Once you have completed the challenges, schedule an
+                    assessment to review with an instructor where you will
+                    complete a third coding challenge live!
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>HTML</h3>
+                <pre><code class="language-jsx">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;DOM Events&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="heading"&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;I'm a paragraph&lt;/p&gt;
+    &lt;button id="changeButton"&gt;Change Text&lt;/button&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Instructions for Using the HTML File:</h3>
+                <ol class="custom-list">
+                    <li>
+                        <strong>Copy the HTML Code:</strong>
+                        <p>
+                            Copy the provided HTML code from the browser or text
+                            editor.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Open Visual Studio Code (VS Code):</strong>
+                        <p>
+                            Open Visual Studio Code (VS Code) on your computer.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Create a New File:</strong>
+                        <p>Create a new file in VS Code.</p>
+                    </li>
+                    <li>
+                        <strong>Paste the HTML Code:</strong>
+                        <p>Paste the copied HTML code into the new file.</p>
+                    </li>
+                    <li>
+                        <strong>Save the File:</strong>
+                        <p>
+                            Save the file with an appropriate name and the
+                            <code>.html</code> extension (e.g.,
+                            <code>index.html</code>).
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Open the HTML File in a Browser:</strong>
+                        <p>
+                            Double-click the saved HTML file to open it in your
+                            default web browser.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Verify Functionality:</strong>
+                        <p>
+                            Upon opening the HTML file in a browser, you should
+                            see the text "Hello, World!" displayed as the
+                            heading.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Continue with Next Steps:</strong>
+                        <p>
+                            Once you have confirmed that the HTML file is
+                            displaying correctly, you can proceed with
+                            completing the JavaScript challenges as described
+                            below.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Code Challenges</h3>
+                <h4>Challenge 1: Change Text Content (DOM Manipulation)</h4>
+                <h5>Problem Statement:</h5>
+                <p>
+                    Create a function called <code>changeTextContent</code> that
+                    changes the text content of an HTML element with a specific
+                    ID.
+                </p>
+                <h5>Instructions:</h5>
+                <ol class="custom-list">
+                    <li>
+                        Write a JavaScript function called
+                        <code>changeTextContent</code> that takes two
+                        parameters:
+                        <ul class="custom-list">
+                            <li>
+                                <code>elementId</code>: The ID of the HTML
+                                element whose text content needs to be changed.
+                            </li>
+                            <li>
+                                <code>newText</code>: The new text content to be
+                                set for the element.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Inside the function, use
+                        <code>document.getElementById()</code> to select the
+                        HTML element with the specified <code>elementId</code>.
+                    </li>
+                    <li>
+                        Set the <code>textContent</code> property of the
+                        selected element to the value of <code>newText</code>.
+                    </li>
+                    <li>
+                        Test the function by calling it with different element
+                        IDs and new text content.
+                    </li>
+                </ol>
+                <h5>Example:</h5>
+                <pre><code class="language-jsx">function changeTextContent(elementId, newText) {
+ // your code goes here
+}
+
+// Test the function with different element IDs and new text content
+changeTextContent('heading', 'Welcome to my website!');
+changeTextContent('paragraph', 'This is a sample paragraph.');
+</code></pre>
+                <h4>Challenge 2: Add Event Listener (DOM Events)</h4>
+                <h5>Problem Statement:</h5>
+                <p>
+                    Create an event listener for a button element that changes
+                    the text content of another HTML element when clicked.
+                </p>
+                <h5>Instructions:</h5>
+                <ol class="custom-list">
+                    <li>
+                        Write JavaScript code to add an event listener to a
+                        button element in the HTML file.
+                    </li>
+                    <li>
+                        When the button is clicked, call the
+                        <code>changeTextContent</code> function (from Challenge
+                        1) with appropriate parameters to change the text
+                        content of another HTML element.
+                    </li>
+                    <li>
+                        Test the event listener by clicking the button and
+                        verifying that the text content of the specified HTML
+                        element is updated accordingly.
+                    </li>
+                </ol>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
