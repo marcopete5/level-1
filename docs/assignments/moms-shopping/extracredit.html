@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shopping List - Extra Credit</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Mom's Shopping List</h1>
+            </header>
+            <div class="page-layout">
+                <div class="requirements">
+                    <h2>Extra Credit Requirements</h2>
+                    <ul>
+                        <li>Fulfill all Part 1 & 2 requirements.</li>
+                        <li>
+                            A user can click the "edit" button to reveal an
+                            input box.
+                        </li>
+                        <li>
+                            The input box is pre-filled with the item's value.
+                        </li>
+                        <li>A "save" button replaces the "edit" button.</li>
+                        <li>
+                            On save, the input box disappears and the new value
+                            is displayed.
+                        </li>
+                    </ul>
+                </div>
+                <div class="app-content">
+                    <form name="addItem">
+                        <input
+                            type="text"
+                            name="title"
+                            placeholder="Item to add..."
+                            required />
+                        <button type="submit">Add Item</button>
+                    </form>
+                    <ul id="list"></ul>
+                </div>
+            </div>
+        </div>
+        <script src="extracredit.js"></script>
+    </body>
+</html>

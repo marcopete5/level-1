@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mom's Shopping List</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">Mom's Shopping List</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Your mom is frustrated by her propensity to lose slips of
+                    paper with writing on them, specifically her shopping lists.
+                    She knows that you're a really smart web developer and
+                    assumes that you can easily make her a website to keep track
+                    of her shopping list.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Project Requirements Overview</h3>
+                <p>
+                    Using HTML, CSS, and JavaScript, write a simple shopping
+                    list app. There must be an input box to add new items, and
+                    an [x] button to delete items. The data does not have to
+                    persist a page refresh (because there's no API right now).
+                </p>
+                <p>Here's what the list might look like:</p>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2015/05/Screenshot-2015-05-18-at-17-02-51.png"
+                    alt="Example of shopping list with input box and items"
+                    aria-label="Example of shopping list with input box and items for Mom's Shopping List assignment" />
+                <p>You should be able to delete items by clicking the [x]:</p>
+                <img
+                    class="image-embed"
+                    src="https://coursework.vschool.io/content/images/2015/05/Screenshot-2015-05-18-at-17-03-48.png"
+                    alt="Example of shopping list with delete buttons"
+                    aria-label="Example of shopping list with delete buttons for Mom's Shopping List assignment" />
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Setup</h3>
+                <p>
+                    Use the following
+                    <a
+                        href="https://github.com/VSchool/moms-shopping-list-start"
+                        target="_blank"
+                        rel="noopener"
+                        >repo</a
+                    >
+                    to start your project. This code will help you understand
+                    any patterns you should use when completing this assignment.
+                </p>
+                <p>Follow the instructions in the README.</p>
+                <aside>
+                    <p>
+                        Note: The three items already there are to show how the
+                        rest should be structured, but should be removed or
+                        commented out before moving on to part 2.
+                    </p>
+                </aside>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Parts</h3>
+                <p>
+                    Each part is it's own task. It would be beneficial to have
+                    someone look at your code before moving from one part to the
+                    next.
+                </p>
+                <h4>Part 1</h4>
+                <ul class="custom-list">
+                    <li>
+                        A user will be able to add list items to the pre-built
+                        <code>ul</code> using the pre-built form
+                    </li>
+                    <li>
+                        New list items should have the same format as the
+                        <code>li</code>'s that come with the git repo
+                    </li>
+                </ul>
+                <h4>Part 2</h4>
+                <ul class="custom-list">
+                    <li>
+                        A user will be able to delete items using an items
+                        delete button
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Extra Credit</h3>
+                <ul class="custom-list">
+                    <li>
+                        A user will be able to click the "edit" button and see
+                        an input box appear
+                    </li>
+                    <li>
+                        When the user clicks the "edit" button, a "save" button
+                        replaces the "edit" button
+                    </li>
+                    <li>
+                        The input box will automatically have the value of the
+                        list item
+                    </li>
+                    <li>The user can edit and "save" the input box's value</li>
+                    <li>
+                        On save, the input box will disappear, and the new value
+                        will appear
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <h3>
+                <a
+                    href="https://marcopete5.github.io/assignments/moms-shopping/index.html"
+                    target="_blank"
+                    rel="noopener"
+                    >DEMO OF ALL COMPLETED PARTS</a
+                >.
+            </h3>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Task Rubric</h3>
+                <table class="custom-table">
+                    <tr>
+                        <th>Criteria</th>
+                        <th>Level 1: Emerging</th>
+                        <th>Level 2: Developing</th>
+                        <th>Level 3: Proficient</th>
+                        <th>Level 4: Mastery</th>
+                    </tr>
+                    <tr>
+                        <td>Basic CRUD operations</td>
+                        <td>
+                            UI doesn’t correctly reflect the type of operation
+                            being performed, or is missing the operation
+                            entirely.
+                        </td>
+                        <td>
+                            ‘Create’ and Read’ functionality is present, but in
+                            a buggy, inconsistent fashion.
+                        </td>
+                        <td>
+                            ‘Delete’ and ‘Update’ are incorporated but UI is
+                            glitchy.
+                        </td>
+                        <td>
+                            All CRUD operations are able to be performed by the
+                            user, and the UI correctly displays items in the
+                            list for each operation. Edit form works seamlessly
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Code Quality</td>
+                        <td>
+                            Formatting is inconsistent and code is repeated or
+                            disorganized and difficult to follow. Syntax errors
+                            are present.
+                        </td>
+                        <td>
+                            Syntax and formatting is correct and consistent but
+                            certain code conventions aren’t followed, variable
+                            names are confusing, and code is challenging to read
+                        </td>
+                        <td>
+                            Minor issues with code organization and variable
+                            naming but is generally easy to read and follow.
+                        </td>
+                        <td>
+                            Code is DRY, variable names are sensible, and it is
+                            broken up into discreet, reusable pieces.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Tips for when you are stumped.</h3>
+                <p>
+                    Take a minute to practice the problem solving process
+                    without these notes.
+                </p>
+                <p>
+                    Come to your Level 1 assessment with this assignment ready
+                    to show to the instructor.
+                </p>
+                <p>
+                    Remember the note in the above requirements to delete the
+                    items from the HTML.
+                </p>
+                <p>To break down creating a new list item:</p>
+                <ul class="custom-list">
+                    <li>
+                        Write an event listener that listens for a
+                        <code>submit</code> on the form. Prevent the default
+                        refresh that happens on submits.
+                    </li>
+                    <li>
+                        Be able to log the string the user types into the input
+                        box to the console after the submit. Keep the console
+                        open and look often for JS errors there.
+                    </li>
+                    <li>
+                        Use the three steps of creating a new element.
+                        <ol class="custom-list">
+                            <li>create the element</li>
+                            <li>
+                                edit properties like <code>textContent</code> or
+                                the <code>style</code> object
+                            </li>
+                            <li>append the element to the DOM</li>
+                        </ol>
+                    </li>
+                </ul>
+                <p>
+                    Most importantly, take this assignment to reach out to find
+                    a friend to keep pace with in V School. You can ask for help
+                    on this assignment or offer help on the other DOM
+                    assignments.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Submitting Assignments</h3>
+                <p>
+                    Please remember to regularly submit your assignments to
+                    GitHub!
+                </p>
+                <p>Using Git Command Line:</p>
+                <ol class="custom-list">
+                    <li>Open Terminal and navigate to your project folder.</li>
+                    <li>
+                        Add Changes:
+                        <code
+                            >git add
+                            &lt;relative/path/to/assignment/folder&gt;</code
+                        >
+                    </li>
+                    <li>
+                        Commit Changes:
+                        <code
+                            >git commit -m "submitting assignment
+                            &lt;name&gt;"</code
+                        >
+                    </li>
+                    <li>Push to GitHub: <code>git push origin main</code></li>
+                </ol>
+                <p>Using VSCode's Source Control:</p>
+                <ol class="custom-list">
+                    <li>Open VSCode and click on the Source Control tab.</li>
+                    <li>
+                        Stage Changes: Click the "+" icon next to each file.
+                    </li>
+                    <li>
+                        Commit Changes: Enter a commit message and click Commit.
+                    </li>
+                    <li>Push to GitHub: Click the Sync Changes button.</li>
+                </ol>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
