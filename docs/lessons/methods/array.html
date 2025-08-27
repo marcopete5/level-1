@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Array Methods Exercise</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">Array Methods Exercise</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Create a new JavaScript file and put these two arrays at the
+                    beginning. You will write a single function that performs
+                    many operations on them.
+                </p>
+                <pre><code class="language-jsx">
+var fruit = ["banana", "apple", "orange", "watermelon"];
+var vegetables = ["carrot", "tomato", "pepper", "lettuce"];
+
+</code></pre>
+                <p>
+                    After every command, use <code>console.log()</code> to
+                    inspect your arrays. A good way to do that is to do
+                    something like:
+                </p>
+                <pre><code class="language-jsx">
+console.log("fruit: ", fruit);
+console.log("vegetables: ", vegetables);
+
+</code></pre>
+                <ol class="custom-list">
+                    <li>Remove the last item from the vegetable array.</li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">
+fruit: ["banana", "apple", "orange", "watermelon"]
+vegetables: ["carrot", "tomato", "pepper"]
+
+</code></pre>
+                    <li>Remove the first item from the fruit array.</li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">
+fruit: ["apple", "orange", "watermelon"]
+vegetables: ["carrot", "tomato", "pepper"]
+
+</code></pre>
+                    <li>Find the index of "orange."</li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">1
+</code></pre>
+                    <li>Add that number to the end of the fruit array.</li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">
+fruit: ["apple", "orange", "watermelon", 1]
+vegetables: ["carrot", "tomato", "pepper"]
+
+</code></pre>
+                    <li>
+                        Use the length property to find the length of the
+                        vegetable array.
+                    </li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">3
+</code></pre>
+                    <li>Add that number to the end of the vegetable array.</li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">
+fruit: ["apple", "orange", "watermelon", 1]
+vegetables: ["carrot", "tomato", "pepper", 3]
+
+</code></pre>
+                    <li>
+                        Put the two arrays together into one array. Fruit first.
+                        Call the new Array "food".
+                    </li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">food: ["apple", "orange", "watermelon", 1, "carrot", "tomato", "pepper", 3]
+</code></pre>
+                    <li>
+                        Remove 2 elements from your new array starting at index
+                        4 with one method.
+                    </li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">food: ["apple", "orange", "watermelon", 1, "pepper", 3]
+</code></pre>
+                    <li>Reverse your array.</li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">food: [3, "pepper", 1, "watermelon", "orange", "apple"]
+</code></pre>
+                    <li>Turn the array into a string and return it.</li>
+                    <p>Result of a Correct Solution:</p>
+                    <pre><code class="language-jsx">3,pepper,1,watermelon,orange,apple
+</code></pre>
+                </ol>
+                <p>
+                    If you've done everything correctly, the last step should
+                    print the following string to the console:
+                </p>
+                <pre><code class="language-jsx">3,pepper,1,watermelon,orange,apple
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>A bigger picture</h3>
+                <p>
+                    It's important to memorize what those arguments represent.
+                    Also take time to memorize what a method does and returns.
+                    Those three things will set you up to pass the Level 1
+                    assessment. Look in the Level 1 curriculum for the study
+                    sheets for these methods. It will be helpful for this
+                    assignment!
+                </p>
+                <p>
+                    If a method doesn't change something about the array, it
+                    just may share functionality to a string method! Unlike an
+                    array, strings are immutable. But they are still iterable,
+                    like an array.
+                </p>
+                <p>
+                    Your friends list, ingredients on a cooking website, posts
+                    on a feed, and just about every list is an array.
+                </p>
+                <p>
+                    Being able to remove, add, reverse, and otherwise work with
+                    these is a big deal. Practicing code challenges like this
+                    one is a good way to get good.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Reminders for if you get stuck</h3>
+                <p>These methods <code>return</code> something</p>
+                <p>These methods often change something about the array</p>
+                <p>
+                    These methods take <code>arguments</code> this arguments are
+                    values
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

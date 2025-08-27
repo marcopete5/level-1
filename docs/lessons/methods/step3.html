@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>String Methods</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">String Methods</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Understand the difference between global functions and
+                        methods.
+                    </li>
+                    <li>
+                        Recognize that JavaScript automatically converts
+                        primitives to String objects, allowing the use of
+                        methods on strings
+                    </li>
+                    <li>
+                        Be familiar with commonly used string methods such as
+                        <code>toUpperCase()</code>, <code>toLowerCase()</code>,
+                        <code>split()</code>, <code>slice()</code>, and
+                        <code>indexOf()</code>.
+                    </li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/c9PEkZfD?pl=pQMWgWMUg"
+                    title="String Methods"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining string methods in JavaScript"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Methods are functions that are defined within the scope of
+                    an object. When people say function they are typically
+                    referring to a function on the global scope, whereas a
+                    method is part of the local scope of an object.
+                </p>
+                <p>For example.</p>
+                <pre><code class="language-jsx">//global Function
+function doSomething () {
+    console.log("I'm doing something")
+}
+
+doSomething(); // this can be called directly
+
+//method
+var someObj = {
+    name: "John",
+    age: 23,
+    speak: function (){
+    console.log("I'm speaking")
+}
+};
+
+someObj.speak(); // this has to be called as part of the object someObj
+</code></pre>
+                <p>
+                    Primitive values are not objects so they typically cannot
+                    have properties or methods. But JavaScript automatically
+                    converts primitives to String objects, so that it is
+                    possible to use methods on strings.
+                </p>
+                <p>
+                    Methods are extremely useful because they are basically like
+                    shortcuts or cheat codes that we can use to manipulate our
+                    code without having to write whole functions for each
+                    specific thing we want to do.
+                </p>
+                <p>
+                    One string method is string.<code>toUpperCase()</code> This
+                    returns the string value converted to uppercase.
+                </p>
+                <p>
+                    So instead of writing out a whole function that changes your
+                    string to uppercase letters all you have to do is this
+                </p>
+                <pre><code class="language-jsx">
+var str = 'hello';
+var upperStr = str.toUpperCase();
+console.log(upperStr); //prints 'HELLO' to the console
+
+</code></pre>
+                <p>Some common string methods are</p>
+                <h4>.concat()</h4>
+                <p>
+                    combines the text of one or more strings and returns a new
+                    string
+                </p>
+                <pre><code class="language-jsx">
+var str = 'hello ';
+var str2 = 'world';
+var fullStr = str.concat(str2);
+console.log(fullStr); // prints 'hello world'
+
+</code></pre>
+                <h4>.indexOf()</h4>
+                <p>
+                    returns the index of the specified value, or -1 if not found
+                </p>
+                <pre><code class="language-jsx">
+var str = 'hello world';
+var oIndex = str.indexOf('o');
+console.log(oIndex); //prints 4
+
+</code></pre>
+                <p>
+                    or you can specify which instance of the specified value you
+                    want
+                </p>
+                <pre><code class="language-jsx">
+var str = 'hello world';
+
+//find first index of 'o' starting at the index 5
+var oIndex = str.indexOf('o', 5); 
+
+console.log(oIndex); //prints 7
+
+</code></pre>
+                <h4>.slice()</h4>
+                <p>removes a section of a string and returns a new string</p>
+                <pre><code class="language-jsx">
+var str = 'hello world';
+var newStr = str.slice(6);
+console.log(newStr); // prints 'world'
+
+</code></pre>
+                <p>or you can grab just a middle section</p>
+                <pre><code class="language-jsx">
+var str = 'heyyoudude';
+var newStr = str.slice(3,6);
+console.log(newStr); // prints 'you'
+
+</code></pre>
+                <p>or you can go from the back</p>
+                <pre><code class="language-jsx">
+var str = 'hello world';
+var newStr = str.slice(-5);
+console.log(newStr); // prints 'world'
+
+</code></pre>
+                <h4>.split()</h4>
+                <p>
+                    splits a string into an array of strings by separating the
+                    string into substrings
+                </p>
+                <pre><code class="language-jsx">
+var str = 'hello I am john, I am a real human being';
+var words = str.split(' '); // splits by every space
+var lines = str.split(','); // splits by every ,
+var allChar = str.split(''); // splits by every character
+
+console.log(words);//prints[ 'hello', 'I', 'am', 'john,', 'I', 'am', 'real' ]
+console.log(lines);//prints[ 'hello I am john', ' I am real' ]
+console.log(allChar);//prints[ 'h','e','l','l','o',' ','I',' ','a','m',' ','j','o','h','n',',',' ','I',' ','a','m',' ','r','e','a','l' ]
+
+</code></pre>
+                <h4>.toLowerCase()</h4>
+                <p>Returns the string changed to lower case</p>
+                <pre><code class="language-jsx">
+var str = 'HelLo WorlD';
+var lowStr = str.toLowerCase();
+console.log(lowStr); // prints 'hello world'
+
+</code></pre>
+                <p>A list of all the methods can be found here</p>
+                <p>
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+                        target="_blank"
+                        rel="noopener"
+                        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String</a
+                    >
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

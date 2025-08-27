@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>String Methods Exercise</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">String Methods Exercise</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Write a function that takes a string as a parameter and
+                    returns the same string in all capital letters followed by
+                    all lowercase letters.
+                </p>
+                <pre><code class="language-jsx">capilizeAndLowercase("HelLo") // => "HELLOhello"
+</code></pre>
+
+                <hr class="section-divider" />
+
+                <p>
+                    Write a function that takes a string as a parameter and
+                    returns a number that is half the string's length, rounded
+                    down.
+                </p>
+                <p>&gt; Hint: You'll need to use <code>Math.floor()</code>.</p>
+                <pre><code class="language-jsx">findMiddleIndex("Hello") // => 2
+findMiddleIndex("Hello World") // => 5
+</code></pre>
+
+                <hr class="section-divider" />
+
+                <p>
+                    Write a function that uses
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice"
+                        target="_blank"
+                        rel="noopener"
+                        ><code>slice()</code></a
+                    >
+                    and the other functions you've written to return the first
+                    half of the given string.
+                </p>
+                <pre><code class="language-jsx">returnFirstHalf("Hello") // => "He"
+returnFirstHalf("Hello World") // => "Hello"
+</code></pre>
+
+                <hr class="section-divider" />
+
+                <p>
+                    Write a function that takes a string as a parameter and
+                    returns that string where the first half is capitalized, and
+                    the second half is lowercase.
+                </p>
+                <p>
+                    &gt; Hint: If your string length is odd, use
+                    <code>Math.floor()</code> to round down.
+                </p>
+                <pre><code class="language-jsx">capilizeAndLowercase("Hello") // => "HEllo"
+capilizeAndLowercase("Hello World") // => "HELLO world"
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Optional Code Challenge</h3>
+                <p>
+                    &gt; (This one is a step up in difficulty and utilizes the
+                    <code>split()</code> string method and
+                    <code>join()</code> array method):
+                </p>
+                <p>
+                    Write a function that takes a string as a parameter and
+                    capitalizes any character that follows a space.
+                </p>
+                <pre><code class="language-jsx">capitalize("hey friends! practice practice practice!") // -> "Hey Friends! Practice Practice Practice!"
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
