@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Loop Olympics</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">Loop Olympics</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    For this exercise you are only <strong>required</strong> to
+                    complete the <strong>Preliminary</strong> and
+                    <strong>Bronze</strong> medal portions. Once you have
+                    completed these two portions you are allowed to move on in
+                    the curriculum. This exercise will get progressively more
+                    difficult with each challenge. The Silver and Gold medal
+                    portions of this exercise are <strong>optional</strong>. You
+                    are welcome to attempt these additional challenges if you
+                    would like to go the extra mile!
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Preliminaries</h3>
+                <ol class="custom-list">
+                    <li>
+                        Write a for loop that prints to the console the numbers
+                        0 through 9.
+                    </li>
+                </ol>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+</code></pre>
+                <ol class="custom-list" start="2">
+                    <li>
+                        Write a for loop that prints to the console 9 through 0.
+                    </li>
+                </ol>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+
+</code></pre>
+                <ol class="custom-list" start="3">
+                    <li>
+                        Write a for loop that prints these fruits to the
+                        console.
+                        <code
+                            >const fruit = ["banana", "orange", "apple",
+                            "kiwi"]</code
+                        >
+                    </li>
+                </ol>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+banana
+orange
+apple
+kiwi
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Bronze Medal</h3>
+                <ol class="custom-list">
+                    <li>
+                        Write a for loop that will push the numbers 0 through 9
+                        to an array.
+                    </li>
+                </ol>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+                <ol class="custom-list" start="2">
+                    <li>
+                        Write a for loop that prints to the console only even
+                        numbers 0 through 100.
+                    </li>
+                </ol>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+0
+2
+4
+6
+8
+...
+96
+98
+100
+
+</code></pre>
+                <ol class="custom-list" start="3">
+                    <li>
+                        Write a for loop that will push every other fruit to an
+                        array.
+                        <code
+                            >const fruit = ["banana", "orange", "apple", "kiwi",
+                            "pear", "peach"]</code
+                        >
+                    </li>
+                </ol>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">["banana", "apple", "pear"]
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Silver Medal</h3>
+                <ol class="custom-list">
+                    <li>
+                        Write a loop that will print out all the names of the
+                        people of the people array
+                    </li>
+                </ol>
+                <pre><code class="language-jsx">
+const peopleArray = [
+  {
+    name: "Harrison Ford",
+    occupation: "Actor"
+  },
+  {
+    name: "Justin Bieber",
+    occupation: "Singer"
+  },
+  {
+    name: "Vladimir Putin",
+    occupation: "Politician"
+  },
+  {
+    name: "Oprah",
+    occupation: "Entertainer"
+  }
+]
+
+// ["Harrison Ford", "Vladimir Putin"] // names
+// ["Singer", "Entertainer"] // occupations
+
+</code></pre>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+Harrison Ford
+Justin Bieber
+Vladimir Putin
+Oprah
+
+</code></pre>
+                <ol class="custom-list" start="2">
+                    <li>
+                        Write a loop that pushes the names into a
+                        <code>names</code> array, and the occupations into an
+                        <code>occupations</code> array.
+                    </li>
+                </ol>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+names: ["Harrison Ford", "Justin Bieber", "Vladimir Putin", "Oprah"]
+occupations: ["Actor", "Singer", "Politician", "Entertainer"]
+
+</code></pre>
+                <ol class="custom-list" start="3">
+                    <li>
+                        Write a loop that pushes every other name to an array
+                        starting with the first person, in this case "Harrison
+                        Ford", and every other occupation to
+                        <em>another</em> array starting with, in this case,
+                        "Singer".
+                    </li>
+                </ol>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+names: ["Harrison Ford", "Vladimir Putin"]
+occupations: ["Singer", "Entertainer"]
+
+</code></pre>
+                <p>
+                    Think about what good names for the arrays would be. Since
+                    it will be an array of each name or occupation, the plurals
+                    of name and occupation would be appropriate.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Gold Medal - Nesting</h3>
+                <ol class="custom-list">
+                    <li>
+                        Create an array that mimics a grid like the following
+                        using nested <code>for</code> loops:
+                    </li>
+                </ol>
+                <pre><code class="language-jsx">
+[[0, 0, 0],
+[0, 0, 0],
+[0, 0, 0]]
+
+</code></pre>
+
+                <ol class="custom-list" start="2">
+                    <li>
+                        Create an array that mimics a grid like the following
+                        using nested <code>for</code> loops:
+                    </li>
+                </ol>
+                <pre><code class="language-jsx">
+[[0, 0, 0],
+[1, 1, 1],
+[2, 2, 2]]
+
+</code></pre>
+
+                <ol class="custom-list" start="3">
+                    <li>
+                        Create an array that mimics a grid like the following
+                        using nested <code>for</code> loops:
+                    </li>
+                </ol>
+                <pre><code class="language-jsx">
+[[0, 1, 2],
+[0, 1, 2],
+[0, 1, 2]]
+
+</code></pre>
+
+                <ol class="custom-list" start="4">
+                    <li>
+                        Given a grid like the previous ones, write a nested
+                        <code>for</code> loop that would change every number to
+                        an x.
+                    </li>
+                </ol>
+                <pre><code class="language-jsx">
+var grid = [
+["x", ...],
+["x", ...],
+["x",...], 
+...]
+
+</code></pre>
+                <p>Result of a Correct Solution:</p>
+                <pre><code class="language-jsx">
+[["x", "x", "x"],
+["x", "x", "x"],
+["x", "x", "x"]]
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>A bigger picture</h3>
+                <p>
+                    You'll begin to learn even more how important arrays are in
+                    development. The optional challenges in this practice use
+                    nested arrays. These are used to represent grids. Many board
+                    games would be simulated using 2 dimensional arrays.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>If you get stuck</h3>
+                <p>This is a top go to pattern for code challenges:</p>
+                <ol class="custom-list">
+                    <li>Define your accumulator - [], {}, 0, or ""</li>
+                    <li>Build on it using your for loop</li>
+                    <li>return or log your accumulator</li>
+                </ol>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

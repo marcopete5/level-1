@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nested Loops</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Nested Loops</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Understand the concept of nested loops in JavaScript
+                    </li>
+                    <li>
+                        Learn how to create and access multidimensional arrays
+                    </li>
+                    <li>
+                        Understand the application and usage of nested loops
+                    </li>
+                    <li>
+                        Learn the potential pitfalls and dangers of nested loops
+                    </li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cqRr8bUR?pl=pQMWgWMUg"
+                    title="Nested Loops"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining nested loops and multidimensional arrays in JavaScript"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Nested loops are a very useful tool that we have access to
+                    in JavaScript. They can be used for a variety of things,
+                    such as accessing/creating matrices, or building a game
+                    similar to Battleship using a grid like system.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Multidimensional Arrays</h3>
+                <p>
+                    We refer to arrays inside of arrays as "Multidimensional
+                    Arrays." People might also call them "Nested arrays."
+                    Specifically, two layers deep is a "Two Dimensional Array,"
+                    three layers deep is a "Three Dimensional Array."
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Uses</h3>
+                <p>First, let's take a look at our array</p>
+                <pre><code class="language-jsx">var arr = [[1,2], [3,4], [5,6]];
+</code></pre>
+                <p>It's easier if we look at it like this</p>
+                <pre><code class="language-jsx">// the variable arr is an array full of arrays
+var arr = [
+    [1,2], // &lt;-- this is an array
+    [3,4], // &lt;-- this is an array
+    [5,6]  // &lt;-- this is an array
+];
+</code></pre>
+                <p>Now let's look at the first for loop</p>
+                <pre><code class="language-jsx">for (var i = 0; i &lt; arr.length; i++){
+    console.log(arr[i])
+}
+</code></pre>
+                <p>
+                    We are console logging <code>arr[i]</code>,
+                    <code>i</code> starts at a value of <code>0</code> and
+                    increments 1 each round through the loop.
+                </p>
+                <p>Therefore our console will look like this</p>
+                <pre><code class="language-jsx">[1,2] // arr[0] or the first time through the loop
+[3,4] // arr[1] or 2nd loop
+[5,6] // arr[2] or 3rd loop
+</code></pre>
+                <p>Let's do the nested loop now</p>
+                <pre><code class="language-jsx">for (var i = 0; i &lt; arr.length; i++){
+    for (var j = 0; j &lt; arr[i].length; j++){
+        console.log(arr[i][j]);
+    }
+}
+</code></pre>
+                <p>The console.log here will print out like this</p>
+                <pre><code class="language-jsx">//I listed below next to each number what arr[i][j] will actually look like each round through the for loops.
+
+1 // arr[0][0]
+2 // arr[0][1]
+3 // arr[1][0]
+4 // arr[1][1]
+5 // arr[2][0]
+6 // arr[2][1]
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Warning</h3>
+                <p>
+                    Nested loops are often considered dangerous. They are fine
+                    on a small scale, but let's pretend we have an app with
+                    users and each of the users can favorite other user's
+                    profiles.
+                </p>
+                <p>
+                    We wouldn't want to write a nested loop that looped through
+                    all our users, and each time it did that, looped through the
+                    users again to see if that user had favorited any other
+                    user.
+                </p>
+                <p>
+                    This operation would perform fairly quick if we just had 10
+                    users.
+                </p>
+                <p>
+                    It would loop through each user, and on each user it would
+                    loop 10 times to check that user against each of the others.
+                    Meaning the loop would run 100 times
+                </p>
+                <p>
+                    But if we had 1,000 users, that would be 1,000,000 checks.
+                    This operation would become exponentially slower the more
+                    users we get. This is part of the Big O discussion, but
+                    that's all we'll mention here.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

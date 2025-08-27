@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Node Calculator</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">Node Calculator</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    You are going to create a calculator in pure JavaScript
+                    using <code>NodeJS</code> and <code>readline-sync</code>.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Your script must have:</h3>
+                <ul class="custom-list">
+                    <li>
+                        A function that adds two numbers and returns the result
+                    </li>
+                    <li>
+                        A function that multiplies two numbers and returns the
+                        result
+                    </li>
+                    <li>
+                        A function that divides two numbers and returns the
+                        result
+                    </li>
+                    <li>
+                        A function that subtracts two numbers and returns the
+                        result
+                    </li>
+                    <li>
+                        Each function will have 2 parameters, <code>num1</code>,
+                        <code>num2</code>
+                    </li>
+                    <li>On the console the prompt will print to the user:</li>
+                    <ul class="custom-list">
+                        <li>
+                            <em>Please enter your first number</em> (store that
+                            number)
+                        </li>
+                        <li>
+                            <em>Please enter your second number</em> (store that
+                            number)
+                        </li>
+                        <li>
+                            <em
+                                >Please enter the operation to perform:
+                                <strong>add</strong>, <strong>sub</strong>,
+                                <strong>mul</strong>, <strong>div</strong></em
+                            >
+                            (then store the operation)
+                        </li>
+                    </ul>
+                    <li>
+                        Based on the operation entered by the user, you will
+                        call one of your 4 functions to perform the correct
+                        operation
+                    </li>
+                    <li>
+                        You will then print to the console:
+                        <em>The result is: [the result]</em>
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>DEMO OF COMPLETED ASSIGNMENT</h3>
+                <iframe
+                    class="video-embed"
+                    width="1280"
+                    height="720"
+                    style="border: 0"
+                    scrolling="no"
+                    src="https://go.screenpal.com/player/cTjtqhn2M3i?controls=1&share=1&download=1&embed=1&cl=1&width=1280&height=720&overlays=1&ff=1"
+                    allowfullscreen="true"></iframe>
+            </div>
+
+            <div class="section">
+                <h3>To get set up:</h3>
+                <ul class="custom-list">
+                    <li>
+                        <code>cd</code> into the folder you'll be working in.
+                    </li>
+                    <li>run <code>npm install readline-sync</code></li>
+                    <li>
+                        At the top of your JS file, include
+                        <strong
+                            ><code
+                                >const readline = require("readline-sync")</code
+                            ></strong
+                        >
+                    </li>
+                    <li>
+                        For documentation on the
+                        <code>readline-sync</code> package, check out the
+                        <a
+                            href="https://www.npmjs.com/package/readline-sync"
+                            target="_blank"
+                            rel="noopener"
+                            >readline-sync docs on npmjs.org</a
+                        >
+                    </li>
+                    <li>
+                        There are two places we run JavaScript. The browser and
+                        node. Only node has <code>require</code> defined, so
+                        you’ll need to run your file with
+                        <code>node filename.js</code>
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Tips:</h3>
+                <p>
+                    Spend some time making sure you know the difference between
+                    a function call's "argument" and a function's "parameter".
+                </p>
+                <p>
+                    You will have an if statement run a different function
+                    depending on what the user chooses on the third readline
+                    prompt.
+                </p>
+                <pre><code class="language-jsx">const operator = readlinesync.keyIn("do you want to (a)dd, (s)ubract, 
+    (d)ivide, or (m)ultiply?")
+
+if(){
+
+}
+</code></pre>
+                <p>
+                    A function can take values as arguments and a function will
+                    return a value. If you console log the function call, you
+                    can see that value.
+                </p>
+                <pre><code class="language-jsx">console.log(add(3, 4))
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

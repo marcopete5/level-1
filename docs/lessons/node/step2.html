@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NPM &amp; readline-sync</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">NPM &amp; readline-sync</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Understand what NPM is and how it can be utilized in
+                        their projects
+                    </li>
+                    <li>
+                        Learn how to initialize a node module with
+                        <code>npm init -y</code>
+                    </li>
+                    <li>Learn how to install NPM packages locally</li>
+                    <li>
+                        Understand how to use the
+                        <code>readline-sync</code> package and import it into
+                        their files using <code>require()</code>
+                    </li>
+                    <li>
+                        Learn how to add <code>/node_modules</code> to their git
+                        repo's <code>.gitignore</code> file
+                    </li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://www.youtube.com/embed/nbcloRxPfX0"
+                    title="NPM &amp; readline-sync"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining NPM, package installation, and using readline-sync"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+                <p>
+                    <a
+                        href="https://coursework.vschool.io/computer-setup-for-v-school/#automaticsetupwithbashscript"
+                        target="_blank"
+                        rel="noopener"
+                        >V School students will already have NPM installed</a
+                    >
+                </p>
+                <p>
+                    <a
+                        href="https://coursework.vschool.io/npm-introduction-using-readline-sync/#commands"
+                        target="_blank"
+                        rel="noopener"
+                        >Click here to go to the cheet sheet</a
+                    >
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    NPM, or Node Package Manager, helps us utilze 3rd party
+                    packages.
+                </p>
+                <p>
+                    These packages will help us solve many problems that
+                    developers regularly come up against.
+                </p>
+                <p>
+                    In terminal, if we navigate to our project folder, we can
+                    run <code>npm init -y</code>
+                </p>
+                <p>
+                    This will create a <code>package.json</code> file for us.
+                    This file officially makes the project a node module, and
+                    will contain meta information about our project, including
+                    what packages we used.
+                </p>
+                <p>
+                    We can run <code>npm install [package name]</code> any time
+                    to install npm packages locally, to the specific project
+                    that we're working on.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>readline-sync</h3>
+                <p>
+                    Still in your project folder, watch your
+                    <code>package.json</code> file as you run
+                    <code>npm install readline-sync</code>.
+                </p>
+                <p>
+                    It adds a <code>dependencies</code> section, and puts
+                    <code>readline-sync</code> and the proper version in
+                    <code>package.json</code>
+                </p>
+                <p>
+                    This will be helpful when you or other developers clone down
+                    your project from github.
+                </p>
+                <p>
+                    More importantly, it gives us the
+                    <code>node_modules</code> folder and adds the
+                    <code>readline-sync</code> package to it.
+                </p>
+                <p>Our file structure will now look like:</p>
+                <pre><code class="language-jsx">project/
+    /node_modules/
+        /readline-sync/
+    app.js
+    package.json
+</code></pre>
+                <p>
+                    Remember to put <code>/node_modules</code> in your git
+                    repo's <code>.gitignore</code> file.
+                </p>
+                <p>
+                    The last thing we need to do before using methods from the
+                    helpful third party package is to import it into our file
+                    using <code>require()</code>.
+                </p>
+                <pre><code class="language-jsx">const readline = require("readline-sync")
+</code></pre>
+                <p>
+                    Here is one example from
+                    <a
+                        href="https://www.npmjs.com/package/readline-sync"
+                        target="_blank"
+                        rel="noopener"
+                        >the docs</a
+                    >, check them out for more cool methods from readline.
+                </p>
+                <pre><code class="language-jsx">const userName = readline.question('May I have your name? ');
+console.log('Hi ' + userName + '!');
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Commands</h3>
+                <p>
+                    <code>npm init -y</code> - Run this command in your project
+                    folder to make it a node module
+                </p>
+                <pre><code class="language-bash">npm init -y</code></pre>
+                <p>
+                    <code>npm install [package name]</code> - Run this command
+                    in your project folder to install a local npm package.
+                </p>
+                <pre><code class="language-bash">npm install [package name]</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

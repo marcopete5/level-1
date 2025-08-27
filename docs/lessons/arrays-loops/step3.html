@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Arrays &amp; Loops</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Arrays &amp; Loops</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>Understand the concept of array iteration</li>
+                    <li>Learn how to use loops to iterate over arrays</li>
+                    <li>
+                        Understand how to use array indices to access individual
+                        array elements
+                    </li>
+                    <li>
+                        Learn how to use the <code>.length</code> property of
+                        arrays
+                    </li>
+                    <li>
+                        Practice using loops to modify or inspect array elements
+                    </li>
+                </ul>
+                <aside>
+                    <p>
+                        ⚠️ The video contains an error at approximately ~6
+                        minutes left, at Problem #3. the logic should be
+                        <code>numbersArr[i] % 2 !== 0</code> (if a number, when
+                        divided by 2, does not return 0, it is therefore an odd
+                        number) not <code>numbersArr[i]%3 === 0</code> (this is
+                        incorrect because this will only return 0 if a number is
+                        divisible by 3, not if it’s odd.)
+                    </p>
+                </aside>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cN3WMNAL?pl=pQMWgWMUg"
+                    title="Arrays &amp; Loops"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining array iteration and loops in JavaScript"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Usage</h3>
+                <p>
+                    Often times we will want to "loop over" or "iterate over"
+                    and array. This means we go and dig into each of the items
+                    in our array and either check it for something or do
+                    something with each item.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Examples</h3>
+                <h4>Meal Helper App</h4>
+                <p>
+                    A user selects 5 ingredients in a list of ingredients and
+                    clicks a button to give those ingredients an "added" status.
+                </p>
+                <p>
+                    You would loop through an array of
+                    <code>checkedIngredients</code> and add a
+                    <code>isAdded</code> property to each.
+                </p>
+                <h4>Trading Card App</h4>
+                <p>
+                    You receive data for 100 trading cards from a data base, but
+                    you only want to display the ones where the card was made
+                    before 1980.
+                </p>
+                <p>
+                    You would loop through the array of cards from the data
+                    base, and check what year each one was made, and only
+                    display the ones where <code>the cards year &lt; 1980</code>
+                </p>
+                <h4>Grocery Store Inventory App</h4>
+                <p>
+                    A grocery store has an array of all their fruit. They would
+                    like to count how many bananas they have.
+                </p>
+                <p>
+                    They would loop through all of their fruit and add one to a
+                    variable for every fruit that was a banana.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>The code</h3>
+                <p>Let us print every animal from an array of animals.</p>
+                <pre><code class="language-jsx">var animals = ["dog", "cat", "octopus", "blowfish", "lion"]
+
+for (var i = 0; i &lt; animals.length; i++){
+  console.log(animals[i])
+}
+</code></pre>
+                <p>Two big things that we need to pay attention to.</p>
+                <p>
+                    <strong>#1 <code>.length</code></strong>
+                </p>
+                <p>
+                    Every array has a property called <code>.length</code>. This
+                    will tell us how many items are in the array. Since we may
+                    not know how many items are going to be in an array, we can
+                    not say:
+                </p>
+                <pre><code class="language-jsx">for (var i = 0; i &lt; 5; i++){
+  console.log(animals[i])
+}
+</code></pre>
+                <p>
+                    We can't use 5, or 10, or 1000000. But how many times our
+                    loop runs needs to be <em>dynamic</em>. So we use
+                    <code>arrayName.length</code>.
+                </p>
+                <p>
+                    <strong>#2 <code>arrayName[i]</code></strong>
+                </p>
+                <p>
+                    the variable <code>i</code> starts at <code>0</code>. We
+                    tell it to do that when we say <code>var i = 0</code>. In
+                    our first time through the loop in our animals example,
+                    <code>i</code> will equal <code>0</code>, so if we say:
+                    <code>animals[i]</code>, that's like saying:
+                    <code>animals[0]</code>. What is
+                    <code>animals[0]</code> referring to?
+                </p>
+                <p>
+                    What will <code>i</code> be the next or second time through
+                    the loop?
+                </p>
+                <p>
+                    That's right, <code>1</code>. And what will
+                    <code>animals[i]</code> be? What about the next time
+                    through? And the next?
+                </p>
+                <p>
+                    This is how we will "loop through" or "iterate through" a
+                    loop.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Practice</h3>
+                <p>
+                    Loop through the following array, and log to the console
+                    "hooray" for every party there is.
+                </p>
+                <pre><code class="language-jsx">var eventsAtWork = ["work", "pretend to work", "party", "work", "meeting", "party", "daily grind", "work", "party"]
+</code></pre>
+                <p>
+                    Loop through the following array, and count how many "trues"
+                    there are.
+                </p>
+                <pre><code class="language-jsx">var booleans = [true, true, false, true, false, false, false]
+</code></pre>
+                <p>
+                    Add an <code>isAdmin</code> property to each of the users in
+                    this array.
+                </p>
+                <pre><code class="language-jsx">var users = [
+  {
+    name: "Sophie",
+    age: 12
+  },
+  {
+    name: "Larry",
+    age: 32
+  },
+  {
+    name: "Cathy",
+    age: 40
+  }
+]
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

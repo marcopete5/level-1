@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Arrays Review</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Arrays Review</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ol class="custom-list">
+                    <li>
+                        Understand what arrays are and how they are used in
+                        JavaScript.
+                    </li>
+                    <li>
+                        Be able to create arrays and access elements within
+                        them.
+                    </li>
+                    <li>Understand the concept of 'index' in an array.</li>
+                    <li>Use the <code>.length</code> property of an array.</li>
+                    <li>
+                        Understand how to access the last element of an array
+                        using the <code>.length</code> property.
+                    </li>
+                </ol>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cvzqvZUR?pl=pQMWgWMUg"
+                    title="Arrays Review"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining arrays, their creation, indexing, and properties in JavaScript"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Arrays are a data structure we can use to collect together
+                    multiple other pieces of data. Essentially, it's like a box
+                    that holds things inside in a specified order.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Creating an array</h3>
+                <p>
+                    Arrays are created simply by surrounding the pieces of data
+                    you want in the array with square brackets (<code>[</code>
+                    and <code>]</code>).
+                </p>
+                <pre><code class="language-jsx">var myArray = [1, 2, 3];
+var mixedArray = [
+    true,
+    42,
+    "Hello world",
+    ["cat", "in", "the", "hat"],
+    { title: "Catcher in the Rye", author: "J. D. Salinger" },
+    function add(a,b) {return a + b}
+];
+</code></pre>
+                <p>
+                    As you can see in <code>mixedArray</code>, JavaScript arrays
+                    can contain any other data type in them, even if they're
+                    mixed together. In some languages you have to specify what
+                    type of data an array will contain, forcing you to create
+                    arrays with only one data type. (All strings, all booleans,
+                    etc. but no mixtures).
+                </p>
+                <p>
+                    That being said, if you find yourself writing an array that
+                    contains multiple different data types in it, you're most
+                    likely going to be better off using an object instead of an
+                    array.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Accessing elements from an array</h3>
+                <p>
+                    Each item in an array is automatically assigned a position
+                    (called an "index") in the array. If it's the very first
+                    item in the array, it has an index of 0. (All arrays start
+                    with an index of 0. It's confusing at first, but you'll get
+                    used to it quickly).
+                </p>
+                <p>
+                    To access elements in an array, you need to know which index
+                    the item you're looking for is at. To access the individual
+                    element in the array, you use square bracket notation:
+                    <code>myArray[&lt;index of the item you want&gt;]</code>.
+                    For example:
+                </p>
+                <pre><code class="language-jsx">var turtles = ["Leo", "Don", "Raph", "Mike"];
+
+// to access "Leo":
+turtles[0];  // "Leo" is at index 0
+
+// to access "Mike":
+turtles[3];  // "Mike" is at index 3
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Array Properties</h3>
+                <p>
+                    The only property you need to know for now is the
+                    <code>.length</code> property, which returns the number of
+                    items in the array.
+                </p>
+                <pre><code class="language-jsx">var myArray = ["I", "Like", "Turtles"];
+console.log(myArray.length) . // 3
+</code></pre>
+                <aside>
+                    <p>
+                        Critical Thinking: How might you access the last element
+                        from an array using the array's
+                        <code>.length</code> property?
+                    </p>
+                </aside>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
