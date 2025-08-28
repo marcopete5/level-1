@@ -1,0 +1,62 @@
+/* Universal box-sizing and font-size reset */
+* {
+    box-sizing: border-box;
+    font-size: 0px;
+}
+
+body {
+    margin: 50px;
+}
+
+.grid-container {
+    width: 100%;
+}
+
+.box {
+    display: inline-block;
+    height: 150px;
+    border: 5px solid white;
+}
+
+/* Color definitions */
+.pink {
+    background-color: #f5c6d6;
+}
+.dark-pink {
+    background-color: #ee2e84;
+}
+.light-blue {
+    background-color: #85cfd8;
+}
+.green {
+    background-color: #8dc63f;
+}
+.orange {
+    background-color: #e76e34;
+}
+
+/* Large screen layout (default) */
+.pink {
+    width: 100%;
+}
+.dark-pink {
+    width: 25%;
+}
+.light-blue {
+    width: 50%;
+}
+.green {
+    width: 75%;
+}
+.orange {
+    width: 25%;
+}
+
+/* Small screen layout (below 768px) */
+@media (max-width: 768px) {
+    .box {
+        width: 100%;
+        height: 50px;
+        border: 1px solid white;
+    }
+}

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Responsive Design</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Responsive Design</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Understand the concept of responsive web design and its
+                        importance.
+                    </li>
+                    <li>
+                        Be able to use media queries to create adaptive designs
+                        for different screen sizes.
+                    </li>
+                    <li>
+                        Understand the difference between
+                        <code>min-width</code> and <code>max-width</code> in
+                        media queries.
+                    </li>
+                    <li>Know what it means to build mobile-first designs.</li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cEe8qdTB?pl=pQMWgWMUg"
+                    title="Responsive Design"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining responsive web design, media queries, min-width, max-width, and mobile-first design"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    In this age of mobile devices the developer has to account
+                    for their product being viewed on a hand held or tablet
+                    sized device as well as laptops and desktops. This means
+                    your site should look great on any size screen!
+                </p>
+                <p>
+                    <a
+                        href="http://www.burlingtonnews.net/burlington_ufo_center.html"
+                        target="_blank"
+                        rel="noopener"
+                        >Here</a
+                    >
+                    is an example of a website that does not adapt to screen
+                    size. (Laptops and desktops: follow the link, grab a corner
+                    of your browser and shrink it to phone size...notice how
+                    none of the elements reposition and much of the information
+                    is offscreen because of it? This makes users very unhappy.)
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Responsive web design</h3>
+                <p>
+                    Responsive web design is an approach to web design aimed at
+                    making your sites content look great on all screen sizes.
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/12/Screen-Shot-2016-12-26-at-9.49.14-PM.png"
+                        alt="Example of a responsive website adapting to different screen sizes" />
+                </p>
+                <p>
+                    These days, all web apps should be created with this
+                    approach.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Media queries</h3>
+                <p>
+                    A media query is a fancy way of asking "How wide is the
+                    window." We can also query to check if our device is in
+                    landscape mode.
+                </p>
+                <p>
+                    It's almost like writing an <code>if</code> statement for
+                    your CSS.
+                </p>
+                <p>In our CSS, we could have the line:</p>
+                <pre><code class="language-css">
+@media (max-width: 500px)&#123;&#125;
+
+</code></pre>
+                <p>
+                    This is like saying, <code>if</code> the screen(or window of
+                    the browser) is less than 500px. We write the
+                    <code>then</code> part of the if-then statement in brackets.
+                </p>
+                <pre><code class="language-css">
+@media (orientation: landscape) &#123;
+    .my-class &#123;
+        color: red;
+    &#125;
+&#125;
+
+</code></pre>
+                <p>
+                    This one is saying: <code>If</code> the device in in
+                    landscape <code>then</code> turn .my-class red.
+                </p>
+                <p>
+                    This example is arbitrary, but we could see how it would be
+                    nice to show certain wider content when in landscape, and
+                    hide it while our phone or tablet is in held upright.
+                </p>
+                <p>These work with <code>and</code> statements as well...</p>
+                <pre><code class="language-css">
+@media (min-width: 600px) and (max-width: 800px) &#123;
+  html &#123; background: red; &#125;
+&#125;
+
+</code></pre>
+                <p>
+                    So the screen must have a minimum width of 600 pixels AND a
+                    maximum width no greater than 800 pixels in order to run the
+                    code inside of the &#123;&#125;'s.
+                </p>
+                <p>
+                    Media queries also work with <code>or</code> statements...
+                </p>
+                <pre><code class="language-css">
+@media (max-width: 600px), (min-width: 800px) &#123;
+  html &#123; background: red; &#125;
+&#125;
+
+</code></pre>
+                <p>
+                    Notice we use a "," rather than <code>or</code>, that is
+                    because the above statement will actually be read as two
+                    different media queries, but for the sake of understanding
+                    you can view this as a simple or statement.
+                </p>
+                <p>
+                    So we might have several media queries to cover the many
+                    different size screens our site might be viewed on. We might
+                    have one for phone sized screens, one for tablets and one
+                    for laptops.
+                </p>
+                <p>
+                    Here is sudo-code (not actual code, but an english
+                    approximation of the code) as an example:
+                </p>
+                <pre><code class="language-css">
+if (phone size) do this &#123;&#125;
+if (tablet size) do this &#123;&#125;
+if (larger than tablet) do this &#123;&#125;
+
+</code></pre>
+                <p>
+                    Let's now break down the two phrases you will see most
+                    often...<code>max-width</code> and
+                    <code>min-width</code> and how to remember which does what.
+                </p>
+                <p>
+                    When using media queries we are checking to see if the
+                    screen size is between 0 and infinity but we will substitute
+                    <code>min-width</code>, if we have it, for the first number
+                    and <code>max-width</code>, if we have it, for the second
+                    number.
+                </p>
+                <pre><code class="language-css">
+0 through infinity
+        -or-
+min-width through max-width
+
+</code></pre>
+                <p>
+                    So, if we only have a <code>min-width</code> of 230px we are
+                    checking to see if our screen size is between
+                    min-width(230px) and infinity (we could say 10,000 if that
+                    helps).
+                </p>
+                <p><code>230px through 10,000px</code></p>
+                <p>
+                    If our screen size was 650px width would the following media
+                    query would be true or false?
+                </p>
+                <pre><code class="language-css">
+@media (min-width: 100px)&#123;...&#125;
+
+</code></pre>
+                <pre><code class="language-css">
+@media (min-width: 100px)&#123;...&#125; // 650 -> true
+
+</code></pre>
+                <p>
+                    Our screen size of 650px is between min-width (100) and
+                    infinity so the above code in &#123;...&#125; will run.
+                </p>
+                <p>Here is another:</p>
+                <pre><code class="language-css">
+@media (max-width: 600px)&#123;...&#125;
+
+</code></pre>
+                <pre><code class="language-css">
+@media (max-width: 600px)&#123;...&#125; //650 -> false
+
+</code></pre>
+                <p>
+                    In the above we are checking to see if our screen size
+                    (650px) is between 0 and <code>max-width</code>... 0 - 600.
+                    650 is not between them so the code in the
+                    <code>&#123;...&#125;</code> will not run.
+                </p>
+                <pre><code class="language-css">
+@media (min-width: 601) and (max-width: 850px)&#123;...&#125;
+
+</code></pre>
+                <pre><code class="language-css">
+@media (min-width: 601) and (max-width: 850px)&#123;...&#125; // 650px -> true
+
+</code></pre>
+                <p>
+                    We are checking to see if our screen size (650px) is between
+                    min-width and <code>max-width</code> which translates to:
+                    601 - 850. 650 is between those two numbers so the
+                    <code>&#123;...&#125;</code> will run.
+                </p>
+                <p>
+                    Let's get a bit more complicated now. If our screen size is
+                    650px what color will our background be?
+                </p>
+                <pre><code class="language-css">
+@media only screen and (min-width: 640px)  &#123;background: blue&#125;
+@media only screen and (min-width: 479px)  &#123;background: red&#125;
+
+</code></pre>
+                <p>You guessed it! Red!</p>
+                <p>
+                    Why? Because both media queries are true and so first the
+                    screen will be turned blue by the first query (too fast to
+                    see), then it will be turned red by the second. And red it
+                    will stay. (Unless acted upon later in our CSS!)
+                </p>
+                <p>
+                    Suppose we wanted the first (background: blue) to apply to
+                    any screen size over 640?
+                </p>
+                <pre><code class="language-css">
+@media only screen and (min-width: 640px)  &#123;background: blue&#125;
+@media only screen and (min-width: 479px), (max-width: 639px) &#123;background: red&#125;
+
+</code></pre>
+                <p>
+                    We added (max-width) to the second to give it a range. Thus
+                    the first will handle anything between min-width and
+                    infinity (10,000) so...640 - 10,000. And the second would be
+                    between min-width(479) and max-width (639) so...479 - 639.
+                </p>
+                <pre><code class="language-css">
+479 - 639 --> red
+640 - 10,000 --> blue
+
+</code></pre>
+                <p>
+                    Note: I've used 10,000 as infinity to make it easier to read
+                    only. Infinity is, of course, not 10,000.
+                </p>
+                <p>
+                    Note: <code>only screen</code> is made of two recognized key
+                    words, the first only is a keyword not recognized by older
+                    browsers and will keep this block of CSS from running on
+                    them. The second screen is saying if we are printing to a
+                    screen rather than email or printer, etc. then do the
+                    following code.
+                </p>
+                <p>
+                    For more information on <code>only</code> see this Stack
+                    Overflow answer @Hybrid's answer.
+                </p>
+                <p>
+                    <a
+                        href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/"
+                        target="_blank"
+                        rel="noopener"
+                        >Here</a
+                    >
+                    is a link with the various sizes of common devices including
+                    Apple Watches, various phones, general rules for
+                    laptops/desktops (because there are so many) and tablets.
+                </p>
+                <p>
+                    Let's look at some mobile first examples (because you should
+                    ALWAYS design for mobile first):
+                </p>
+                <pre><code class="language-css">
+// This applies from 0px to 600px
+body &#123;
+  background: red;
+&#125;
+
+</code></pre>
+                <pre><code class="language-css">
+// This applies from 600px onwards
+@media (min-width: 600px) &#123;
+  body &#123;
+    background: green;
+  &#125;
+&#125;
+
+</code></pre>
+                <p>
+                    This accounts for only two sizes, but that is still better
+                    than accounting for only one, much better.
+                </p>
+                <p>Here is a larger, or rather more detailed, example:</p>
+                <pre><code class="language-css">
+/*Mobile Large 620px*/
+@media screen and (min-width: 38.75em) &#123;
+/*your code*/
+&#125;
+
+/*Tablet Small 740px*/
+@media screen and (min-width: 46.25em) &#123;
+/*your code*/
+&#125;
+
+/*Tablet Large 880px */
+@media screen and (min-width: 55em) &#123;
+/*your code*/
+&#125;
+
+/*Desktop Small 955px*/
+@media screen and (min-width: 59.6875em) &#123;
+/*your code*/
+&#125;
+
+/*15.5 Desktop Medium 1100px */
+@media screen and (min-width: 68.75em) &#123;
+/*your code*/
+&#125;
+
+/*15.6 Desktop Large 1240px*/
+@media screen and (min-width: 77.5em) &#123;
+/*your code*/
+&#125;
+
+/*Desktop X-Large 1403px */
+@media screen and (min-width: 87.6875em) &#123;
+/*your code*/
+&#125;
+
+/*Print*/
+@media print &#123;
+/*your code*/
+&#125;
+
+</code></pre>
+                <p>
+                    Note: Bootstrap (the framework) uses media queries so while
+                    you will find that Bootstrap might be an easier choice to
+                    create responsive websites, you need to understand Media
+                    Queries to understand Bootstrap.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Mobile First</h3>
+                <p>
+                    Mobile First is a popular design practice. This means that
+                    we design for phones and small screens first.
+                </p>
+                <p>This helps our content load quicker on small screes.</p>
+                <p>
+                    Instead of using <code>max</code> as in
+                    <code>@media only screen and (max-width: 750px)</code> we
+                    use <code>min</code>.
+                </p>
+                <pre><code class="language-css">
+@media only screen and (min-width: 750px)
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Common usage</h3>
+                <p>
+                    You will often see, and will more than likely want to
+                    encapsulate all the design for your media queries group in
+                    their sizes.
+                </p>
+                <pre><code class="language-css">
+@media only screen and (min-width: 500px)&#123;
+  p &#123;
+    font-size: 10px;
+  &#125;
+  .nav-bar &#123;
+    display: none;
+  &#125;
+&#125;
+
+@media only screen and (min-width: 750px)&#123;
+  p &#123;
+    font-size: 15px;
+  &#125;
+  .nav-bar &#123;
+    display: block;
+  &#125;
+&#125;
+
+</code></pre>
+                <p>
+                    Media queries will overrule general CSS written outside of a
+                    media query block. So in both of the follow cases, the
+                    background color would be blue with the screen was less than
+                    500px wide.
+                </p>
+                <pre><code class="language-css">
+@media only screen and (max-width: 500px)&#123;
+  body &#123;
+    background-color: blue;
+  &#125;
+&#125;
+
+body &#123;
+  background-color: red;
+&#125;
+
+</code></pre>
+                <pre><code class="language-css">
+body &#123;
+  background-color: red;
+&#125;
+
+@media only screen and (max-width: 500px)&#123;
+  body &#123;
+    background-color: blue;
+  &#125;
+&#125;
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

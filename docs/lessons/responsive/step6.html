@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Grid Part 1</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">CSS Grid Part 1</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>Learn how to create a grid container</li>
+                    <li>
+                        Understand the use of the property
+                        <code>grid-template-columns</code>
+                    </li>
+                    <li>
+                        Learn how to prototype layouts using the
+                        <code>grid-template-areas</code> selector
+                    </li>
+                    <li>
+                        Understand how to use <code>px</code>,
+                        <code>auto</code>, and <code>fr</code> in
+                        grid-template-columns
+                    </li>
+                    <li>
+                        Understand how to create responsive layouts with CSS
+                        Grid
+                    </li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cdPr9VCz?pl=pQMWgWMUg"
+                    title="CSS Grid Part 1"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining CSS Grid container creation, grid-template-columns, grid-template-areas, px, auto, fr, and responsive layouts"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Grid</h3>
+                <p>
+                    To make a container a grid container, it has to be
+                    <code>display: grid</code>.
+                </p>
+                <p>
+                    The appropriate way to set up grid columns is by using
+                    <code>grid-template-columns</code>.
+                </p>
+                <p>
+                    You can prototype layouts using the
+                    <code>grid-template-areas</code> selector (not covered in
+                    these lessons)
+                </p>
+                <p>
+                    This write-up is taken from the beautifully built course
+                    here:
+                    <a
+                        href="https://scrimba.com/g/gR8PTE"
+                        target="_blank"
+                        rel="noopener"
+                        >https://scrimba.com/g/gR8PTE</a
+                    >
+                </p>
+                <p>
+                    This will give you a brief rundown of the main functionality
+                    presented with CSS Grid and hopefully a simple explanation
+                    of how to implement it yourself.
+                </p>
+                <p>
+                    If you want the cool color scheme below add this to your
+                    css.
+                </p>
+                <pre><code class="language-css">
+.container > div &#123;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+&#125;
+
+html, body &#123;
+  background-color: #ffeead;
+  margin: 10px;
+&#125;
+
+.container > div:nth-child(1n) &#123;
+  background-color: #96ceb4;
+&#125;
+
+.container > div:nth-child(3n) &#123;
+  background-color: #88d8b0;
+&#125;
+
+.container > div:nth-child(2n) &#123;
+      background-color: #ff6f69;
+&#125;
+
+.container > div:nth-child(4n) &#123;
+      background-color: #ffcc5c;
+&#125;
+
+</code></pre>
+                <p>First, lets make a simple html page that looks like this.</p>
+                <pre><code class="language-jsx">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel="stylesheet" href="index.css"&gt;
+        &lt;style&gt;
+            .container &#123;
+                display: grid;
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="container"&gt;
+            &lt;div&gt;1&lt;/div&gt;
+            &lt;div&gt;2&lt;/div&gt;
+            &lt;div&gt;3&lt;/div&gt;
+            &lt;div&gt;4&lt;/div&gt;
+            &lt;div&gt;5&lt;/div&gt;
+            &lt;div&gt;6&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+                <p>
+                    Adding <code>display: grid</code> will allow us to use all
+                    of the properties pertaining to CSS Grid.
+                </p>
+                <p>
+                    Feel free to style your div's however you want, it doesn't
+                    have to look like mine.
+                </p>
+                <p>But you should end up seeing something similar to this.</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.01.51-PM-1.png"
+                        alt="Simple CSS Grid layout with six numbered divs stacked vertically" />
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Grid-template-columns</h3>
+                <p>
+                    Now lets see what ways we can alter the different divs as
+                    columns.
+                </p>
+                <p>First we will look at using <code>px</code>.</p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: 100px 100px 100px;
+            &#125;
+
+</code></pre>
+                <p>
+                    Which tells our HTML page that we only want 3 columns and
+                    that we want each of them to only be 100px wide.
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.09.51-PM.png"
+                        alt="CSS Grid layout with three columns, each 100px wide" />
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: 100px 100px 100px 100px 100px 100px;
+            &#125;
+
+</code></pre>
+                <p>
+                    If you add 6, it will make 6 columns with a width of 100px.
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.11.21-PM.png"
+                        alt="CSS Grid layout with six columns, each 100px wide" />
+                </p>
+                <p>
+                    If you want it to be responsive you can use
+                    <code>auto</code> instead of a px length.
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: 100px auto 100px;
+            &#125;
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.13.17-PM.png"
+                        alt="CSS Grid layout with three columns, where the middle column uses auto width" />
+                </p>
+                <p>
+                    Feel free to make your window bigger and smaller and watch
+                    how the column labeled as auto expands/shrinks to fill the
+                    page.
+                </p>
+                <p>
+                    A more common alternative to <code>auto</code> is
+                    <code>fr</code>. <code>fr</code> stands for fraction. You
+                    can specify how many fractions of the window you want each
+                    column to take up by simply putting the number in front of
+                    <code>fr</code>. So if i want the left and right edges to
+                    take up <code>1fr</code> and i want the middle to take up
+                    <code>2fr</code>. The code would look like this.
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+            &#125;
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.17.15-PM.png"
+                        alt="CSS Grid layout with three columns using fractional units: 1fr, 2fr, 1fr" />
+                </p>
+                <p>
+                    You can go as high as you want, but will usually want to use
+                    the smallest fraction available. For example if I did the
+                    following code instead, it would produce the same result,
+                    but would introduce potentially undesirable problems later
+                    on.
+                </p>
+                <p><strong>DON'T DO THIS</strong></p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: 100fr 200fr 100fr;
+            &#125;
+
+</code></pre>
+                <p>
+                    But the point is that the proportion is what matters, not
+                    necessarily the fraction amount.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
