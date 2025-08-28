@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Responsive CSS Grid Layout</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                min-height: 100vh;
+                padding: 20px;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 30px;
+                font-size: 2.5rem;
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .current-layout {
+                text-align: center;
+                padding: 10px 20px;
+                margin-bottom: 20px;
+                border-radius: 8px;
+                font-weight: bold;
+                color: white;
+            }
+
+            .grid-container {
+                display: grid;
+                gap: 15px;
+                margin: 20px 0;
+                padding: 20px;
+                background: linear-gradient(145deg, #f0f0f0, #e6e6e6);
+                border-radius: 12px;
+                box-shadow: inset 5px 5px 10px #d1d1d1,
+                    inset -5-5px 10px #ffffff;
+            }
+
+            .grid-item {
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: white;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.2s ease;
+                min-height: 80px;
+            }
+
+            .grid-item:hover {
+                transform: translateY(-2px);
+            }
+
+            .header {
+                background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            }
+
+            .nav {
+                background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            }
+
+            .main {
+                background: linear-gradient(135deg, #45b7d1, #3498db);
+            }
+
+            .aside {
+                background: linear-gradient(135deg, #f9ca24, #f0932b);
+            }
+
+            .footer {
+                background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            }
+
+            .info-panel {
+                background: linear-gradient(135deg, #74b9ff, #0984e3);
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+
+            .code-example {
+                background: #2d3748;
+                color: #e2e8f0;
+                padding: 15px;
+                border-radius: 8px;
+                margin: 10px 0;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9rem;
+                overflow-x: auto;
+            }
+
+            /* Mobile Layout (Phone) */
+            @media (max-width: 767px) {
+                .current-layout {
+                    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+                }
+
+                .current-layout::before {
+                    content: '📱 Phone Layout (< 768px)';
+                }
+
+                .grid-container {
+                    grid-template-columns: 1fr;
+                    grid-template-areas:
+                        'header'
+                        'nav'
+                        'main'
+                        'aside'
+                        'footer';
+                }
+
+                .header {
+                    grid-area: header;
+                }
+                .nav {
+                    grid-area: nav;
+                }
+                .main {
+                    grid-area: main;
+                    min-height: 200px;
+                }
+                .aside {
+                    grid-area: aside;
+                }
+                .footer {
+                    grid-area: footer;
+                }
+
+                .container {
+                    padding: 15px;
+                    margin: 10px;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+
+            /* Tablet Layout */
+            @media (min-width: 768px) and (max-width: 1023px) {
+                .current-layout {
+                    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+                }
+
+                .current-layout::before {
+                    content: '📱 Tablet Layout (768px - 1023px)';
+                }
+
+                .grid-container {
+                    grid-template-columns: 200px 1fr;
+                    grid-template-areas:
+                        'header header'
+                        'nav main'
+                        'aside main'
+                        'footer footer';
+                }
+
+                .header {
+                    grid-area: header;
+                }
+                .nav {
+                    grid-area: nav;
+                }
+                .main {
+                    grid-area: main;
+                    min-height: 300px;
+                }
+                .aside {
+                    grid-area: aside;
+                }
+                .footer {
+                    grid-area: footer;
+                }
+            }
+
+            /* Desktop/Laptop Layout */
+            @media (min-width: 1024px) {
+                .current-layout {
+                    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+                }
+
+                .current-layout::before {
+                    content: '💻 Laptop Layout (≥ 1024px)';
+                }
+
+                .grid-container {
+                    grid-template-columns: 200px 1fr 200px;
+                    grid-template-areas:
+                        'header header header'
+                        'nav main aside'
+                        'footer footer footer';
+                }
+
+                .header {
+                    grid-area: header;
+                }
+                .nav {
+                    grid-area: nav;
+                }
+                .main {
+                    grid-area: main;
+                    min-height: 400px;
+                }
+                .aside {
+                    grid-area: aside;
+                }
+                .footer {
+                    grid-area: footer;
+                }
+            }
+
+            .resize-instruction {
+                background: linear-gradient(135deg, #00b894, #00cec9);
+                color: white;
+                padding: 15px;
+                border-radius: 8px;
+                text-align: center;
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Responsive CSS Grid Layout</h1>
+
+            <div class="grid-container">
+                <div class="grid-item header">Header</div>
+                <div class="grid-item nav">Navigation</div>
+                <div class="grid-item main">Main Content</div>
+                <div class="grid-item aside">Sidebar</div>
+                <div class="grid-item footer">Footer</div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Grid Part 3</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">CSS Grid Part 3</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students should:</p>
+                <ul class="custom-list">
+                    <li>
+                        Understand the use of <code>auto-fit</code> in creating
+                        responsive grid layouts.
+                    </li>
+                    <li>
+                        Learn and apply the <code>minmax()</code> function in
+                        CSS grid.
+                    </li>
+                    <li>
+                        Understand and apply the
+                        <code>grid-auto-rows</code> property in CSS grid.
+                    </li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cR4GvRCr?pl=pQMWgWMUg"
+                    title="CSS Grid Part 3"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining auto-fit, minmax(), and grid-auto-rows in CSS Grid"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>auto-fit</h3>
+                <p>Let's change our HTML code again to this</p>
+                <pre><code class="language-jsx">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel="stylesheet" href="index.css"&gt;
+        &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="container"&gt;
+            &lt;div&gt;1&lt;/div&gt;
+            &lt;div&gt;2&lt;/div&gt;
+            &lt;div&gt;3&lt;/div&gt;
+            &lt;div&gt;4&lt;/div&gt;
+            &lt;div&gt;5&lt;/div&gt;
+            &lt;div&gt;6&lt;/div&gt;
+            &lt;div&gt;7&lt;/div&gt;
+            &lt;div&gt;8&lt;/div&gt;
+            &lt;div&gt;9&lt;/div&gt;
+            &lt;div&gt;10&lt;/div&gt;
+            &lt;div&gt;11&lt;/div&gt;
+            &lt;div&gt;12&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+                <p>and our CSS to this</p>
+                <pre><code class="language-css">
+.container &#123;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(2, 100px);
+&#125;
+
+</code></pre>
+                <p>it should look like this</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.36.27-PM.png"
+                        alt="CSS Grid layout with six columns and two rows, each 100px" />
+                </p>
+                <p>
+                    if you make your window bigger and smaller you will see that
+                    it is not responsive.
+                </p>
+                <p>
+                    Well couldn't we just change
+                    <code>grid-template-columns: repeat(6, 100px);</code> to
+                    <code>grid-template-columns: repeat(6, 1fr);</code>?
+                </p>
+                <p>When we make the screen small it looks like this</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.39.46-PM.png"
+                        alt="CSS Grid layout with six columns using 1fr on a small screen" />
+                </p>
+                <p>and when its large it looks like this</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.39.59-PM.png"
+                        alt="CSS Grid layout with six columns using 1fr on a large screen" />
+                </p>
+                <p>
+                    What if you wanted all the containers to be
+                    <code>100px</code> wide and responsive?
+                </p>
+                <p>That's when you use <code>auto-fit</code>.</p>
+                <pre><code class="language-css">
+.container &#123;
+    display: grid;
+    grid-gap: 5px;
+
+    grid-template-columns: repeat(auto-fit, 100px);
+
+    grid-template-rows: repeat(2, 100px);
+&#125;
+
+</code></pre>
+                <p>
+                    Below is what the screen would look like at varying sizes.
+                </p>
+                <p>large screen</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.44.28-PM.png"
+                        alt="CSS Grid layout with auto-fit on a large screen, columns at 100px" />
+                </p>
+                <p>medium screen</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.44.41-PM.png"
+                        alt="CSS Grid layout with auto-fit on a medium screen, columns at 100px" />
+                </p>
+                <p>small screen</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.44.53-PM.png"
+                        alt="CSS Grid layout with auto-fit on a small screen, columns wrapping to next row" />
+                </p>
+                <p>
+                    Notice how they just fall into position when there is at
+                    least <code>100px</code> worth of space for them, otherwise
+                    they simply fall to the next row.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>minmax()</h3>
+                <p>But we are still left with another problem.</p>
+                <p>
+                    We have this awkward spot in between 0-100px where we get
+                    this ugly extra space on the side.
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.49.25-PM.png"
+                        alt="CSS Grid layout with auto-fit showing extra side space on a small screen" />
+                </p>
+                <p>
+                    To solve this we will use <code>minmax()</code> like so...
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+    display: grid;
+    grid-gap: 5px;
+
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    grid-template-rows: repeat(2, 100px);
+&#125;
+
+</code></pre>
+                <p>
+                    This says that our box's will be a minimum of 100px wide and
+                    a maximum of 1fr, thus solving the problem of the unwanted
+                    extra side space.
+                </p>
+                <p>
+                    This is a screen shot at the exact same screen width I had
+                    above just with the new code.
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.53.04-PM.png"
+                        alt="CSS Grid layout with minmax(100px, 1fr) eliminating extra side space" />
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>grid-auto-rows</h3>
+                <p>
+                    Our problems aren't all solved quite yet, however. You may
+                    have noticed that if you make your screen all the way to the
+                    smallest size, that it looks like this
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.55.57-PM.png"
+                        alt="CSS Grid layout with only two defined rows, causing overflow on small screens" />
+                </p>
+                <p>
+                    That is because we only have 2 rows defined currently. But
+                    since our grid is responsive now it may become difficult to
+                    predict how many rows there will be.
+                </p>
+                <p>
+                    So lets go into our CSS and change
+                    <code>grid-template-rows</code> to
+                    <code>grid-auto-rows</code>
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    grid-auto-rows: 100px;
+&#125;
+
+</code></pre>
+                <p>Now look at our window</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-1.03.48-PM.png"
+                        alt="CSS Grid layout with grid-auto-rows ensuring all rows are 100px high" />
+                </p>
+                <p>
+                    All the rows are now created with the height of
+                    <code>100px</code>!!!
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

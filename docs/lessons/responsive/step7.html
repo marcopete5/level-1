@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Grid Part 2</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">CSS Grid Part 2</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Understand how to use the
+                        <code>grid-template-columns</code> and
+                        <code>grid-template-rows</code> properties in CSS Grid.
+                    </li>
+                    <li>
+                        Learn how to use the <code>repeat()</code> function in
+                        CSS Grid.
+                    </li>
+                    <li>
+                        Be able to apply the <code>grid-gap</code> property to
+                        create space between grid items.
+                    </li>
+                    <li>
+                        Students should understand how to use
+                        <code>grid-template</code> to define rows and columns
+                        simultaneously.
+                    </li>
+                    <li>
+                        Students should learn how to use
+                        <code>grid-column-start</code>,
+                        <code>grid-column-end</code> and
+                        <code>grid-column</code> for positioning grid items.
+                    </li>
+                    <li>
+                        Students should understand how to use
+                        <code>grid-row</code> to control the vertical placement
+                        of grid items.
+                    </li>
+                    <li>
+                        Students should be able to apply the
+                        <code>grid-template-areas</code> property for more
+                        complex layouts.
+                    </li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/czN32MAw?pl=pQMWgWMUg"
+                    title="CSS Grid Part 2"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining grid-template-columns, grid-template-rows, repeat(), grid-gap, grid-template, grid-column, grid-row, and grid-template-areas"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    If you are wanting all your columns to be the same width,
+                    you can write
+                    <code>grid-template-columns: 1fr 1fr 1fr;</code> or you can
+                    use <code>repeat()</code>.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>repeat()</h3>
+                <p>
+                    <code>repeat()</code> takes two parameters, the first is the
+                    number of columns and the second is the column width.
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            &#125;
+
+</code></pre>
+                <p>and</p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+            &#125;
+
+</code></pre>
+                <p>would both produce the same result</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.23.45-PM.png"
+                        alt="CSS Grid layout with three columns of equal width using repeat(3, 1fr)" />
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: repeat(6, 50px);
+            &#125;
+
+</code></pre>
+                <p>would look like this</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.28.23-PM.png"
+                        alt="CSS Grid layout with six columns, each 50px wide using repeat(6, 50px)" />
+                </p>
+                <p>
+                    Remember that <code>repeat()</code> is only useful for when
+                    you are wanting all the columns to be the same size.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>grid-template-rows</h3>
+                <p>
+                    <code>grid-template-rows</code> is the same as
+                    <code>grid-template-columns</code> but with rows instead.
+                </p>
+                <p>
+                    So while with <code>grid-template-columns</code> you are
+                    setting/adjusting the <strong>width</strong>. With
+                    <code>grid-template-rows</code> you are setting/adjusting
+                    the <strong>height</strong>.
+                </p>
+                <p>
+                    One difference to note is that <code>fr</code> cannot be
+                    used with <code>grid-template-rows</code>.
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 100px 100px;
+            &#125;
+
+</code></pre>
+                <p>This will make 2 rows each with a height of 100px;</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.34.37-PM.png"
+                        alt="CSS Grid layout with three columns and two rows, each row 100px high" />
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 50px 100px;
+            &#125;
+
+</code></pre>
+                <p>would look like this.</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.35.20-PM.png"
+                        alt="CSS Grid layout with three columns, first row 50px high, second row 100px high" />
+                </p>
+                <p>
+                    Notice how the first row on this one is 50px high and the
+                    second is 100px;
+                </p>
+                <p>
+                    You can add more rows by adding more
+                    <code>px</code> amounts.if you don't add more
+                    <code>px</code> amounts for the amount of rows present, it
+                    will default to the height of the content inside of it.
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 100px;
+            &#125;
+
+</code></pre>
+                <p>
+                    So this would make 2 columns, but since we have 6 divs, the
+                    extra divs will run over and create 3 rows total. But we
+                    only specified the height of 1 row, so it would look like
+                    this
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.39.26-PM.png"
+                        alt="CSS Grid layout with two columns and three rows, first row 100px high, others auto height" />
+                </p>
+                <p>
+                    You can also use <code>repeat()</code> in the same way, just
+                    without using <code>fr</code> or <code>auto</code>. You have
+                    to use <code>px</code>.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>grid-gap</h3>
+                <p>
+                    <code>grid-gap</code> adds some space in between each of the
+                    divs to make it look a little nicer.
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 100px);
+                grid-gap: 5px;
+            &#125;
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.43.18-PM.png"
+                        alt="CSS Grid layout with three columns, two rows, and 5px grid-gap between items" />
+                </p>
+                <p>notice the space between each box.</p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>grid-template</h3>
+                <p>
+                    <code>grid-template</code> will provide a condensed version
+                    of what we did with <code>grid-template-rows</code> and
+                    <code>grid-template-columns</code>.
+                </p>
+                <p><code>grid-template</code> takes two values.</p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template: (grid-template-rows) / (grid-template-columns)
+                grid-gap: 5px;
+            &#125;
+
+</code></pre>
+                <p>The following code snippets would produce the same result</p>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 100px);
+                grid-gap: 5px;
+            &#125;
+
+</code></pre>
+                <pre><code class="language-css">
+.container &#123;
+                display: grid;
+                grid-template: repeat(2, 50px) / repeat(3, 1fr);
+                grid-gap: 5px;
+            &#125;
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-2.43.18-PM-1.png"
+                        alt="CSS Grid layout using grid-template with two rows (50px) and three columns (1fr)" />
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>POSITIONING</h3>
+                <p>Add the following code to your css.</p>
+                <pre><code class="language-css">
+.container &#123;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 40px 200px 40px;
+&#125;
+
+.header &#123;&#125;
+
+.menu &#123;&#125;
+
+.content &#123;&#125;
+
+.footer &#123;&#125;
+
+</code></pre>
+                <p>change your HTML to look like this</p>
+                <pre><code class="language-jsx">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel="stylesheet" href="index.css"&gt;
+        &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="header"&gt;HEADER&lt;/div&gt;
+            &lt;div class="menu"&gt;MENU&lt;/div&gt;
+            &lt;div class="content"&gt;CONTENT&lt;/div&gt;
+            &lt;div class="footer"&gt;FOOTER&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>grid-column-start, grid-column-end & grid-column</h3>
+                <p>Currently our page should look like this</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-4.03.54-PM.png"
+                        alt="CSS Grid layout with header, menu, content, and footer in two columns" />
+                </p>
+                <p>
+                    now lets add this code to our <code>.header</code> in our
+                    css
+                </p>
+                <pre><code class="language-css">
+.header &#123;
+     grid-column-start:1;
+     grid-column-end: 3;
+&#125;
+
+</code></pre>
+                <p>It will now look like this</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-4.06.52-PM.png"
+                        alt="CSS Grid layout with header spanning both columns" />
+                </p>
+                <p>
+                    Cool! Now our header spans the whole length of the window.
+                </p>
+                <p>
+                    Take note that this pushed our footer into a third row. You
+                    may be wondering why we set <code>grid-column-end</code> to
+                    3 when we only have 2 columns.
+                    <code>grid-column-end</code> goes to the start of the column
+                    indicated but does not include it. So it starts at column 1
+                    and goes to the start of column 3(or the end of column 2).
+                </p>
+                <p>
+                    For the exact same result in less code. You can use
+                    <code>grid-column</code> instead.
+                </p>
+                <pre><code class="language-css">
+.header &#123;
+     grid-column: 1/3;
+&#125;
+
+</code></pre>
+                <p>
+                    So to be clear, <code>grid-column</code> works like
+                    this.<code
+                        >grid-column:
+                        (grid-column-start)/(grid-column-end)</code
+                    >
+                </p>
+                <p>Another alternative is using <code>span</code> like this.</p>
+                <pre><code class="language-css">
+.footer &#123;
+    grid-column: 1 / span 2;
+&#125;
+
+</code></pre>
+                <p>
+                    This acts in the same way as shown by the result in our
+                    window.
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-4.19.18-PM.png"
+                        alt="CSS Grid layout with footer spanning both columns using span" />
+                </p>
+                <p>
+                    The difference between <code>grid-column: 1/3;</code> and
+                    <code>grid-column: 1 / span 2;</code> is that the former is
+                    specifying where specifically it is going to cover, whereas
+                    the latter indicates how a starting point and then how many
+                    columns it will span rather than just two specific
+                    locations.
+                </p>
+                <p>One more alternative is</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-4.19.18-PM.png"
+                        alt="CSS Grid layout with footer spanning the entire page width using -1" />
+                </p>
+                <p>
+                    Again this will produce the same result. The -1 will target
+                    the very last column line.
+                </p>
+                <p>
+                    This last method is the best route to take if you are
+                    wanting to span the whole page because you may not always
+                    know exactly how many columns there are and this will always
+                    span the full page width.
+                </p>
+                <p>
+                    Now lets fix the menu and content, we don't want them to
+                    share equal portions of the page. We can't use
+                    <code>grid-column</code> like we have been to fix it because
+                    we there are only 2 columns so we cant make the content
+                    column cover more of the page unless we make changes in our
+                    <code>grid-template</code>.
+                </p>
+                <p>One possible option would be to do something like this</p>
+                <pre><code class="language-css">
+.container &#123;
+    display: grid;
+    grid-gap: 3px;
+
+    grid-template-columns: 1fr 4fr;
+
+    grid-template-rows: 40px 200px 40px;
+&#125;
+
+</code></pre>
+                <p>That would look like this</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-4.52.17-PM.png"
+                        alt="CSS Grid layout with content spanning 4fr and menu 1fr" />
+                </p>
+                <p>Seems nice right?</p>
+                <p>WRONG!</p>
+                <p>
+                    Just kidding, it does <strong>seem</strong> nice. The
+                    problem comes when we want to add more stuff in our content
+                    section and organize that. Because with our current layout
+                    we still only have 2 columns.
+                </p>
+                <p>A better solution would be something like this.</p>
+                <pre><code class="language-css">
+.container &#123;
+    display: grid;
+    grid-gap: 3px;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    grid-template-rows: 40px 200px 40px;
+&#125;
+
+</code></pre>
+                <p>and then</p>
+                <pre><code class="language-css">
+.content &#123;
+    grid-column: 2/-1;
+&#125;
+
+</code></pre>
+                <p>The result</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-4.56.46-PM.png"
+                        alt="CSS Grid layout with content spanning from column 2 to the last column" />
+                </p>
+                <p>Here is a look at it with the grid showing</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/01/Screen-Shot-2018-01-31-at-4.56.36-PM.png"
+                        alt="CSS Grid layout with grid lines visible, showing content spanning multiple columns" />
+                </p>
+                <p>
+                    Much better! Now we have so much more flexibility with our
+                    content section.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>grid-row</h3>
+                <p>
+                    We still have another problem. The menu sometimes goes to
+                    the very top of the page. If we want to do that, we will
+                    just do the following code.
+                </p>
+                <pre><code class="language-css">
+.header &#123;
+    grid-column: 2/-1;
+&#125;
+
+</code></pre>
+                <p>This will leave some space up top by the header</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-01-31-at-5.07.27-PM.png"
+                        alt="CSS Grid layout with header shifted to start from column 2" />
+                </p>
+                <p>Now we simply add</p>
+                <pre><code class="language-css">
+.menu &#123;
+    grid-row: 1/3;
+&#125;
+
+</code></pre>
+                <p>and we get...</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-01-31-at-5.09.56-PM.png"
+                        alt="CSS Grid layout with menu spanning from row 1 to row 3" />
+                </p>
+                <p>
+                    <code>grid-row</code> works in the same way as
+                    <code>grid-column</code> but rather than left to right, it
+                    is top to bottom.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>grid-template-areas</h3>
+                <p>Take note of the small changes I made in our CSS</p>
+                <pre><code class="language-css">
+.container &#123;
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+&#125;
+
+.header &#123;
+    grid-column: 1 / -1;
+&#125;
+
+.menu &#123;&#125;
+
+.content &#123;
+    grid-column: 2 / -1;
+&#125;
+
+.footer &#123;
+    grid-column: 1 / -1;
+&#125;
+
+</code></pre>
+                <p>
+                    I changed the second row to <code>auto</code> instead of
+                    <code>200px</code>. Now doing this alone won't actually
+                    work. We also have to add <code>height: 100%</code>, now if
+                    you look at the window you'll see that the second row
+                    expands and shrinks to fill any extra space in the window.
+                </p>
+                <p>
+                    Now let's add <code>grid-template-areas</code> to our CSS.
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+&#125;
+
+</code></pre>
+                <p>
+                    What we have here is essentially a visual representation of
+                    our grid layout. The letters there are just to name each
+                    column on each row of our grid. The <code>h</code> is for
+                    header, <code>m</code> is for menu, <code>c</code> is for
+                    content, and <code>f</code> is for footer.
+                </p>
+                <p>
+                    These names are arbitrary, the <code>h</code> could just as
+                    well be named <code>header</code> or
+                    <code>dolphinpants</code>. But best practice is to name it
+                    in a way that allows you to clearly understand its relation
+                    to its column, so in this case <code>h</code> is for header.
+                </p>
+                <p>
+                    We will now remove all the <code>grid-columns</code> and
+                    replace them with <code>grid-area</code> like this.
+                </p>
+                <pre><code class="language-css">
+.header &#123;
+    grid-area: h;
+&#125;
+
+.menu &#123;
+    grid-area: m;
+&#125;
+
+.content &#123;
+    grid-area: c;
+&#125;
+
+.footer &#123;
+    grid-area: f;
+&#125;
+
+</code></pre>
+                <p>Your window should still look the same</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.18.15-PM.png"
+                        alt="CSS Grid layout using grid-template-areas for header, menu, content, and footer" />
+                </p>
+                <p>
+                    Isn't that cool? It's a very clear way of organizing your
+                    layout in a clear visual way.
+                </p>
+                <p>
+                    Now if you want the menu to span all the way to the top like
+                    before, you can just switch the first <code>h</code> with an
+                    <code>m</code>
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas:
+        "m h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+&#125;
+
+</code></pre>
+                <p>and now it spans all the way to the top</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.22.01-PM.png"
+                        alt="CSS Grid layout with menu spanning the first column across top two rows" />
+                </p>
+                <p>You can also use a <code>.</code> to make a column blank.</p>
+                <pre><code class="language-css">
+.container &#123;
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas:
+        ". h h h h h h h h h h ."
+        "m c c c c c c c c c c ."
+        ". f f f f f f f f f f .";
+&#125;
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.24.41-PM.png"
+                        alt="CSS Grid layout with blank columns using dots in grid-template-areas" />
+                </p>
+                <p>
+                    Notice how the spaces above and below the menu are blank and
+                    the right column is completely blank all the way down.
+                </p>
+                <p>
+                    You cannot put a <code>.</code> in between letters
+                    though.Your areas also have to be continuous rectangles.The
+                    following code would break the entire layout.
+                </p>
+                <pre><code class="language-css">
+.container &#123;
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas:
+        "h h h h h . h h h h h h"
+        "m c c c c . c c c c f c"
+        "f f f f f . f f f f f f";
+&#125;
+
+</code></pre>
+                <p>This is what our window would look like.</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2018/02/Screen-Shot-2018-02-01-at-12.27.43-PM.png"
+                        alt="Broken CSS Grid layout due to non-continuous rectangles in grid-template-areas" />
+                </p>
+                <p>
+                    As you can see, it completely ruined it. So keep the
+                    <code>.</code>'s on the edges. Also, the
+                    <code>f</code> interrupts the continuity of the
+                    <code>c</code> rectangle which also ruins the layout.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
