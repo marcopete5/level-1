@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Problem Solving Practice</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">Problem Solving Practice</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Write a function that takes an array of numbers and returns
+                    the largest (without using <code>Math.max()</code>)
+                </p>
+                <pre><code class="language-jsx">
+function largest(arr) {
+    // your code here
+}
+
+// test data
+console.log(largest([6, 13, 250, 3)) // => 250
+console.log(largest([3, 5, 2, 8, 1])) // => 8
+console.log(largest([-13, 40, 3, 0, 19, 22])) // => 40
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Write a function that takes an array of words and a
+                    character and returns each word that has that character
+                    present.
+                </p>
+                <pre><code class="language-jsx">
+function lettersWithStrings(arr, char) {
+    // your code here
+}
+
+// test data
+console.log(lettersWithStrings(["$hello!", "%%^%%", "test!"], "!") => // => ["$hello!", "test!"]
+console.log(lettersWithStrings(["#3", "$$$", "C%4!", "Hey!"], "!"))  // => ["C%4!", "Hey!"]
+console.log(lettersWithStrings(["yellow", "green", "^up^", "down", "dog"], "h"))  // => []
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Write a function that takes a num1 and num2 and returns
+                    whether num1 is divisible by num2.
+                </p>
+                <pre><code class="language-jsx">
+function isDivisible(num1, num2) {
+    // your code here
+}
+
+// test data
+console.log(isDivisible(4, 2)) // => true
+console.log(isDivisible(9, 3)) // => true
+console.log(isDivisible(15, 4)) // => false
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>A Bigger Picture</h3>
+                <p>
+                    Breaking problems down into approachable problems is an
+                    important skill. The
+                    <a
+                        href="https://coursework.vschool.io/problem-solving/"
+                        target="_blank"
+                        rel="noopener"
+                        >four steps of the problem-solving process</a
+                    >
+                    are a good place to start.
+                </p>
+                <p>
+                    The more of these puzzles you solve, the more patterns
+                    you'll see. It'll take time and focus to develop the
+                    deductive reasoning to use old patterns you've seen to solve
+                    new problems.
+                </p>
+                <p>
+                    Having the syntax memorized and a good understanding of the
+                    tools available to you will really help, but much of that
+                    will come with practice.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>If you get stuck</h3>
+                <p>Remember to log your function call:</p>
+                <pre><code class="language-jsx">
+console.log(isDivisible(4, 2))
+
+</code></pre>
+                <p>
+                    If that command logs <code>undefined</code>, it's likely
+                    because the function isn't returning anything. Make sure
+                    your function is returning something!
+                </p>
+                <p>
+                    That something will likely get defined before a for loop and
+                    returned after.
+                </p>
+                <p>
+                    Making sure you've done step 1 correctly (understanding the
+                    problem) will save you heartache in any code challenge
+                    problem-solving.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
