@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Escape Room</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="assignment-header">
+            <header class="slide-header">
+                <h1 id="assignment-header">Escape Room</h1>
+                <h2>Assignment</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    Write a game that lets a user escape a room. The character
+                    finds him/herself locked in a room. In order to escape the
+                    room, your character needs to find the key in the room and
+                    then open the door. There's also a hole in the wall in the
+                    room. If your character puts his hand in the hole, he dies.
+                </p>
+                <h3>Game start:</h3>
+                <p>Tell the user their options:</p>
+                <ol class="custom-list">
+                    <li>Find the key, or</li>
+                    <li>Put hand in hole</li>
+                    <li>Open the door</li>
+                </ol>
+                <p>
+                    They can't open the door unless they find the key first.
+                    They die if they put their hand in the hole.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>JavaScript tools that may help</h3>
+                <ul class="custom-list">
+                    <li>while loop</li>
+                    <li>variables</li>
+                    <li>booleans</li>
+                    <li>if/else if/else OR switch statement</li>
+                    <li>
+                        <code>readline-sync</code> (syntax for installing and
+                        using below)
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>To use <code>readline-sync</code> in your game:</h3>
+                <p>In terminal:</p>
+                <pre><code class="language-bash">
+# cd into escape room's folder
+npm install readline-sync
+
+</code></pre>
+                <p>In your JavaScript code:</p>
+                <pre><code class="language-jsx">
+const readline = require("readline-sync");
+const name = readline.question("What is your name? ");
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>DEMO OF COMPLETED ASSIGNMENT</h3>
+                <iframe
+                    class="video-embed"
+                    width="1280"
+                    height="720"
+                    style="border: 0"
+                    scrolling="no"
+                    src="https://go.screenpal.com/player/cTjuDnn28Gx?controls=1&share=1&download=1&embed=1&cl=1&width=1280&height=720&overlays=1&ff=1"
+                    allowfullscreen="true"></iframe>
+            </div>
+
+            <div class="section">
+                <h3>Problem solving approach:</h3>
+                <p>
+                    Attempt this assignment using just the requirements above.
+                    If you get stumped, it's ok to read through the following
+                    tips. Attempt the problems solving process by yourself
+                    first! It's the best way to get better at it.
+                </p>
+                <p>
+                    You may find yourself asking where to start. This program
+                    will need to ask the user a question over and over. Because
+                    of this, we will need a loop.
+                </p>
+                <p>
+                    The program will ask the same question, but respond in
+                    different ways depending on things that vary. Before our
+                    loop, we may need to define a couple variables.
+                </p>
+                <p>
+                    I don't want to give away the whole assignment, but imagine
+                    we were interested in counting how many times the user was
+                    asked a question. We could define <code>count</code> and set
+                    it to 0. What variables would you want to define before the
+                    for loop for the requirements of this assignment?
+                </p>
+                <p>
+                    These variables will toggle. What data type would be good
+                    for a toggle?
+                </p>
+                <p>
+                    Make sure you know the difference between the assignment
+                    operator <code>=</code> and the "is equal to" operators,
+                    <code>==</code> and <code>===</code>.
+                </p>
+                <p>
+                    You will use if statements, and likely nested if statements
+                    to solve this code challenge.
+                </p>
+                <p>
+                    console.logs are a must!! Make sure you know what lines in
+                    what order will run when the user (you, as the tester) does
+                    different things. Console.logs will confirm what you know,
+                    or show you where you're thinking about things wrong. You
+                    may need a friend to talk it through, but the console will
+                    get you in the right direction!
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Task Rubric</h3>
+                <table>
+                    <tr>
+                        <th>Criteria</th>
+                        <th>Level 1: Emerging</th>
+                        <th>Level 2: Developing</th>
+                        <th>Level 3: Proficient</th>
+                        <th>Level 4: Mastery</th>
+                    </tr>
+                    <tr>
+                        <td>Game Logic</td>
+                        <td>
+                            One or more parts of the game sequence are missing.
+                            User is unable to complete game.
+                        </td>
+                        <td>
+                            User is able to complete game but there are
+                            occasional glitches in the program. Inputs and
+                            outputs are formatted poorly
+                        </td>
+                        <td>
+                            User is able to complete game with minor formatting
+                            issues
+                        </td>
+                        <td>
+                            User is able to complete game and terminal prompts
+                            and output is formatted well.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Code Quality</td>
+                        <td>
+                            Formatting is inconsistent and code is repeated or
+                            disorganized and difficult to follow. Syntax errors
+                            are present.
+                        </td>
+                        <td>
+                            Syntax and formatting is correct and consistent but
+                            certain code conventions aren’t followed, variable
+                            names are confusing, and code is challenging to read
+                        </td>
+                        <td>
+                            Minor issues with code organization and variable
+                            naming but is generally easy to read and follow.
+                        </td>
+                        <td>
+                            Code is DRY, variable names are sensible, and it is
+                            broken up into discreet, reusable pieces.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Submitting Assignments</h3>
+                <p>
+                    Please remember to regularly submit your assignments to
+                    GitHub!
+                </p>
+                <p>Using Git Command Line:</p>
+                <ol class="custom-list">
+                    <li>Open Terminal and navigate to your project folder.</li>
+                    <li>
+                        Add Changes:
+                        <code
+                            >git add
+                            &lt;relative/path/to/assignment/folder&gt;</code
+                        >
+                    </li>
+                    <li>
+                        Commit Changes:
+                        <code
+                            >git commit -m "submitting assignment
+                            &lt;name&gt;"</code
+                        >
+                    </li>
+                    <li>Push to GitHub: <code>git push origin main</code></li>
+                </ol>
+                <p>Using VSCode's Source Control:</p>
+                <ol class="custom-list">
+                    <li>Open VSCode and click on the Source Control tab.</li>
+                    <li>
+                        Stage Changes: Click the "+" icon next to each file.
+                    </li>
+                    <li>
+                        Commit Changes: Enter a commit message and click Commit.
+                    </li>
+                    <li>Push to GitHub: Click the Sync Changes button.</li>
+                </ol>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

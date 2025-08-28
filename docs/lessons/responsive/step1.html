@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Box Model Review</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="lesson-header">
+            <header class="slide-header">
+                <h1 id="lesson-header">Box Model Review</h1>
+                <h2>Lesson</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Learning Objectives</h3>
+                <p>Students will:</p>
+                <ul class="custom-list">
+                    <li>
+                        Know what each layer of the box model is and what they
+                        mean: <code>border</code>, <code>margin</code>,
+                        <code>padding</code>, <code>height/width</code>.
+                    </li>
+                    <li>
+                        Understand how padding, margin, and borders help create
+                        spacing between your content.
+                    </li>
+                </ul>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cdPk4eSD?pl=pQMWgWMUg"
+                    title="Box Model Review"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video explaining the CSS box model including border, margin, padding, and height/width"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>The order of the Box Model from inside out:</p>
+                <ol class="custom-list">
+                    <li>Content (the element's context such as text)</li>
+                    <li>
+                        Padding (the spacing between the content and the
+                        element's border)
+                    </li>
+                    <li>Border (the element's border)</li>
+                    <li>
+                        Margin (the spacing between the elements border and
+                        other neighboring elements)
+                    </li>
+                </ol>
+                <p>
+                    Understanding the CSS box model will help you more as a web
+                    designer than just about any one other thing in CSS. Once
+                    you understand the difference between inline and block-level
+                    elements, the box model will begin to be easier to
+                    understand. Each concept is fairly straightforward to
+                    understand, so we'll work through a number of examples to
+                    illustrate the different pieces of the box model.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Analogy</h3>
+                <p>Imagine yourself inside of a bubble suit or a sumo suit:</p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/6ycugupg64-635576098981616250-370x208.jpg"
+                        alt="Person in a bubble suit, illustrating the CSS box model analogy" />
+                </p>
+                <p>
+                    We'll be referring to this concept throughout this lesson.
+                    Now check the diagram below:
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/boxmodel.gif"
+                        alt="Diagram of the CSS box model showing content, padding, border, and margin" />
+                </p>
+                <p>
+                    In the diagram you can see each piece of the box model:
+                    <code>height/width</code>, <code>padding</code>,
+                    <code>border</code>, and <code>margin</code>.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Height/Width</h3>
+                <p>
+                    The height and width of an element is the amount of space
+                    the content of the element itself takes up. This is not
+                    necessarily the same as how much space the whole element
+                    takes up. In the bubble suit analogy, this is represented by
+                    <em>how much space your actual body takes up</em>. The
+                    dimensions of the content can be set by the CSS
+                    <code>height</code> and <code>width</code> properties.
+                </p>
+                <p>
+                    <strong>Note:</strong> While this <em>can</em> be set in the
+                    HTML on many elements, this is a bad idea and should be
+                    avoided
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Padding</h3>
+                <p>
+                    An element's <strong>padding</strong> can be thought of as
+                    the additional space the bubble suit adds to the total
+                    amount of space you occupy. If there is no padding, it would
+                    be like the bubble suit were vacuumed to your body with no
+                    additional air between the plastic bubble material and your
+                    clothes.
+                </p>
+                <p>
+                    The element's padding is still considered part of the
+                    element itself, so as the padding increases, the element
+                    gets larger and larger. We can see this with a span element:
+                </p>
+                <pre><code class="language-jsx">
+&lt;span class="no-padding"&gt;I'm skinny&lt;/span&gt;&lt;span class="with-padding"&gt;I'm fat&lt;/span&gt;
+
+</code></pre>
+                <pre><code class="language-css">
+span {
+    background-color: #FF4F33;
+    color: #F4FEFF;
+    border: none;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.with-padding {
+    padding: 30px;
+}
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/span.png"
+                        alt="Two span elements showing the effect of padding, one with no padding and one with 30px padding" />
+                </p>
+                <p>
+                    Since <code>&lt;span&gt;</code> elements are inline
+                    elements, they naturally want to take up as little space as
+                    possible. By default they have no padding. Once we add
+                    padding, we can see that the element gets larger in the
+                    amount of space it takes up on the page. The text itself
+                    determines the height and width of the element, but if we
+                    want to extend the size of the element further (including a
+                    larger amount of space for the background color), we can use
+                    padding to do this.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Border</h3>
+                <p>
+                    An element's border is akin to the plastic walls of the
+                    bubble suit. It represents the separation between the
+                    element itself and any other elements that may be nearby.
+                </p>
+                <pre><code class="language-jsx">
+&lt;span class="little-border"&gt;Little Border&lt;/span&gt;&lt;span class="big-border"&gt;Big Border&lt;/span&gt;
+
+</code></pre>
+                <pre><code class="language-css">
+span {
+    background-color: #0FB565;
+    color: #F4FEFF;
+    padding: 20px;
+}
+
+.little-border {
+    border: 1px dashed red;
+}
+
+.big-border {
+    border: 10px dashed red;
+}
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-17-at-8-36-13-PM.png"
+                        alt="Two span elements showing different border widths, one with a 1px dashed red border and one with a 10px dashed red border" />
+                </p>
+                <p>
+                    There are a number of things we can do with an element's
+                    border, including rounding the corners, changing the border
+                    style, etc. Some of the most common properties we change are
+                    the <code>border-width</code>, <code>border-color</code>,
+                    <code>border-style</code>, and <code>border-radius</code>.
+                </p>
+                <ul class="custom-list">
+                    <li>
+                        <code>border-width</code> is simply the thickness of the
+                        border itself. In the example above, one has a
+                        <code>border-width</code> of 1 px, the other 10px.
+                    </li>
+                    <li>
+                        <code>border-color</code> is the color of the border.
+                    </li>
+                    <li>
+                        <code>border-style</code> is the pattern of the border.
+                        There are a lot of options, all of which can be found
+                        <a
+                            href="http://www.w3schools.com/cssref/pr_border-style.asp"
+                            target="_blank"
+                            rel="noopener"
+                            >here</a
+                        >.
+                    </li>
+                    <li>
+                        <code>border-radius</code> is the roundness of the
+                        corners of the border (and the element itself).
+                    </li>
+                </ul>
+                <p>
+                    You may notice from the above image that the border is
+                    traced along the inside of the padding. It is important to
+                    note that the border will do this by default. Even if you
+                    set the item to have 0 padding, it will create the padding
+                    it needs in order for the border to still be sitting inside
+                    the element. So if you're trying to use percentages to do
+                    math with the width of items on a page, but you're also
+                    adding a border (no matter how small), your math won't work
+                    out to 100%! The widths of the borders will add just enough
+                    to make your items not sit side-by-side.
+                </p>
+                <p>
+                    To remedy this, you'll probably want to add the following to
+                    the top of your CSS file:
+                </p>
+                <pre><code class="language-css">
+* {
+    box-sizing: border-box;
+}
+
+</code></pre>
+                <p>
+                    This property takes the width of the border into account
+                    when setting the <code>width</code> and
+                    <code>height</code> properties, so now you could put 2
+                    objects side-by-side at 50% each without pulling your hair
+                    out!
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Margin</h3>
+                <p>
+                    In our bubble suit analogy, an element's
+                    <code>margin</code> would be the space between other people
+                    who are also wearing their own bubble suits. The greater the
+                    margin, the more space between each person and their suit.
+                </p>
+                <pre><code class="language-jsx">
+&lt;span&gt;No margin&lt;/span&gt;&lt;span&gt;I'm squished!&lt;/span&gt;
+
+</code></pre>
+                <pre><code class="language-css">
+span {
+    background-color: #F2AD02;
+    color: #F4FEFF;
+    padding: 10px;
+    margin: 0;
+}
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-18-at-3-00-49-PM.png"
+                        alt="Two span elements with no margin, appearing squished together" />
+                </p>
+                <p>
+                    <em
+                        >Note: You'll notice in the image that it still kind of
+                        looks like there is a little bit a margin separating the
+                        two spans. This has to do with a quirk of HTML obeying
+                        whitespace between HTML tags on separate lines, and it
+                        doesn't mean that the elements have some margin. If you
+                        put the two spans on the same line in the editor (<code
+                            >&lt;span&gt;No margin&lt;/span&gt;&lt;span&gt;I'm
+                            squished!&lt;/span&gt;</code
+                        >), you'll see that small space disappear.</em
+                    >
+                </p>
+                <p>
+                    Let's see a more realistic example of when margin should be
+                    used: navbar links!
+                </p>
+                <pre><code class="language-jsx">
+&lt;nav&gt;&lt;ul&gt;&lt;a href="index.html"&gt;&lt;li&gt;Home&lt;/li&gt;&lt;/a&gt;&lt;a href="about.html"&gt;&lt;li&gt;About&lt;/li&gt;&lt;/a&gt;&lt;a href="contact.html"&gt;&lt;li&gt;Contact&lt;/li&gt;&lt;/a&gt;&lt;a href="donate.html"&gt;&lt;li&gt;Donate&lt;/li&gt;&lt;/a&gt;&lt;/ul&gt;&lt;/nav&gt;
+
+</code></pre>
+                <pre><code class="language-css">
+nav li {
+    display: inline-block;
+    background-color: #3B62F2;
+}
+
+nav li > a {
+    text-decoration: none;
+    color: #F4FEFF;
+}
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-18-at-3-08-19-PM.png"
+                        alt="Navbar with cramped links due to no padding or margin" />
+                </p>
+                <p>
+                    This navbar is really cramped and each link is really small!
+                    How would we make each element larger so the user didn't
+                    have to be very precise with their mouse? Padding! Remember,
+                    padding adds space inside the element so as to make the
+                    element's insides larger:
+                </p>
+                <pre><code class="language-css">
+nav li {
+    display: inline-block;
+    background-color: #3B62F2;
+    padding: 10px;
+}
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-18-at-3-15-14-PM.png"
+                        alt="Navbar with links enlarged using padding" />
+                </p>
+                <p>
+                    If we wanted to move each of these links further apart from
+                    one another? This is where margin comes in to play! I could
+                    add <code>margin: 10px;</code> to my
+                    <code>nav li</code> selector, and that would add a margin of
+                    10px to all 4 sides:
+                </p>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-18-at-3-17-49-PM.png"
+                        alt="Navbar with links spaced apart using margin" />
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Limitations of margin</h3>
+                <p>
+                    Margin shouldn't be used to lay out your page! If you want
+                    something to be on the right side of your page,
+                    <strong
+                        >do not add <code>margin-left: 90%</code> to you
+                        element!</strong
+                    >
+                    This is the job of the <code>position</code> property.
+                    Margin should be used solely for pushing other elements
+                    away, usually just by a relatively small amount.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Another example: images and text</h3>
+                <p>
+                    It's common to have an image that sits inline with your
+                    text. Image tags are inline elements, and text tags are
+                    block-level elements, so there's a property that allows our
+                    image tags to "float" next to our text. However, because it
+                    is still an inline element, it will still try to take up as
+                    little space as possible, resulting in this:
+                </p>
+                <pre><code class="language-jsx">
+&lt;img class="kitten-pic" src="http://placekitten.com/g/200/300" alt="Kitten!"&gt;&lt;div class="kitten-description"&gt;&lt;p&gt;This is a picture of a kitten. His name is Mr. Pickles, and he is the cuddliest kitten you'll ever meet. However, if you get on his bad side he will shred your skin away, and then shred your couch cushions for good measure.&lt;/p&gt;&lt;p&gt;It's best not to get on his bad side.&lt;/p&gt;&lt;/div&gt;
+
+</code></pre>
+                <pre><code class="language-css">
+.kitten-pic {
+    float:left;
+}
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-18-at-3-30-44-PM.png"
+                        alt="Image of a kitten with text too close due to no margin" />
+                </p>
+                <p>
+                    The text is far too close to that kitten! Margin to the
+                    rescue.
+                </p>
+                <pre><code class="language-css">
+.kitten-pic {
+    float:left;
+    margin-right: 15px;
+}
+
+</code></pre>
+                <p>
+                    <img
+                        class="image-embed"
+                        src="https://coursework.vschool.io/content/images/2016/08/Screen-Shot-2016-08-18-at-3-30-09-PM.png"
+                        alt="Image of a kitten with text spaced properly using margin" />
+                </p>
+                <p>Much better.</p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Shortcut properties</h3>
+                <p>
+                    So far we've been using the shortcut properties
+                    <code>padding</code>, <code>border</code>, and
+                    <code>margin</code> without explaining what they mean.
+                </p>
+                <p>
+                    Each of those properties have a long-form version that deals
+                    with each side individually:
+                </p>
+                <pre><code class="language-css">
+/* Padding */
+padding-top: 20px;
+padding-right: 20px;
+padding-bottom: 20px;
+padding-left: 20px;
+
+/* Border */
+border-top-width: 2px;
+border-right-width: 2px;
+border-bottom-width: 2px;
+border-left-width: 2px;
+border-top-style: dashed;
+... etc ...
+border-top-color: blue;
+... etc ...
+border-top-right-radius: 20%;
+... etc ...
+
+/* Margin */
+margin-top: 20px;
+margin-right: 20px;
+margin-bottom: 20px;
+margin-left: 20px;
+
+</code></pre>
+                <p>
+                    We can always use these long-form version of the properties
+                    if we need a lot more flexibility, but fortunately we're
+                    given the option to shorten all of these.
+                </p>
+                <p>
+                    For padding and margin, we can decide to either put 1, 2, 3,
+                    or 4 size values, separated by a space, in the
+                    <code>margin</code> or <code>padding</code> property:
+                </p>
+                <pre><code class="language-css">
+margin: 10px;
+margin: 10px 20px;
+margin: 10px 20px 30px;
+margin: 10px 20px 30px 40px;
+
+</code></pre>
+                <p>
+                    The order is important: 1) top, 2) right, 3) bottom, and 4)
+                    left. With these in mind, the following rules apply:
+                </p>
+                <ul class="custom-list">
+                    <li>
+                        If you have a single value:
+                        <ul class="custom-list">
+                            <li>
+                                Your value applies to
+                                <strong>all 4 sides</strong>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        If you have 2 values:
+                        <ul class="custom-list">
+                            <li>
+                                The <strong>first value</strong> applies to the
+                                <strong>top and bottom</strong> sides, and
+                            </li>
+                            <li>
+                                The <strong>second value</strong> applies to the
+                                <strong>right and left</strong> sides.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        If you have 3 values:
+                        <ul class="custom-list">
+                            <li>The first value applies to the top side,</li>
+                            <li>
+                                The second value applies to the right and left
+                                sides, and
+                            </li>
+                            <li>The third value applies to the bottom side.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        If you have 4 values:
+                        <ul class="custom-list">
+                            <li>
+                                The order of the values goes, respectively,
+                                <strong>top, right, bottom, left</strong>.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    Other shortcut methods follow a different pattern. With
+                    borders, for example, the <code>border</code> shortcut
+                    method is simply a combination of <code>border-width</code>,
+                    <code>border-style</code>, and <code>border-color</code> (in
+                    that order), all of which are optional:
+                </p>
+                <pre><code class="language-css">
+border: 3px;
+border: dashed;
+border: red;
+border: 3px red;
+border: 3px dashed;
+border: solid blue;
+border: 3px solid red;
+... etc ...
+
+</code></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Conclusion</h3>
+                <p>
+                    The box model can seem complex and confusing at first. The
+                    more time you spend with it, the better you'll get at using
+                    it to your advantage.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
