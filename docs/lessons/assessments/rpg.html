@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Colossal Adventure RPG</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    </head>
+    <body>
+        <div
+            class="slide-container"
+            role="region"
+            aria-labelledby="project-header">
+            <header class="slide-header">
+                <h1 id="project-header">Colossal Adventure RPG</h1>
+                <h2>Capstone Project</h2>
+            </header>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <p>
+                    <strong
+                        >Don’t forget to schedule your assessment before
+                        starting your capstone project!</strong
+                    >
+                </p>
+                <p>Message your Instructor to get your assessment scheduled</p>
+                <p>
+                    Work through the 4 parts of the problem solving process the
+                    best you can with this one, but there is Part 2 explained in
+                    the Scrimba link for this Notion Page.
+                </p>
+                <p><strong>Tips for getting started</strong>:</p>
+                <iframe
+                    id="lessonFrame"
+                    class="video-embed"
+                    src="https://v1.scrimba.com/scrim/cQqLVghJ"
+                    title="Tips for getting started with Colossal Adventure RPG"
+                    frameborder="0"
+                    allowfullscreen
+                    aria-label="Video providing tips for starting the Colossal Adventure RPG capstone project"></iframe>
+                <button
+                    onclick="window.open(document.getElementById('lessonFrame').src, '_blank')">
+                    Open in Browser
+                </button>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Project Requirements:</h3>
+                <p><strong>EXAMPLE RPG:</strong></p>
+                <p>
+                    <iframe
+                        class="video-embed"
+                        width="1280"
+                        height="720"
+                        style="border: 0"
+                        scrolling="no"
+                        src="https://go.screenpal.com/player/cTjObPn2dTp?controls=1&share=1&download=1&embed=1&cl=1&width=1280&height=720&overlays=1&ff=1"
+                        allowfullscreen="true"></iframe>
+                </p>
+                <p><strong>Description</strong></p>
+                <p>
+                    The year is 1985. Your job is to build a text-based
+                    (console) RPG game. (Using <code>readline-sync</code>)
+                </p>
+                <p>
+                    The point of this exercise is to better master Javascript
+                    functions, loops, conditionals, and some data types.
+                </p>
+                <p><strong>Watch these workshops to review!</strong></p>
+                <ul class="custom-list">
+                    <li>
+                        <a
+                            href="https://youtu.be/HE1YefJRwsk"
+                            target="_blank"
+                            rel="noopener"
+                            >Loops and Conditionals</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://youtu.be/etdklGbMBPw"
+                            target="_blank"
+                            rel="noopener"
+                            >Loops and Conditionals Part II</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://youtu.be/2hUphYzD6NM"
+                            target="_blank"
+                            rel="noopener"
+                            >Functions/Parameters/Arguments</a
+                        >
+                    </li>
+                </ul>
+
+                <p><strong>Requirements:</strong></p>
+
+                <ol class="custom-list">
+                    <li>Console must greet player with a fun message</li>
+                    <li>Console must ask for the player's name and store it</li>
+                    <li>
+                        Walking
+                        <ul class="custom-list">
+                            <li>
+                                The console will ask the user to enter a
+                                <code>w</code> to walk
+                            </li>
+                            <li>
+                                Every time the player walks, a random algorithm
+                                will be run that determines if a wild enemy has
+                                appeared (A 1/3 or 1/4 chance of being attacked)
+                            </li>
+                            <li>Use a while loop to control this flow.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        If a wild enemy appears
+                        <ul class="custom-list">
+                            <li>
+                                The enemy is random (can be chosen out of a
+                                minimum of 3 different enemy names)
+                            </li>
+                            <li>The user can decide to attack or run</li>
+                            <li>
+                                If attacking, a random amount of damage will be
+                                dealt between a min and max
+                            </li>
+                            <li>
+                                If running, there will be a 50% chance of
+                                escaping
+                            </li>
+                            <li>
+                                After the player attacks or runs the enemy
+                                attacks back for a random damage amount
+                            </li>
+                            <li>
+                                The player and enemy will attack each other in a
+                                loop until one of them passes out or dies.
+                            </li>
+                            <li>
+                                If the player kills the enemy you can give the
+                                Player some HP and special item that is stored
+                                in the inventory. If the player has killed three
+                                enemies total, end the game with a victory
+                                message. Otherwise, the player will continue
+                                walking.
+                            </li>
+                            <li>
+                                If the enemy kills the player the console prints
+                                a cool death message and the game ends
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Inventory
+                        <ul class="custom-list">
+                            <li>
+                                When the player kills enemies, they are awarded
+                                with items (optional)
+                            </li>
+                            <li>
+                                If the user enters <code>'Print'</code> or
+                                <code>'p'</code> in the console, the console
+                                will print the players name, HP, and each item
+                                in their inventory
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Tips for getting started:</h3>
+                <p>
+                    <strong
+                        >Passing Criteria: Demo to the Instructor & Code
+                        Review</strong
+                    >
+                </p>
+                <p>
+                    An instructor will look through your code with you and make
+                    sure you have a solid grasp on using functions, loops, and
+                    conditionals in JavaScript, as well as to verify that you're
+                    following JavaScript code standards and good general
+                    programming practices.
+                </p>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Task Rubric</h3>
+                <table class="rubric-table" role="grid">
+                    <thead>
+                        <tr>
+                            <th>Criteria</th>
+                            <th>Level 1: Emerging</th>
+                            <th>Level 2: Developing</th>
+                            <th>Level 3: Proficient</th>
+                            <th>Level 4: Mastery</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Game Logic</td>
+                            <td>
+                                User cannot complete game either due to infinite
+                                loops or incorrect sequencing of logic. Poor
+                                formatting of prompts/output
+                            </td>
+                            <td>
+                                User can complete game only inconsistently with
+                                some flaws in sequencing and formatting issues.
+                            </td>
+                            <td>
+                                User can complete game consistently. Minor
+                                glitches or miscalculations during the fight
+                                sequence
+                            </td>
+                            <td>
+                                User can complete game consistently. Prompts are
+                                formatted well and fight sequences works
+                                smoothly.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Code Quality</td>
+                            <td>
+                                Formatting is inconsistent and code is repeated
+                                or disorganized and difficult to follow. Syntax
+                                errors are present.
+                            </td>
+                            <td>
+                                Syntax and formatting is correct and consistent
+                                but certain code conventions aren’t followed,
+                                variable names are confusing, and code is
+                                challenging to read
+                            </td>
+                            <td>
+                                Minor issues with code organization and variable
+                                naming but is generally easy to read and follow.
+                            </td>
+                            <td>
+                                Code is DRY, variable names are sensible, and it
+                                is broken up into discreet, reusable pieces.
+                                Modules are used to separate concerns
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section">
+                <h3>Submitting Assignments</h3>
+                <p>
+                    Please remember to regularly submit your assignments to
+                    GitHub!
+                </p>
+                <p>Using Git Command Line:</p>
+                <ul class="custom-list">
+                    <li>Open Terminal and navigate to your project folder.</li>
+                    <li>
+                        Add Changes:
+                        <code
+                            >git add
+                            &lt;relative/path/to/assignment/folder&gt;</code
+                        >
+                    </li>
+                    <li>
+                        Commit Changes:
+                        <code
+                            >git commit -m "submitting assignment
+                            &lt;name&gt;"</code
+                        >
+                    </li>
+                    <li>Push to GitHub: <code>git push origin main</code></li>
+                </ul>
+                <pre><code class="language-bash">
+git add &lt;relative/path/to/assignment/folder&gt;
+git commit -m "submitting assignment &lt;name&gt;"
+git push origin main
+
+</code></pre>
+                <p>Using VSCode's Source Control:</p>
+                <ul class="custom-list">
+                    <li>Open VSCode and click on the Source Control tab.</li>
+                    <li>
+                        Stage Changes: Click the "+" icon next to each file.
+                    </li>
+                    <li>
+                        Commit Changes: Enter a commit message and click Commit.
+                    </li>
+                    <li>Push to GitHub: Click the Sync Changes button.</li>
+                </ul>
+            </div>
+
+            <hr class="section-divider" />
+
+            <footer class="slide-footer">
+                <p>
+                    Have feedback on this page? Submit it
+                    <a
+                        href="https://forms.gle/n7Mig99LCGqvE6Kq8"
+                        target="_blank"
+                        rel="noopener"
+                        >here</a
+                    >.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
